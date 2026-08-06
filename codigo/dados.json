@@ -1,1393 +1,722 @@
 [
   {
-    "titulo": "Analista de QA Estagio",
-    "empresa": "Rio Sergipe Dados",
-    "nivel": "estagio",
-    "salario": 1350,
-    "remoto": false,
-    "requisitos": [
-      "html"
-    ]
-  },
-  {
-    "titulo": "Designer de Produto Junior",
-    "empresa": "Rio Sergipe Dados",
-    "nivel": "junior",
-    "salario": 1800,
-    "remoto": true,
-    "requisitos": [
-      "sql",
-      "js"
-    ]
-  },
-  {
-    "titulo": "Assistente de Dados Pleno",
-    "empresa": "Aracaju Cloud",
-    "nivel": "pleno",
-    "salario": 5050,
-    "remoto": false,
-    "requisitos": [
-      "js",
-      "docker",
-      "python",
-      "sql",
-      "css"
-    ]
-  },
-  {
-    "titulo": "Designer de Produto Pleno",
-    "empresa": "Orla Digital",
-    "nivel": "pleno",
-    "salario": 5950,
-    "remoto": false,
-    "requisitos": [
-      "css",
-      "python",
-      "sql",
-      "node",
-      "js"
-    ]
-  },
-  {
-    "titulo": "Dev Back-End Senior",
-    "empresa": "Farol Tecnologia",
-    "nivel": "senior",
-    "salario": 8450,
-    "remoto": false,
-    "requisitos": [
-      "html",
-      "sql",
-      "node",
-      "react",
-      "css"
-    ]
-  },
-  {
-    "titulo": "Dev Full-Stack Pleno",
-    "empresa": "Sertão Digital",
-    "nivel": "pleno",
-    "salario": 4650,
-    "remoto": true,
-    "requisitos": [
-      "sql",
-      "react",
-      "js",
-      "html"
-    ]
-  },
-  {
-    "titulo": "Designer de Produto Estagio",
-    "empresa": "Caju Hub Labs",
-    "nivel": "estagio",
-    "salario": 1250,
-    "remoto": false,
-    "requisitos": [
-      "html"
-    ]
-  },
-  {
-    "titulo": "Analista de Sistemas Senior",
-    "empresa": "Orla Digital",
-    "nivel": "senior",
-    "salario": 10150,
-    "remoto": false,
-    "requisitos": [
-      "react",
-      "node",
-      "html",
-      "sql",
-      "docker"
-    ]
-  },
-  {
-    "titulo": "Dev Back-End Estagio",
-    "empresa": "Orla Digital",
-    "nivel": "estagio",
-    "salario": 850,
-    "remoto": false,
-    "requisitos": [
-      "node"
-    ]
-  },
-  {
-    "titulo": "Dev Mobile Estagio",
-    "empresa": "Tech Aracaju",
-    "nivel": "estagio",
-    "salario": 1100,
-    "remoto": true,
-    "requisitos": [
-      "js"
-    ]
-  },
-  {
-    "titulo": "Designer de Produto Junior",
-    "empresa": "Sergipe Log",
-    "nivel": "junior",
-    "salario": 1950,
-    "remoto": false,
-    "requisitos": [
-      "docker",
-      "html"
-    ]
-  },
-  {
-    "titulo": "Designer de Produto Pleno",
-    "empresa": "Sertão Digital",
-    "nivel": "pleno",
-    "salario": 5350,
-    "remoto": true,
-    "requisitos": [
-      "docker",
-      "node",
-      "js",
-      "sql",
-      "react",
-      "python"
-    ]
-  },
-  {
-    "titulo": "Dev Mobile Junior",
-    "empresa": "Atalaia Systems",
-    "nivel": "junior",
-    "salario": 2300,
-    "remoto": false,
-    "requisitos": [
-      "js"
-    ]
-  },
-  {
-    "titulo": "Analista de Sistemas Junior",
-    "empresa": "Atalaia Systems",
-    "nivel": "junior",
-    "salario": 2450,
-    "remoto": true,
-    "requisitos": [
-      "sql",
-      "react",
-      "python"
-    ]
-  },
-  {
-    "titulo": "Dev Mobile Estagio",
-    "empresa": "Sergipe Log",
-    "nivel": "estagio",
-    "salario": 1100,
-    "remoto": true,
-    "requisitos": [
-      "css"
-    ]
-  },
-  {
-    "titulo": "Analista de QA Estagio",
-    "empresa": "Caju Hub Labs",
-    "nivel": "estagio",
-    "salario": 1100,
-    "remoto": true,
-    "requisitos": [
-      "css"
-    ]
-  },
-  {
-    "titulo": "Dev Front-End Pleno",
-    "empresa": "Sertão Digital",
-    "nivel": "pleno",
-    "salario": 3750,
-    "remoto": false,
-    "requisitos": [
-      "node",
-      "python",
-      "html",
-      "docker"
-    ]
-  },
-  {
-    "titulo": "Analista de Sistemas Estagio",
-    "empresa": "Vale do Cotinguiba Software",
-    "nivel": "estagio",
-    "salario": 1200,
-    "remoto": true,
-    "requisitos": [
-      "react"
-    ]
-  },
-  {
-    "titulo": "Analista de Infra Estagio",
-    "empresa": "Orla Digital",
-    "nivel": "estagio",
-    "salario": 1250,
-    "remoto": false,
-    "requisitos": [
-      "html"
-    ]
-  },
-  {
-    "titulo": "Dev Full-Stack Estagio",
-    "empresa": "Farol Tecnologia",
-    "nivel": "estagio",
-    "salario": 800,
-    "remoto": false,
-    "requisitos": [
-      "js"
-    ]
-  },
-  {
-    "titulo": "Dev Front-End Junior",
-    "empresa": "Vale do Cotinguiba Software",
-    "nivel": "junior",
-    "salario": 1800,
-    "remoto": false,
-    "requisitos": [
-      "node",
-      "python"
-    ]
-  },
-  {
-    "titulo": "Analista de Sistemas Junior",
-    "empresa": "Caju Hub Labs",
-    "nivel": "junior",
-    "salario": 2600,
-    "remoto": true,
-    "requisitos": [
-      "python",
-      "docker"
-    ]
-  },
-  {
-    "titulo": "Dev Mobile Junior",
-    "empresa": "Aracaju Cloud",
-    "nivel": "junior",
-    "salario": 2450,
-    "remoto": false,
-    "requisitos": [
-      "js",
-      "sql"
-    ]
-  },
-  {
-    "titulo": "Analista de Sistemas Junior",
-    "empresa": "Aracaju Cloud",
-    "nivel": "junior",
-    "salario": 2250,
-    "remoto": false,
-    "requisitos": [
-      "sql",
-      "python",
-      "html"
-    ]
-  },
-  {
-    "titulo": "Dev Mobile Estagio",
-    "empresa": "Sergipe Log",
-    "nivel": "estagio",
-    "salario": 1050,
-    "remoto": false,
-    "requisitos": [
-      "js"
-    ]
-  },
-  {
-    "titulo": "Suporte Web Junior",
-    "empresa": "Orla Digital",
-    "nivel": "junior",
-    "salario": 2050,
-    "remoto": false,
-    "requisitos": [
-      "docker",
-      "react"
-    ]
-  },
-  {
-    "titulo": "Analista de QA Junior",
-    "empresa": "Aracaju Cloud",
-    "nivel": "junior",
-    "salario": 2050,
-    "remoto": true,
-    "requisitos": [
-      "python"
-    ]
-  },
-  {
-    "titulo": "Suporte Web Junior",
-    "empresa": "Tech Aracaju",
-    "nivel": "junior",
-    "salario": 2450,
-    "remoto": false,
-    "requisitos": [
-      "sql"
-    ]
-  },
-  {
-    "titulo": "Analista de QA Junior",
-    "empresa": "Tech Aracaju",
-    "nivel": "junior",
-    "salario": 2450,
-    "remoto": true,
-    "requisitos": [
-      "html"
-    ]
-  },
-  {
-    "titulo": "Designer de Produto Junior",
-    "empresa": "Caju Hub Labs",
-    "nivel": "junior",
-    "salario": 1650,
-    "remoto": false,
-    "requisitos": [
-      "html",
-      "js",
-      "react"
-    ]
-  },
-  {
-    "titulo": "Dev Full-Stack Junior",
-    "empresa": "Tech Aracaju",
-    "nivel": "junior",
-    "salario": 2250,
-    "remoto": true,
-    "requisitos": [
-      "css"
-    ]
-  },
-  {
-    "titulo": "Analista de Sistemas Pleno",
-    "empresa": "Vale do Cotinguiba Software",
-    "nivel": "pleno",
-    "salario": 4050,
-    "remoto": true,
-    "requisitos": [
-      "docker",
-      "js",
-      "python"
-    ]
-  },
-  {
-    "titulo": "Dev Front-End Junior",
-    "empresa": "Sergipe Log",
-    "nivel": "junior",
-    "salario": 2600,
-    "remoto": false,
-    "requisitos": [
-      "css",
-      "html"
-    ]
-  },
-  {
     "titulo": "Dev Front-End Estagio",
     "empresa": "Caju Hub Labs",
     "nivel": "estagio",
-    "salario": 800,
-    "remoto": false,
-    "requisitos": [
-      "docker"
-    ]
-  },
-  {
-    "titulo": "Dev Front-End Senior",
-    "empresa": "Tech Aracaju",
-    "nivel": "senior",
-    "salario": 13900,
-    "remoto": true,
-    "requisitos": [
-      "html",
-      "css",
-      "sql",
-      "python"
-    ]
-  },
-  {
-    "titulo": "Dev Full-Stack Estagio",
-    "empresa": "Rio Sergipe Dados",
-    "nivel": "estagio",
-    "salario": 900,
-    "remoto": false,
-    "requisitos": [
-      "html"
-    ]
-  },
-  {
-    "titulo": "Dev Mobile Senior",
-    "empresa": "Farol Tecnologia",
-    "nivel": "senior",
-    "salario": 7250,
-    "remoto": false,
-    "requisitos": [
-      "sql",
-      "js",
-      "css",
-      "python",
-      "html"
-    ]
-  },
-  {
-    "titulo": "Analista de Infra Junior",
-    "empresa": "Orla Digital",
-    "nivel": "junior",
-    "salario": 1800,
-    "remoto": false,
-    "requisitos": [
-      "node",
-      "docker"
-    ]
-  },
-  {
-    "titulo": "Dev Back-End Pleno",
-    "empresa": "Sergipe Log",
-    "nivel": "pleno",
-    "salario": 3700,
-    "remoto": true,
-    "requisitos": [
-      "react",
-      "sql",
-      "js",
-      "html",
-      "css",
-      "python"
-    ]
-  },
-  {
-    "titulo": "Analista de Infra Junior",
-    "empresa": "Orla Digital",
-    "nivel": "junior",
-    "salario": 2400,
-    "remoto": true,
-    "requisitos": [
-      "node",
-      "react",
-      "html"
-    ]
-  },
-  {
-    "titulo": "Dev Back-End Estagio",
-    "empresa": "Farol Tecnologia",
-    "nivel": "estagio",
-    "salario": 1150,
-    "remoto": false,
-    "requisitos": [
-      "sql"
-    ]
-  },
-  {
-    "titulo": "Designer de Produto Senior",
-    "empresa": "Tech Aracaju",
-    "nivel": "senior",
-    "salario": 12450,
-    "remoto": true,
-    "requisitos": [
-      "css",
-      "python",
-      "node"
-    ]
-  },
-  {
-    "titulo": "Dev Front-End Junior",
-    "empresa": "Atalaia Systems",
-    "nivel": "junior",
-    "salario": 2300,
-    "remoto": false,
-    "requisitos": [
-      "html",
-      "sql",
-      "react"
-    ]
-  },
-  {
-    "titulo": "Dev Back-End Estagio",
-    "empresa": "Orla Digital",
-    "nivel": "estagio",
-    "salario": 1000,
-    "remoto": false,
-    "requisitos": [
-      "python"
-    ]
-  },
-  {
-    "titulo": "Assistente de Dados Senior",
-    "empresa": "Vale do Cotinguiba Software",
-    "nivel": "senior",
-    "salario": 13400,
-    "remoto": true,
-    "requisitos": [
-      "node",
-      "js",
-      "react",
-      "css"
-    ]
-  },
-  {
-    "titulo": "Assistente de Dados Estagio",
-    "empresa": "Farol Tecnologia",
-    "nivel": "estagio",
-    "salario": 1150,
-    "remoto": false,
-    "requisitos": [
-      "react"
-    ]
-  },
-  {
-    "titulo": "Suporte Web Senior",
-    "empresa": "Sertão Digital",
-    "nivel": "senior",
-    "salario": 9950,
-    "remoto": false,
-    "requisitos": [
-      "python",
-      "css",
-      "sql",
-      "react"
-    ]
-  },
-  {
-    "titulo": "Dev Back-End Senior",
-    "empresa": "Atalaia Systems",
-    "nivel": "senior",
-    "salario": 7200,
-    "remoto": true,
-    "requisitos": [
-      "html",
-      "react",
-      "js",
-      "docker"
-    ]
-  },
-  {
-    "titulo": "Analista de QA Senior",
-    "empresa": "Caju Hub Labs",
-    "nivel": "senior",
-    "salario": 11900,
-    "remoto": false,
-    "requisitos": [
-      "sql",
-      "node",
-      "html"
-    ]
-  },
-  {
-    "titulo": "Dev Front-End Junior",
-    "empresa": "Caju Hub Labs",
-    "nivel": "junior",
-    "salario": 1750,
-    "remoto": true,
-    "requisitos": [
-      "html",
-      "js",
-      "node"
-    ]
-  },
-  {
-    "titulo": "Analista de QA Estagio",
-    "empresa": "Orla Digital",
-    "nivel": "estagio",
-    "salario": 850,
-    "remoto": false,
-    "requisitos": [
-      "css"
-    ]
-  },
-  {
-    "titulo": "Dev Full-Stack Senior",
-    "empresa": "Sergipe Log",
-    "nivel": "senior",
-    "salario": 9700,
-    "remoto": false,
-    "requisitos": [
-      "css",
-      "docker",
-      "node"
-    ]
-  },
-  {
-    "titulo": "Suporte Web Junior",
-    "empresa": "Aracaju Cloud",
-    "nivel": "junior",
-    "salario": 1650,
-    "remoto": true,
-    "requisitos": [
-      "node",
-      "python",
-      "react"
-    ]
-  },
-  {
-    "titulo": "Assistente de Dados Estagio",
-    "empresa": "Tech Aracaju",
-    "nivel": "estagio",
-    "salario": 1150,
-    "remoto": true,
-    "requisitos": [
-      "html"
-    ]
+    "salario": 1200
   },
   {
     "titulo": "Suporte Web Senior",
     "empresa": "Orla Digital",
     "nivel": "senior",
-    "salario": 8100,
-    "remoto": false,
-    "requisitos": [
-      "python",
-      "html",
-      "react"
-    ]
-  },
-  {
-    "titulo": "Designer de Produto Pleno",
-    "empresa": "Tech Aracaju",
-    "nivel": "pleno",
-    "salario": 4400,
-    "remoto": true,
-    "requisitos": [
-      "js",
-      "python",
-      "react"
-    ]
-  },
-  {
-    "titulo": "Dev Front-End Pleno",
-    "empresa": "Caju Hub Labs",
-    "nivel": "pleno",
-    "salario": 5100,
-    "remoto": true,
-    "requisitos": [
-      "docker",
-      "sql",
-      "react",
-      "css",
-      "python",
-      "js"
-    ]
-  },
-  {
-    "titulo": "Analista de QA Pleno",
-    "empresa": "Orla Digital",
-    "nivel": "pleno",
-    "salario": 5650,
-    "remoto": true,
-    "requisitos": [
-      "node",
-      "css",
-      "html",
-      "js",
-      "react"
-    ]
-  },
-  {
-    "titulo": "Suporte Web Estagio",
-    "empresa": "Sergipe Log",
-    "nivel": "estagio",
-    "salario": 1300,
-    "remoto": false,
-    "requisitos": [
-      "node"
-    ]
-  },
-  {
-    "titulo": "Suporte Web Estagio",
-    "empresa": "Farol Tecnologia",
-    "nivel": "estagio",
-    "salario": 1000,
-    "remoto": true,
-    "requisitos": [
-      "react"
-    ]
-  },
-  {
-    "titulo": "Dev Back-End Estagio",
-    "empresa": "Orla Digital",
-    "nivel": "estagio",
-    "salario": 850,
-    "remoto": false,
-    "requisitos": [
-      "html"
-    ]
-  },
-  {
-    "titulo": "Suporte Web Estagio",
-    "empresa": "Farol Tecnologia",
-    "nivel": "estagio",
-    "salario": 1150,
-    "remoto": true,
-    "requisitos": [
-      "python"
-    ]
-  },
-  {
-    "titulo": "Dev Front-End Pleno",
-    "empresa": "Rio Sergipe Dados",
-    "nivel": "pleno",
-    "salario": 3800,
-    "remoto": true,
-    "requisitos": [
-      "node",
-      "docker",
-      "js",
-      "html",
-      "react",
-      "css"
-    ]
-  },
-  {
-    "titulo": "Dev Full-Stack Estagio",
-    "empresa": "Caju Hub Labs",
-    "nivel": "estagio",
-    "salario": 850,
-    "remoto": true,
-    "requisitos": [
-      "python"
-    ]
-  },
-  {
-    "titulo": "Analista de QA Estagio",
-    "empresa": "Caju Hub Labs",
-    "nivel": "estagio",
-    "salario": 1300,
-    "remoto": true,
-    "requisitos": [
-      "node"
-    ]
-  },
-  {
-    "titulo": "Dev Back-End Senior",
-    "empresa": "Sergipe Log",
-    "nivel": "senior",
-    "salario": 12200,
-    "remoto": false,
-    "requisitos": [
-      "sql",
-      "html",
-      "docker",
-      "js"
-    ]
-  },
-  {
-    "titulo": "Designer de Produto Junior",
-    "empresa": "Vale do Cotinguiba Software",
-    "nivel": "junior",
-    "salario": 1600,
-    "remoto": false,
-    "requisitos": [
-      "html"
-    ]
-  },
-  {
-    "titulo": "Analista de Sistemas Senior",
-    "empresa": "Aracaju Cloud",
-    "nivel": "senior",
-    "salario": 8100,
-    "remoto": false,
-    "requisitos": [
-      "node",
-      "react",
-      "sql",
-      "css",
-      "js",
-      "python"
-    ]
-  },
-  {
-    "titulo": "Analista de Sistemas Senior",
-    "empresa": "Sertão Digital",
-    "nivel": "senior",
-    "salario": 10200,
-    "remoto": true,
-    "requisitos": [
-      "css",
-      "sql",
-      "react",
-      "html"
-    ]
-  },
-  {
-    "titulo": "Dev Front-End Junior",
-    "empresa": "Rio Sergipe Dados",
-    "nivel": "junior",
-    "salario": 1900,
-    "remoto": false,
-    "requisitos": [
-      "sql",
-      "react",
-      "docker"
-    ]
-  },
-  {
-    "titulo": "Dev Front-End Estagio",
-    "empresa": "Tech Aracaju",
-    "nivel": "estagio",
-    "salario": 1350,
-    "remoto": true,
-    "requisitos": [
-      "python"
-    ]
-  },
-  {
-    "titulo": "Dev Back-End Junior",
-    "empresa": "Sergipe Log",
-    "nivel": "junior",
-    "salario": 1950,
-    "remoto": false,
-    "requisitos": [
-      "html",
-      "js",
-      "react"
-    ]
-  },
-  {
-    "titulo": "Dev Front-End Senior",
-    "empresa": "Sertão Digital",
-    "nivel": "senior",
-    "salario": 8850,
-    "remoto": true,
-    "requisitos": [
-      "docker",
-      "react",
-      "html",
-      "node"
-    ]
+    "salario": 11150
   },
   {
     "titulo": "Assistente de Dados Junior",
     "empresa": "Farol Tecnologia",
     "nivel": "junior",
-    "salario": 1900,
-    "remoto": true,
-    "requisitos": [
-      "react",
-      "docker",
-      "sql"
-    ]
+    "salario": 2350
   },
   {
-    "titulo": "Analista de QA Senior",
-    "empresa": "Vale do Cotinguiba Software",
-    "nivel": "senior",
-    "salario": 10950,
-    "remoto": true,
-    "requisitos": [
-      "docker",
-      "css",
-      "react"
-    ]
-  },
-  {
-    "titulo": "Dev Back-End Junior",
+    "titulo": "Analista de Infra Estagio",
     "empresa": "Rio Sergipe Dados",
-    "nivel": "junior",
-    "salario": 1900,
-    "remoto": false,
-    "requisitos": [
-      "html",
-      "js",
-      "react"
-    ]
+    "nivel": "estagio",
+    "salario": 1250
   },
   {
-    "titulo": "Dev Front-End Junior",
+    "titulo": "Dev Full-Stack Junior",
+    "empresa": "Farol Tecnologia",
+    "nivel": "junior",
+    "salario": 2700
+  },
+  {
+    "titulo": "Dev Full-Stack Junior",
     "empresa": "Atalaia Systems",
     "nivel": "junior",
-    "salario": 2000,
-    "remoto": false,
-    "requisitos": [
-      "html",
-      "python",
-      "docker"
-    ]
+    "salario": 2150
+  },
+  {
+    "titulo": "Assistente de Dados Senior",
+    "empresa": "Caju Hub Labs",
+    "nivel": "senior",
+    "salario": 9400
+  },
+  {
+    "titulo": "Assistente de Dados Estagio",
+    "empresa": "Farol Tecnologia",
+    "nivel": "estagio",
+    "salario": 1150
   },
   {
     "titulo": "Dev Mobile Junior",
-    "empresa": "Sergipe Log",
+    "empresa": "Rio Sergipe Dados",
     "nivel": "junior",
-    "salario": 2500,
-    "remoto": true,
-    "requisitos": [
-      "docker",
-      "react"
-    ]
-  },
-  {
-    "titulo": "Dev Front-End Junior",
-    "empresa": "Aracaju Cloud",
-    "nivel": "junior",
-    "salario": 1900,
-    "remoto": true,
-    "requisitos": [
-      "css",
-      "js",
-      "sql"
-    ]
+    "salario": 1800
   },
   {
     "titulo": "Analista de QA Senior",
-    "empresa": "Sergipe Log",
-    "nivel": "senior",
-    "salario": 13950,
-    "remoto": true,
-    "requisitos": [
-      "js",
-      "css",
-      "python",
-      "node",
-      "html"
-    ]
-  },
-  {
-    "titulo": "Suporte Web Senior",
-    "empresa": "Farol Tecnologia",
-    "nivel": "senior",
-    "salario": 11500,
-    "remoto": false,
-    "requisitos": [
-      "js",
-      "docker",
-      "python",
-      "sql",
-      "html"
-    ]
-  },
-  {
-    "titulo": "Dev Full-Stack Pleno",
-    "empresa": "Rio Sergipe Dados",
-    "nivel": "pleno",
-    "salario": 3800,
-    "remoto": false,
-    "requisitos": [
-      "js",
-      "html",
-      "css",
-      "python",
-      "sql"
-    ]
-  },
-  {
-    "titulo": "Designer de Produto Pleno",
     "empresa": "Caju Hub Labs",
-    "nivel": "pleno",
-    "salario": 5400,
-    "remoto": false,
-    "requisitos": [
-      "node",
-      "docker",
-      "react",
-      "sql"
-    ]
+    "nivel": "senior",
+    "salario": 12250
   },
   {
     "titulo": "Designer de Produto Junior",
     "empresa": "Orla Digital",
     "nivel": "junior",
-    "salario": 2300,
-    "remoto": true,
-    "requisitos": [
-      "python",
-      "react"
-    ]
+    "salario": 2800
   },
   {
     "titulo": "Analista de Sistemas Junior",
     "empresa": "Aracaju Cloud",
     "nivel": "junior",
-    "salario": 1700,
-    "remoto": false,
-    "requisitos": [
-      "docker",
-      "html"
-    ]
+    "salario": 1750
   },
   {
-    "titulo": "Analista de QA Senior",
+    "titulo": "Designer de Produto Junior",
     "empresa": "Sergipe Log",
-    "nivel": "senior",
-    "salario": 11300,
-    "remoto": false,
-    "requisitos": [
-      "react",
-      "python",
-      "html",
-      "docker"
-    ]
-  },
-  {
-    "titulo": "Dev Mobile Junior",
-    "empresa": "Orla Digital",
     "nivel": "junior",
-    "salario": 2200,
-    "remoto": false,
-    "requisitos": [
-      "css"
-    ]
-  },
-  {
-    "titulo": "Dev Mobile Junior",
-    "empresa": "Caju Hub Labs",
-    "nivel": "junior",
-    "salario": 2350,
-    "remoto": true,
-    "requisitos": [
-      "css"
-    ]
-  },
-  {
-    "titulo": "Dev Mobile Pleno",
-    "empresa": "Tech Aracaju",
-    "nivel": "pleno",
-    "salario": 4350,
-    "remoto": false,
-    "requisitos": [
-      "docker",
-      "html",
-      "js",
-      "css"
-    ]
-  },
-  {
-    "titulo": "Analista de QA Junior",
-    "empresa": "Caju Hub Labs",
-    "nivel": "junior",
-    "salario": 1900,
-    "remoto": true,
-    "requisitos": [
-      "python",
-      "node",
-      "docker"
-    ]
-  },
-  {
-    "titulo": "Dev Back-End Pleno",
-    "empresa": "Sergipe Log",
-    "nivel": "pleno",
-    "salario": 5550,
-    "remoto": true,
-    "requisitos": [
-      "html",
-      "python",
-      "sql"
-    ]
-  },
-  {
-    "titulo": "Analista de QA Junior",
-    "empresa": "Caju Hub Labs",
-    "nivel": "junior",
-    "salario": 2100,
-    "remoto": false,
-    "requisitos": [
-      "css"
-    ]
-  },
-  {
-    "titulo": "Analista de Infra Senior",
-    "empresa": "Caju Hub Labs",
-    "nivel": "senior",
-    "salario": 7900,
-    "remoto": true,
-    "requisitos": [
-      "sql",
-      "html",
-      "docker",
-      "css"
-    ]
-  },
-  {
-    "titulo": "Designer de Produto Pleno",
-    "empresa": "Rio Sergipe Dados",
-    "nivel": "pleno",
-    "salario": 4300,
-    "remoto": true,
-    "requisitos": [
-      "python",
-      "react",
-      "sql",
-      "html"
-    ]
-  },
-  {
-    "titulo": "Dev Back-End Estagio",
-    "empresa": "Sergipe Log",
-    "nivel": "estagio",
-    "salario": 1150,
-    "remoto": true,
-    "requisitos": [
-      "sql"
-    ]
-  },
-  {
-    "titulo": "Analista de Infra Senior",
-    "empresa": "Tech Aracaju",
-    "nivel": "senior",
-    "salario": 8050,
-    "remoto": true,
-    "requisitos": [
-      "node",
-      "python",
-      "css",
-      "sql"
-    ]
+    "salario": 2300
   },
   {
     "titulo": "Dev Back-End Junior",
-    "empresa": "Rio Sergipe Dados",
-    "nivel": "junior",
-    "salario": 1700,
-    "remoto": false,
-    "requisitos": [
-      "react",
-      "docker"
-    ]
-  },
-  {
-    "titulo": "Analista de Sistemas Estagio",
     "empresa": "Sergipe Log",
-    "nivel": "estagio",
-    "salario": 1100,
-    "remoto": true,
-    "requisitos": [
-      "docker"
-    ]
-  },
-  {
-    "titulo": "Analista de Sistemas Estagio",
-    "empresa": "Rio Sergipe Dados",
-    "nivel": "estagio",
-    "salario": 950,
-    "remoto": true,
-    "requisitos": [
-      "css"
-    ]
-  },
-  {
-    "titulo": "Assistente de Dados Pleno",
-    "empresa": "Orla Digital",
-    "nivel": "pleno",
-    "salario": 3650,
-    "remoto": true,
-    "requisitos": [
-      "html",
-      "node",
-      "css",
-      "docker",
-      "react"
-    ]
-  },
-  {
-    "titulo": "Analista de Infra Estagio",
-    "empresa": "Sertão Digital",
-    "nivel": "estagio",
-    "salario": 1350,
-    "remoto": true,
-    "requisitos": [
-      "react"
-    ]
-  },
-  {
-    "titulo": "Dev Front-End Pleno",
-    "empresa": "Sertão Digital",
-    "nivel": "pleno",
-    "salario": 5150,
-    "remoto": true,
-    "requisitos": [
-      "html",
-      "sql",
-      "css",
-      "python"
-    ]
-  },
-  {
-    "titulo": "Suporte Web Junior",
-    "empresa": "Orla Digital",
     "nivel": "junior",
-    "salario": 2400,
-    "remoto": true,
-    "requisitos": [
-      "css"
-    ]
-  },
-  {
-    "titulo": "Suporte Web Estagio",
-    "empresa": "Tech Aracaju",
-    "nivel": "estagio",
-    "salario": 900,
-    "remoto": true,
-    "requisitos": [
-      "docker"
-    ]
-  },
-  {
-    "titulo": "Analista de Infra Senior",
-    "empresa": "Caju Hub Labs",
-    "nivel": "senior",
-    "salario": 12250,
-    "remoto": true,
-    "requisitos": [
-      "sql",
-      "html",
-      "js",
-      "node",
-      "css"
-    ]
-  },
-  {
-    "titulo": "Analista de Sistemas Estagio",
-    "empresa": "Farol Tecnologia",
-    "nivel": "estagio",
-    "salario": 1250,
-    "remoto": false,
-    "requisitos": [
-      "node"
-    ]
-  },
-  {
-    "titulo": "Dev Front-End Junior",
-    "empresa": "Orla Digital",
-    "nivel": "junior",
-    "salario": 1850,
-    "remoto": true,
-    "requisitos": [
-      "html"
-    ]
-  },
-  {
-    "titulo": "Assistente de Dados Pleno",
-    "empresa": "Orla Digital",
-    "nivel": "pleno",
-    "salario": 4950,
-    "remoto": true,
-    "requisitos": [
-      "html",
-      "css",
-      "node",
-      "js"
-    ]
+    "salario": 2650
   },
   {
     "titulo": "Analista de QA Estagio",
+    "empresa": "Rio Sergipe Dados",
+    "nivel": "estagio",
+    "salario": 1000
+  },
+  {
+    "titulo": "Dev Mobile Junior",
+    "empresa": "Aracaju Cloud",
+    "nivel": "junior",
+    "salario": 2000
+  },
+  {
+    "titulo": "Dev Full-Stack Estagio",
+    "empresa": "Vale Software",
+    "nivel": "estagio",
+    "salario": 1050
+  },
+  {
+    "titulo": "Dev Front-End Pleno",
+    "empresa": "Tech Aracaju",
+    "nivel": "pleno",
+    "salario": 5450
+  },
+  {
+    "titulo": "Designer de Produto Pleno",
+    "empresa": "Tech Aracaju",
+    "nivel": "pleno",
+    "salario": 6000
+  },
+  {
+    "titulo": "Analista de Infra Pleno",
+    "empresa": "Rio Sergipe Dados",
+    "nivel": "pleno",
+    "salario": 5250
+  },
+  {
+    "titulo": "Analista de QA Estagio",
+    "empresa": "Vale Software",
+    "nivel": "estagio",
+    "salario": 1350
+  },
+  {
+    "titulo": "Assistente de Dados Estagio",
     "empresa": "Caju Hub Labs",
     "nivel": "estagio",
-    "salario": 1150,
-    "remoto": true,
-    "requisitos": [
-      "python"
-    ]
+    "salario": 850
   },
   {
-    "titulo": "Analista de QA Pleno",
-    "empresa": "Atalaia Systems",
+    "titulo": "Dev Back-End Pleno",
+    "empresa": "Orla Digital",
     "nivel": "pleno",
-    "salario": 4450,
-    "remoto": false,
-    "requisitos": [
-      "docker",
-      "js",
-      "html"
-    ]
+    "salario": 3750
   },
   {
-    "titulo": "Analista de QA Junior",
-    "empresa": "Sertão Digital",
-    "nivel": "junior",
-    "salario": 2250,
-    "remoto": true,
-    "requisitos": [
-      "sql",
-      "css",
-      "html"
-    ]
+    "titulo": "Dev Front-End Estagio",
+    "empresa": "Atalaia Systems",
+    "nivel": "estagio",
+    "salario": 1150
   },
   {
-    "titulo": "Dev Front-End Junior",
-    "empresa": "Farol Tecnologia",
+    "titulo": "Analista de QA Estagio",
+    "empresa": "Sertao Digital",
+    "nivel": "estagio",
+    "salario": 1100
+  },
+  {
+    "titulo": "Dev Full-Stack Junior",
+    "empresa": "Sergipe Log",
     "nivel": "junior",
-    "salario": 2550,
-    "remoto": false,
-    "requisitos": [
-      "css",
-      "python"
-    ]
+    "salario": 2450
+  },
+  {
+    "titulo": "Assistente de Dados Estagio",
+    "empresa": "Sergipe Log",
+    "nivel": "estagio",
+    "salario": 1200
+  },
+  {
+    "titulo": "Dev Full-Stack Senior",
+    "empresa": "Aracaju Cloud",
+    "nivel": "senior",
+    "salario": 9850
+  },
+  {
+    "titulo": "Dev Mobile Junior",
+    "empresa": "Aracaju Cloud",
+    "nivel": "junior",
+    "salario": 2600
   },
   {
     "titulo": "Dev Full-Stack Senior",
     "empresa": "Farol Tecnologia",
     "nivel": "senior",
-    "salario": 8100,
-    "remoto": false,
-    "requisitos": [
-      "sql",
-      "html",
-      "js"
-    ]
+    "salario": 14300
   },
   {
-    "titulo": "Suporte Web Estagio",
-    "empresa": "Farol Tecnologia",
-    "nivel": "estagio",
-    "salario": 950,
-    "remoto": true,
-    "requisitos": [
-      "js"
-    ]
+    "titulo": "Dev Front-End Junior",
+    "empresa": "Orla Digital",
+    "nivel": "junior",
+    "salario": 2200
   },
   {
-    "titulo": "Analista de Sistemas Pleno",
-    "empresa": "Vale do Cotinguiba Software",
-    "nivel": "pleno",
-    "salario": 4850,
-    "remoto": false,
-    "requisitos": [
-      "react",
-      "css",
-      "node"
-    ]
+    "titulo": "Designer de Produto Junior",
+    "empresa": "Orla Digital",
+    "nivel": "junior",
+    "salario": 1900
   },
   {
-    "titulo": "Suporte Web Estagio",
-    "empresa": "Caju Hub Labs",
-    "nivel": "estagio",
-    "salario": 1150,
-    "remoto": true,
-    "requisitos": [
-      "sql"
-    ]
-  },
-  {
-    "titulo": "Designer de Produto Senior",
-    "empresa": "Sergipe Log",
+    "titulo": "Assistente de Dados Senior",
+    "empresa": "Rio Sergipe Dados",
     "nivel": "senior",
-    "salario": 7400,
-    "remoto": true,
-    "requisitos": [
-      "docker",
-      "react",
-      "python",
-      "html"
-    ]
+    "salario": 13650
+  },
+  {
+    "titulo": "Analista de QA Senior",
+    "empresa": "Sertao Digital",
+    "nivel": "senior",
+    "salario": 14450
   },
   {
     "titulo": "Dev Back-End Estagio",
     "empresa": "Rio Sergipe Dados",
     "nivel": "estagio",
-    "salario": 900,
-    "remoto": true,
-    "requisitos": [
-      "python"
-    ]
+    "salario": 850
   },
   {
-    "titulo": "Dev Back-End Estagio",
+    "titulo": "Dev Full-Stack Pleno",
+    "empresa": "Sergipe Log",
+    "nivel": "pleno",
+    "salario": 4050
+  },
+  {
+    "titulo": "Dev Mobile Junior",
+    "empresa": "Caju Hub Labs",
+    "nivel": "junior",
+    "salario": 2750
+  },
+  {
+    "titulo": "Analista de QA Pleno",
+    "empresa": "Aracaju Cloud",
+    "nivel": "pleno",
+    "salario": 5500
+  },
+  {
+    "titulo": "Dev Back-End Senior",
+    "empresa": "Aracaju Cloud",
+    "nivel": "senior",
+    "salario": 14850
+  },
+  {
+    "titulo": "Dev Full-Stack Estagio",
+    "empresa": "Tech Aracaju",
+    "nivel": "estagio",
+    "salario": 850
+  },
+  {
+    "titulo": "Dev Mobile Estagio",
+    "empresa": "Sertao Digital",
+    "nivel": "estagio",
+    "salario": 1050
+  },
+  {
+    "titulo": "Analista de Sistemas Pleno",
+    "empresa": "Tech Aracaju",
+    "nivel": "pleno",
+    "salario": 3600
+  },
+  {
+    "titulo": "Suporte Web Pleno",
+    "empresa": "Farol Tecnologia",
+    "nivel": "pleno",
+    "salario": 4350
+  },
+  {
+    "titulo": "Suporte Web Estagio",
+    "empresa": "Vale Software",
+    "nivel": "estagio",
+    "salario": 1300
+  },
+  {
+    "titulo": "Suporte Web Estagio",
     "empresa": "Atalaia Systems",
     "nivel": "estagio",
-    "salario": 1150,
-    "remoto": true,
-    "requisitos": [
-      "css"
-    ]
+    "salario": 1150
+  },
+  {
+    "titulo": "Analista de Sistemas Pleno",
+    "empresa": "Tech Aracaju",
+    "nivel": "pleno",
+    "salario": 4450
+  },
+  {
+    "titulo": "Suporte Web Estagio",
+    "empresa": "Caju Hub Labs",
+    "nivel": "estagio",
+    "salario": 1100
+  },
+  {
+    "titulo": "Analista de Sistemas Senior",
+    "empresa": "Sertao Digital",
+    "nivel": "senior",
+    "salario": 11100
+  },
+  {
+    "titulo": "Analista de Sistemas Senior",
+    "empresa": "Orla Digital",
+    "nivel": "senior",
+    "salario": 12200
+  },
+  {
+    "titulo": "Analista de QA Junior",
+    "empresa": "Rio Sergipe Dados",
+    "nivel": "junior",
+    "salario": 2500
+  },
+  {
+    "titulo": "Assistente de Dados Senior",
+    "empresa": "Atalaia Systems",
+    "nivel": "senior",
+    "salario": 13850
+  },
+  {
+    "titulo": "Analista de QA Junior",
+    "empresa": "Sertao Digital",
+    "nivel": "junior",
+    "salario": 1700
+  },
+  {
+    "titulo": "Designer de Produto Senior",
+    "empresa": "Aracaju Cloud",
+    "nivel": "senior",
+    "salario": 10800
+  },
+  {
+    "titulo": "Suporte Web Estagio",
+    "empresa": "Rio Sergipe Dados",
+    "nivel": "estagio",
+    "salario": 850
+  },
+  {
+    "titulo": "Suporte Web Junior",
+    "empresa": "Atalaia Systems",
+    "nivel": "junior",
+    "salario": 2250
+  },
+  {
+    "titulo": "Dev Mobile Senior",
+    "empresa": "Orla Digital",
+    "nivel": "senior",
+    "salario": 9250
+  },
+  {
+    "titulo": "Suporte Web Junior",
+    "empresa": "Orla Digital",
+    "nivel": "junior",
+    "salario": 2000
+  },
+  {
+    "titulo": "Analista de QA Senior",
+    "empresa": "Farol Tecnologia",
+    "nivel": "senior",
+    "salario": 10650
+  },
+  {
+    "titulo": "Suporte Web Senior",
+    "empresa": "Orla Digital",
+    "nivel": "senior",
+    "salario": 10750
+  },
+  {
+    "titulo": "Dev Front-End Estagio",
+    "empresa": "Sertao Digital",
+    "nivel": "estagio",
+    "salario": 950
+  },
+  {
+    "titulo": "Dev Back-End Junior",
+    "empresa": "Tech Aracaju",
+    "nivel": "junior",
+    "salario": 2150
+  },
+  {
+    "titulo": "Analista de Sistemas Estagio",
+    "empresa": "Farol Tecnologia",
+    "nivel": "estagio",
+    "salario": 1050
+  },
+  {
+    "titulo": "Dev Front-End Senior",
+    "empresa": "Atalaia Systems",
+    "nivel": "senior",
+    "salario": 11350
+  },
+  {
+    "titulo": "Dev Mobile Pleno",
+    "empresa": "Tech Aracaju",
+    "nivel": "pleno",
+    "salario": 4500
+  },
+  {
+    "titulo": "Dev Back-End Junior",
+    "empresa": "Sergipe Log",
+    "nivel": "junior",
+    "salario": 2700
+  },
+  {
+    "titulo": "Analista de Infra Estagio",
+    "empresa": "Rio Sergipe Dados",
+    "nivel": "estagio",
+    "salario": 1200
+  },
+  {
+    "titulo": "Dev Full-Stack Estagio",
+    "empresa": "Atalaia Systems",
+    "nivel": "estagio",
+    "salario": 1000
+  },
+  {
+    "titulo": "Analista de Sistemas Senior",
+    "empresa": "Sertao Digital",
+    "nivel": "senior",
+    "salario": 10100
+  },
+  {
+    "titulo": "Dev Mobile Estagio",
+    "empresa": "Caju Hub Labs",
+    "nivel": "estagio",
+    "salario": 1050
+  },
+  {
+    "titulo": "Dev Front-End Estagio",
+    "empresa": "Tech Aracaju",
+    "nivel": "estagio",
+    "salario": 900
+  },
+  {
+    "titulo": "Suporte Web Senior",
+    "empresa": "Orla Digital",
+    "nivel": "senior",
+    "salario": 14500
+  },
+  {
+    "titulo": "Dev Mobile Estagio",
+    "empresa": "Tech Aracaju",
+    "nivel": "estagio",
+    "salario": 1000
+  },
+  {
+    "titulo": "Assistente de Dados Senior",
+    "empresa": "Tech Aracaju",
+    "nivel": "senior",
+    "salario": 8000
+  },
+  {
+    "titulo": "Analista de Sistemas Junior",
+    "empresa": "Tech Aracaju",
+    "nivel": "junior",
+    "salario": 1600
+  },
+  {
+    "titulo": "Designer de Produto Senior",
+    "empresa": "Tech Aracaju",
+    "nivel": "senior",
+    "salario": 7600
+  },
+  {
+    "titulo": "Analista de Infra Senior",
+    "empresa": "Sergipe Log",
+    "nivel": "senior",
+    "salario": 9750
+  },
+  {
+    "titulo": "Dev Mobile Senior",
+    "empresa": "Caju Hub Labs",
+    "nivel": "senior",
+    "salario": 9600
+  },
+  {
+    "titulo": "Analista de QA Estagio",
+    "empresa": "Sertao Digital",
+    "nivel": "estagio",
+    "salario": 950
+  },
+  {
+    "titulo": "Dev Mobile Estagio",
+    "empresa": "Sertao Digital",
+    "nivel": "estagio",
+    "salario": 800
+  },
+  {
+    "titulo": "Analista de QA Junior",
+    "empresa": "Caju Hub Labs",
+    "nivel": "junior",
+    "salario": 2350
   },
   {
     "titulo": "Analista de Infra Senior",
     "empresa": "Orla Digital",
     "nivel": "senior",
-    "salario": 10050,
-    "remoto": true,
-    "requisitos": [
-      "node",
-      "css",
-      "python",
-      "react"
-    ]
+    "salario": 8750
+  },
+  {
+    "titulo": "Designer de Produto Junior",
+    "empresa": "Sertao Digital",
+    "nivel": "junior",
+    "salario": 2350
+  },
+  {
+    "titulo": "Analista de QA Pleno",
+    "empresa": "Atalaia Systems",
+    "nivel": "pleno",
+    "salario": 3800
+  },
+  {
+    "titulo": "Dev Mobile Junior",
+    "empresa": "Sergipe Log",
+    "nivel": "junior",
+    "salario": 2150
+  },
+  {
+    "titulo": "Dev Mobile Junior",
+    "empresa": "Farol Tecnologia",
+    "nivel": "junior",
+    "salario": 1750
+  },
+  {
+    "titulo": "Dev Front-End Estagio",
+    "empresa": "Aracaju Cloud",
+    "nivel": "estagio",
+    "salario": 1000
+  },
+  {
+    "titulo": "Analista de Infra Senior",
+    "empresa": "Rio Sergipe Dados",
+    "nivel": "senior",
+    "salario": 12800
+  },
+  {
+    "titulo": "Designer de Produto Pleno",
+    "empresa": "Tech Aracaju",
+    "nivel": "pleno",
+    "salario": 5250
+  },
+  {
+    "titulo": "Designer de Produto Junior",
+    "empresa": "Aracaju Cloud",
+    "nivel": "junior",
+    "salario": 1750
+  },
+  {
+    "titulo": "Dev Back-End Junior",
+    "empresa": "Sertao Digital",
+    "nivel": "junior",
+    "salario": 2250
+  },
+  {
+    "titulo": "Analista de Sistemas Junior",
+    "empresa": "Tech Aracaju",
+    "nivel": "junior",
+    "salario": 1850
+  },
+  {
+    "titulo": "Analista de Infra Senior",
+    "empresa": "Farol Tecnologia",
+    "nivel": "senior",
+    "salario": 7450
+  },
+  {
+    "titulo": "Dev Mobile Pleno",
+    "empresa": "Caju Hub Labs",
+    "nivel": "pleno",
+    "salario": 5850
+  },
+  {
+    "titulo": "Analista de QA Estagio",
+    "empresa": "Aracaju Cloud",
+    "nivel": "estagio",
+    "salario": 850
+  },
+  {
+    "titulo": "Analista de Infra Junior",
+    "empresa": "Atalaia Systems",
+    "nivel": "junior",
+    "salario": 1850
+  },
+  {
+    "titulo": "Dev Back-End Senior",
+    "empresa": "Orla Digital",
+    "nivel": "senior",
+    "salario": 9450
+  },
+  {
+    "titulo": "Analista de Sistemas Estagio",
+    "empresa": "Caju Hub Labs",
+    "nivel": "estagio",
+    "salario": 1250
+  },
+  {
+    "titulo": "Suporte Web Junior",
+    "empresa": "Rio Sergipe Dados",
+    "nivel": "junior",
+    "salario": 2450
+  },
+  {
+    "titulo": "Assistente de Dados Estagio",
+    "empresa": "Atalaia Systems",
+    "nivel": "estagio",
+    "salario": 1300
+  },
+  {
+    "titulo": "Dev Front-End Senior",
+    "empresa": "Rio Sergipe Dados",
+    "nivel": "senior",
+    "salario": 9400
+  },
+  {
+    "titulo": "Dev Mobile Senior",
+    "empresa": "Orla Digital",
+    "nivel": "senior",
+    "salario": 13100
+  },
+  {
+    "titulo": "Designer de Produto Junior",
+    "empresa": "Sergipe Log",
+    "nivel": "junior",
+    "salario": 2100
+  },
+  {
+    "titulo": "Dev Mobile Senior",
+    "empresa": "Orla Digital",
+    "nivel": "senior",
+    "salario": 14800
+  },
+  {
+    "titulo": "Dev Front-End Junior",
+    "empresa": "Farol Tecnologia",
+    "nivel": "junior",
+    "salario": 2000
+  },
+  {
+    "titulo": "Dev Mobile Estagio",
+    "empresa": "Orla Digital",
+    "nivel": "estagio",
+    "salario": 850
+  },
+  {
+    "titulo": "Dev Back-End Senior",
+    "empresa": "Caju Hub Labs",
+    "nivel": "senior",
+    "salario": 7200
+  },
+  {
+    "titulo": "Dev Full-Stack Senior",
+    "empresa": "Sergipe Log",
+    "nivel": "senior",
+    "salario": 10650
+  },
+  {
+    "titulo": "Dev Front-End Pleno",
+    "empresa": "Caju Hub Labs",
+    "nivel": "pleno",
+    "salario": 5000
+  },
+  {
+    "titulo": "Suporte Web Pleno",
+    "empresa": "Orla Digital",
+    "nivel": "pleno",
+    "salario": 5300
+  },
+  {
+    "titulo": "Assistente de Dados Estagio",
+    "empresa": "Farol Tecnologia",
+    "nivel": "estagio",
+    "salario": 800
+  },
+  {
+    "titulo": "Dev Back-End Pleno",
+    "empresa": "Farol Tecnologia",
+    "nivel": "pleno",
+    "salario": 4000
+  },
+  {
+    "titulo": "Analista de QA Estagio",
+    "empresa": "Orla Digital",
+    "nivel": "estagio",
+    "salario": 850
+  },
+  {
+    "titulo": "Dev Full-Stack Junior",
+    "empresa": "Sergipe Log",
+    "nivel": "junior",
+    "salario": 1850
+  },
+  {
+    "titulo": "Designer de Produto Senior",
+    "empresa": "Vale Software",
+    "nivel": "senior",
+    "salario": 7800
+  },
+  {
+    "titulo": "Dev Back-End Junior",
+    "empresa": "Atalaia Systems",
+    "nivel": "junior",
+    "salario": 2500
+  },
+  {
+    "titulo": "Analista de Sistemas Pleno",
+    "empresa": "Aracaju Cloud",
+    "nivel": "pleno",
+    "salario": 4200
+  },
+  {
+    "titulo": "Dev Front-End Senior",
+    "empresa": "Rio Sergipe Dados",
+    "nivel": "senior",
+    "salario": 8050
+  },
+  {
+    "titulo": "Assistente de Dados Estagio",
+    "empresa": "Tech Aracaju",
+    "nivel": "estagio",
+    "salario": 1150
+  },
+  {
+    "titulo": "Dev Full-Stack Senior",
+    "empresa": "Tech Aracaju",
+    "nivel": "senior",
+    "salario": 13800
+  },
+  {
+    "titulo": "Dev Mobile Estagio",
+    "empresa": "Orla Digital",
+    "nivel": "estagio",
+    "salario": 950
   }
 ]

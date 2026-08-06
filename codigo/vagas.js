@@ -3,8 +3,8 @@
  * Módulo: Lógica de Programação & Versionamento
  *
  * Problema gerador:
- *   "Como transformar uma lista bagunçada de 120 vagas em uma resposta
- *    curta — 'estas 3 são pra você'?"
+ *   "Como transformar uma lista bagunçada de 120 vagas na resposta
+ *    'estas aqui são pra mim'?"
  *
  * Execute com:  node vagas.js
  */
@@ -12,62 +12,41 @@
 const vagas = require("./dados.json");
 
 // ---------------------------------------------------------------
-// 1. VARIÁVEIS E TIPOS
-//    Cada vaga é um OBJETO: vários valores que descrevem a mesma coisa.
+// 1. VARIÁVEIS
+//    Uma variável é um nome para um valor guardado.
 // ---------------------------------------------------------------
-const minhasSkills = ["html", "css", "js"];
+const meuNivel = "junior";
+const salarioMinimo = 2000;
 
 // ---------------------------------------------------------------
-// 2. CONDICIONAL
-//    Uma pergunta que só responde true ou false.
+// 2. UMA LISTA VAZIA
+//    É aqui que vamos guardar as vagas que servem.
 // ---------------------------------------------------------------
-function serveParaMim(vaga, skills) {
-  const nivelOk = vaga.nivel === "junior";
-  const temTudo = vaga.requisitos.every((req) => skills.includes(req));
-  return nivelOk && temTudo;
-}
+const minhasVagas = [];
 
 // ---------------------------------------------------------------
-// 3. REPETIÇÃO — a versão que o aluno escreve primeiro.
-//    Percorre a lista item por item, com o índice à vista.
+// 3. REPETIÇÃO + CONDICIONAL
+//    O for passa por todas as vagas, uma de cada vez.
+//    O if decide se aquela vaga entra na lista.
 // ---------------------------------------------------------------
-function filtrarComFor(vagas, skills) {
-  const encontradas = [];
-  for (let i = 0; i < vagas.length; i++) {
-    if (serveParaMim(vagas[i], skills)) {
-      encontradas.push(vagas[i]);
-    }
+for (let i = 0; i < vagas.length; i++) {
+  const vaga = vagas[i];
+
+  if (vaga.nivel === meuNivel && vaga.salario >= salarioMinimo) {
+    minhasVagas.push(vaga);
   }
-  return encontradas;
 }
 
 // ---------------------------------------------------------------
-// 4. FUNÇÕES — a versão madura: o mesmo for, escrito curto.
-//    Só entra depois que o aluno entendeu o de cima.
+// 4. MOSTRAR O RESULTADO
 // ---------------------------------------------------------------
-function top3ParaMim(vagas, skills) {
-  return vagas
-    .filter((v) => serveParaMim(v, skills))
-    .sort((a, b) => b.salario - a.salario)
-    .slice(0, 3);
+console.log("");
+console.log("De " + vagas.length + " vagas, " + minhasVagas.length + " sao pra voce:");
+console.log("");
+
+for (let i = 0; i < minhasVagas.length; i++) {
+  const vaga = minhasVagas[i];
+  console.log("  " + vaga.titulo + " - " + vaga.empresa + " - R$ " + vaga.salario);
 }
-
-// ---------------------------------------------------------------
-// 5. SAÍDA
-// ---------------------------------------------------------------
-function reais(valor) {
-  return valor.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
-}
-
-const compativeis = filtrarComFor(vagas, minhasSkills);
-const top3 = top3ParaMim(vagas, minhasSkills);
-
-console.log(`\nDe ${vagas.length} vagas, ${compativeis.length} combinam com você.`);
-console.log("Top 3 por salário:\n");
-
-top3.forEach((vaga, i) => {
-  const linha = `${vaga.titulo} · ${vaga.empresa}`.padEnd(46, ".");
-  console.log(`  ${i + 1}. ${linha} ${reais(vaga.salario)}`);
-});
 
 console.log("");

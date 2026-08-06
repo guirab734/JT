@@ -194,7 +194,7 @@
     <div class="cols wide-l">
       <div>
         <h3>Problema gerador</h3>
-        <div class="quote">Como transformar uma lista bagunçada de 120 vagas em uma resposta curta — “estas 3 são pra você” — e construir isso em squad sem ninguém sobrescrever o trabalho do outro?</div>
+        <div class="quote">Como transformar uma lista bagunçada de 120 vagas na resposta “estas aqui são pra mim” — e construir isso em squad sem ninguém sobrescrever o trabalho do outro?</div>
         <p style="margin-top:24px;font-size:23px">As duas metades do problema são exatamente as duas metades do módulo: <strong class="amber">lógica</strong> resolve a primeira, <strong class="amber">versionamento</strong> resolve a segunda.</p>
       </div>
       <div>
@@ -359,13 +359,17 @@
       <div>
         <div class="filetab"><span class="dot"></span>vagas.json</div>
         <pre class="sm"><span class="p">[</span>
-  <span class="p">{</span> <span class="s">"titulo"</span><span class="p">:</span> <span class="s">"Dev Front-End Júnior"</span><span class="p">,</span> <span class="s">"nivel"</span><span class="p">:</span> <span class="s">"junior"</span><span class="p">,</span>
-    <span class="s">"salario"</span><span class="p">:</span> <span class="n">2400</span><span class="p">,</span> <span class="s">"remoto"</span><span class="p">:</span> <span class="k">true</span> <span class="p">},</span>
-  <span class="p">{</span> <span class="s">"titulo"</span><span class="p">:</span> <span class="s">"Arquiteto de Soluções Sênior"</span><span class="p">,</span> <span class="s">"nivel"</span><span class="p">:</span> <span class="s">"senior"</span><span class="p">,</span>
-    <span class="s">"salario"</span><span class="p">:</span> <span class="n">14000</span><span class="p">,</span> <span class="s">"remoto"</span><span class="p">:</span> <span class="k">false</span> <span class="p">},</span>
-  <span class="p">{</span> <span class="s">"titulo"</span><span class="p">:</span> <span class="s">"Estágio em QA"</span><span class="p">,</span> <span class="s">"nivel"</span><span class="p">:</span> <span class="s">"estagio"</span><span class="p">,</span>
-    <span class="s">"salario"</span><span class="p">:</span> <span class="n">900</span><span class="p">,</span> <span class="s">"remoto"</span><span class="p">:</span> <span class="k">true</span> <span class="p">},</span>
-  <span class="c">// ... mais 117 objetos</span>
+  <span class="p">{</span> <span class="s">"titulo"</span><span class="p">:</span>  <span class="s">"Dev Front-End Estagio"</span><span class="p">,</span>
+    <span class="s">"empresa"</span><span class="p">:</span> <span class="s">"Caju Hub Labs"</span><span class="p">,</span>
+    <span class="s">"nivel"</span><span class="p">:</span>   <span class="s">"estagio"</span><span class="p">,</span>
+    <span class="s">"salario"</span><span class="p">:</span> <span class="n">1200</span> <span class="p">},</span>
+
+  <span class="p">{</span> <span class="s">"titulo"</span><span class="p">:</span>  <span class="s">"Suporte Web Senior"</span><span class="p">,</span>
+    <span class="s">"empresa"</span><span class="p">:</span> <span class="s">"Orla Digital"</span><span class="p">,</span>
+    <span class="s">"nivel"</span><span class="p">:</span>   <span class="s">"senior"</span><span class="p">,</span>
+    <span class="s">"salario"</span><span class="p">:</span> <span class="n">11150</span> <span class="p">},</span>
+
+  <span class="c">... mais 118 vagas</span>
 <span class="p">]</span></pre>
       </div>
     </div>
@@ -380,7 +384,7 @@
 <section class="slide" data-sec="aula" data-b="70" data-t="O problema gerador">
   <p class="eyebrow">01 · Imersão · problema gerador</p>
   <div class="body">
-    <div class="quote" style="font-size:44px">Como transformar 120 vagas bagunçadas em “<span class="amber">estas 3 são pra você</span>” — e construir isso em squad sem ninguém sobrescrever o trabalho do outro?</div>
+    <div class="quote" style="font-size:44px">Como transformar 120 vagas bagunçadas na resposta “<span class="amber">estas aqui são pra mim</span>” — e construir isso em squad sem ninguém sobrescrever o trabalho do outro?</div>
     <div class="grid2" style="margin-top:44px;gap:32px">
       <div class="card" style="border-color:var(--amber-dim)">
         <div class="n">Metade 1 · o quê</div>
@@ -408,7 +412,7 @@
     <div class="grid4">
       <div class="card"><div class="n">01 · Decomposição</div><h4>Quebrar</h4><p>“Achar 3 vagas” vira: ler a lista → filtrar → ordenar → cortar as 3 primeiras.</p></div>
       <div class="card"><div class="n">02 · Padrões</div><h4>Repetir</h4><p>Toda vaga tem os mesmos campos. O que serve para uma serve para as 120.</p></div>
-      <div class="card"><div class="n">03 · Abstração</div><h4>Ignorar</h4><p>Cor do logo da empresa não importa. Nível, salário e requisitos importam.</p></div>
+      <div class="card"><div class="n">03 · Abstração</div><h4>Ignorar</h4><p>Cor do logo da empresa não importa. Nível e salário importam.</p></div>
       <div class="card" style="border-color:var(--amber-dim)"><div class="n">04 · Algoritmo</div><h4>Ordenar</h4><p>Escrever o passo a passo — <strong style="color:var(--paper)">em português</strong>, antes de virar código.</p></div>
     </div>
     <p style="margin-top:34px;font-size:25px">Isto não é “teoria de programação”. É o que separa quem <strong>resolve problemas</strong> de quem só <strong>decora sintaxe</strong>.</p>
@@ -431,14 +435,13 @@
       </div>
       <div>
         <div class="filetab"><span class="dot"></span>algoritmo.txt</div>
-        <pre class="sm"><span class="c">1.</span> Pegar a lista de vagas
-<span class="c">2.</span> Para cada vaga da lista:
+        <pre class="sm"><span class="c">1.</span> Criar uma lista vazia
+<span class="c">2.</span> Para cada vaga das 120:
 <span class="c">3.</span>    Se o nível for "junior"
-<span class="c">4.</span>    E eu tiver todos os requisitos
-<span class="c">5.</span>       Guardar essa vaga
-<span class="c">6.</span> Ordenar as guardadas pelo maior salário
-<span class="c">7.</span> Mostrar as 3 primeiras</pre>
-        <p style="font-size:20px;margin-top:20px;color:var(--slate)">Sete linhas. Nenhuma delas é JavaScript — e mesmo assim <strong>o problema já está resolvido</strong>.</p>
+<span class="c">4.</span>    E o salário for 2000 ou mais
+<span class="c">5.</span>       Guardar na minha lista
+<span class="c">6.</span> Mostrar a minha lista</pre>
+        <p style="font-size:20px;margin-top:20px;color:var(--slate)">Seis linhas. Nenhuma delas é JavaScript — e mesmo assim <strong>o problema já está resolvido</strong>.</p>
       </div>
     </div>
   </div>
@@ -458,24 +461,26 @@
         <p>Uma <strong>variável</strong> é um nome para um valor guardado. Um <strong>objeto</strong> agrupa vários valores que descrevem a mesma coisa.</p>
         <div class="rule"></div>
         <ul class="tight">
-          <li><span class="mono amber">string</span> — texto entre aspas</li>
+          <li><span class="mono amber">string</span> — texto, sempre entre aspas</li>
           <li><span class="mono amber">number</span> — número, sem aspas</li>
-          <li><span class="mono amber">boolean</span> — só <span class="mono">true</span> ou <span class="mono">false</span></li>
-          <li><span class="mono amber">array</span> — uma lista ordenada</li>
         </ul>
+        <p style="font-size:21px;margin-top:18px">Só isso por enquanto. <strong>Dois tipos</strong> resolvem a nossa aula inteira.</p>
       </div>
       <div>
         <div class="filetab"><span class="dot"></span>vagas.js</div>
-        <pre><span class="c">// const = nome que não muda de valor</span>
+        <pre><span class="c">// uma variável guarda UM valor</span>
+<span class="k">const</span> meuNivel <span class="p">=</span> <span class="s">"junior"</span><span class="p">;</span>
+
+<span class="c">// um objeto guarda VÁRIOS valores</span>
+<span class="c">// que descrevem a mesma coisa</span>
 <span class="k">const</span> vaga <span class="p">=</span> <span class="p">{</span>
-  titulo<span class="p">:</span> <span class="s">"Dev Front-End Júnior"</span><span class="p">,</span>   <span class="c">// string</span>
-  nivel<span class="p">:</span> <span class="s">"junior"</span><span class="p">,</span>                  <span class="c">// string</span>
-  salario<span class="p">:</span> <span class="n">2400</span><span class="p">,</span>                    <span class="c">// number</span>
-  remoto<span class="p">:</span> <span class="k">true</span><span class="p">,</span>                     <span class="c">// boolean</span>
-  requisitos<span class="p">:</span> <span class="p">[</span><span class="s">"html"</span><span class="p">,</span> <span class="s">"css"</span><span class="p">,</span> <span class="s">"js"</span><span class="p">]</span> <span class="c">// array</span>
+  titulo<span class="p">:</span>  <span class="s">"Dev Front-End Junior"</span><span class="p">,</span>
+  empresa<span class="p">:</span> <span class="s">"Orla Digital"</span><span class="p">,</span>
+  nivel<span class="p">:</span>   <span class="s">"junior"</span><span class="p">,</span>
+  salario<span class="p">:</span> <span class="n">2200</span>
 <span class="p">};</span>
 
-<span class="f">console</span><span class="p">.</span><span class="f">log</span><span class="p">(</span>vaga<span class="p">.</span>salario<span class="p">);</span> <span class="c">// 2400</span></pre>
+<span class="f">console</span><span class="p">.</span><span class="f">log</span><span class="p">(</span>vaga<span class="p">.</span>salario<span class="p">);</span>  <span class="c">// 2200</span></pre>
       </div>
     </div>
   </div>
@@ -497,12 +502,14 @@
       </div>
       <div>
         <div class="filetab"><span class="dot"></span>vagas.js</div>
-        <pre><span class="k">const</span> vagas <span class="p">=</span> <span class="p">[</span> vaga1<span class="p">,</span> vaga2<span class="p">,</span> vaga3<span class="p">,</span> <span class="c">/* ... */</span> <span class="p">];</span>
+        <pre><span class="c">// um array é uma lista de coisas</span>
+<span class="k">const</span> vagas <span class="p">=</span> <span class="p">[</span> vaga1<span class="p">,</span> vaga2<span class="p">,</span> vaga3<span class="p">,</span> <span class="c">...</span> <span class="p">];</span>
 
-<span class="f">console</span><span class="p">.</span><span class="f">log</span><span class="p">(</span>vagas<span class="p">.</span>length<span class="p">);</span>    <span class="c">// 120</span>
-<span class="f">console</span><span class="p">.</span><span class="f">log</span><span class="p">(</span>vagas<span class="p">[</span><span class="n">0</span><span class="p">].</span>titulo<span class="p">);</span> <span class="c">// "Dev Front-End Júnior"</span>
+<span class="c">// quantas vagas tem na lista?</span>
+<span class="f">console</span><span class="p">.</span><span class="f">log</span><span class="p">(</span>vagas<span class="p">.</span>length<span class="p">);</span>       <span class="c">// 120</span>
 
-<span class="k">const</span> minhasSkills <span class="p">=</span> <span class="p">[</span><span class="s">"html"</span><span class="p">,</span> <span class="s">"css"</span><span class="p">,</span> <span class="s">"js"</span><span class="p">];</span></pre>
+<span class="c">// a PRIMEIRA vaga da lista</span>
+<span class="f">console</span><span class="p">.</span><span class="f">log</span><span class="p">(</span>vagas<span class="p">[</span><span class="n">0</span><span class="p">].</span>titulo<span class="p">);</span>    <span class="c">// "Dev Front-End Estagio"</span></pre>
         <p style="font-size:21px;margin-top:20px"><strong class="amber">A contagem começa no zero.</strong> A primeira vaga é <span class="mono">vagas[0]</span>, não <span class="mono">vagas[1]</span>.</p>
       </div>
     </div>
@@ -523,30 +530,30 @@
         <p>Condicional é como o programa <strong>decide</strong>. Ela só responde <span class="mono amber">true</span> ou <span class="mono amber">false</span>.</p>
         <div class="rule"></div>
         <ul class="tight">
-          <li><span class="mono amber">===</span> compara igualdade</li>
-          <li><span class="mono amber">&amp;&amp;</span> exige as duas condições</li>
-          <li><span class="mono amber">||</span> aceita qualquer uma</li>
-          <li><span class="mono amber">!</span> inverte</li>
+          <li><span class="mono amber">===</span> é igual a</li>
+          <li><span class="mono amber">&gt;=</span> é maior ou igual a</li>
+          <li><span class="mono amber">&amp;&amp;</span> exige as <strong>duas</strong> coisas</li>
         </ul>
       </div>
       <div>
         <div class="filetab"><span class="dot"></span>vagas.js</div>
-        <pre><span class="c">// essa vaga serve pra mim?</span>
-<span class="k">function</span> <span class="f">serveParaMim</span><span class="p">(</span>vaga<span class="p">,</span> skills<span class="p">)</span> <span class="p">{</span>
-<span class="hl">  <span class="k">const</span> nivelOk <span class="p">=</span> vaga<span class="p">.</span>nivel <span class="p">===</span> <span class="s">"junior"</span><span class="p">;</span></span>  <span class="k">const</span> temTudo <span class="p">=</span> vaga<span class="p">.</span>requisitos<span class="p">.</span><span class="f">every</span><span class="p">(</span>
-    <span class="p">(</span>req<span class="p">)</span> <span class="k">=&gt;</span> skills<span class="p">.</span><span class="f">includes</span><span class="p">(</span>req<span class="p">)</span>
-  <span class="p">);</span>
-  <span class="k">return</span> nivelOk <span class="p">&amp;&amp;</span> temTudo<span class="p">;</span>
+        <pre><span class="k">const</span> vaga <span class="p">=</span> vagas<span class="p">[</span><span class="n">0</span><span class="p">];</span>
+
+<span class="hl"><span class="k">if</span> <span class="p">(</span>vaga<span class="p">.</span>nivel <span class="p">===</span> <span class="s">"junior"</span><span class="p">)</span> <span class="p">{</span></span>  <span class="f">console</span><span class="p">.</span><span class="f">log</span><span class="p">(</span><span class="s">"Essa serve pra mim!"</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="f">console</span><span class="p">.</span><span class="f">log</span><span class="p">(</span><span class="s">"Essa nao."</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="f">serveParaMim</span><span class="p">(</span>vagas<span class="p">[</span><span class="n">0</span><span class="p">],</span> minhasSkills<span class="p">);</span> <span class="c">// true</span></pre>
+<span class="c">// exigindo as duas coisas:</span>
+<span class="k">if</span> <span class="p">(</span>vaga<span class="p">.</span>nivel <span class="p">===</span> <span class="s">"junior"</span> <span class="p">&amp;&amp;</span>
+    vaga<span class="p">.</span>salario <span class="p">&gt;=</span> <span class="n">2000</span><span class="p">)</span> <span class="p">{</span> <span class="c">...</span> <span class="p">}</span></pre>
       </div>
     </div>
   </div>
   <div class="notes">
     <b>7:10 – 8:25</b>
-    <p class="say">"Presta atenção no <span class="mono">&amp;&amp;</span>: ele quer as DUAS coisas. Nível júnior <em>e</em> eu tenho os requisitos. Se eu trocasse por <span class="mono">||</span>, ia aparecer vaga de sênior na minha lista — e não é isso que a gente quer."</p>
-    <p>Se perguntarem sobre <span class="mono">every</span>: "percorre a lista e só devolve true se TODOS passarem". Diga que na turma real isso é apresentado depois do <span class="mono">for</span>, nunca antes.</p>
+    <p class="say">"O <span class="mono">if</span> faz uma pergunta que só tem duas respostas: sim ou não. E o <span class="mono">&amp;&amp;</span> quer as DUAS coisas ao mesmo tempo — júnior <em>e</em> pagando 2000 ou mais. Se fosse <span class="mono">||</span>, bastaria uma das duas."</p>
+    <p>Leia o <span class="mono">if</span> em voz alta como português: “se o nível da vaga for igual a junior”. Ler código em voz alta é o hábito que destrava iniciante.</p>
   </div>
 </section>
 
@@ -561,21 +568,25 @@
       </div>
       <div>
         <div class="filetab"><span class="dot"></span>vagas.js</div>
-        <pre><span class="k">const</span> minhasVagas <span class="p">=</span> <span class="p">[];</span>
+        <pre><span class="c">// a minha lista, ainda vazia</span>
+<span class="k">const</span> minhasVagas <span class="p">=</span> <span class="p">[];</span>
 
-<span class="hl"><span class="k">for</span> <span class="p">(</span><span class="k">let</span> i <span class="p">=</span> <span class="n">0</span><span class="p">;</span> i <span class="p">&lt;</span> vagas<span class="p">.</span>length<span class="p">;</span> i<span class="p">++)</span> <span class="p">{</span></span>  <span class="k">if</span> <span class="p">(</span><span class="f">serveParaMim</span><span class="p">(</span>vagas<span class="p">[</span>i<span class="p">],</span> minhasSkills<span class="p">))</span> <span class="p">{</span>
-    minhasVagas<span class="p">.</span><span class="f">push</span><span class="p">(</span>vagas<span class="p">[</span>i<span class="p">]);</span>
+<span class="hl"><span class="k">for</span> <span class="p">(</span><span class="k">let</span> i <span class="p">=</span> <span class="n">0</span><span class="p">;</span> i <span class="p">&lt;</span> vagas<span class="p">.</span>length<span class="p">;</span> i<span class="p">++)</span> <span class="p">{</span></span>  <span class="k">const</span> vaga <span class="p">=</span> vagas<span class="p">[</span>i<span class="p">];</span>
+
+  <span class="k">if</span> <span class="p">(</span>vaga<span class="p">.</span>nivel <span class="p">===</span> <span class="s">"junior"</span> <span class="p">&amp;&amp;</span>
+      vaga<span class="p">.</span>salario <span class="p">&gt;=</span> <span class="n">2000</span><span class="p">)</span> <span class="p">{</span>
+    minhasVagas<span class="p">.</span><span class="f">push</span><span class="p">(</span>vaga<span class="p">);</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="f">console</span><span class="p">.</span><span class="f">log</span><span class="p">(</span>minhasVagas<span class="p">.</span>length<span class="p">);</span> <span class="c">// 10</span></pre>
-        <p style="font-size:20px;margin-top:18px;color:var(--slate)"><span class="mono">i</span> começa em 0, sobe de 1 em 1, e para quando chega no tamanho da lista.</p>
+<span class="f">console</span><span class="p">.</span><span class="f">log</span><span class="p">(</span>minhasVagas<span class="p">.</span>length<span class="p">);</span>  <span class="c">// 24</span></pre>
+        <p style="font-size:20px;margin-top:18px;color:var(--slate)"><span class="mono">i</span> começa em 0, sobe de 1 em 1, e para quando acaba a lista.</p>
       </div>
     </div>
   </div>
   <div class="notes">
     <b>8:25 – 9:40</b>
-    <p class="say">"Três partes: onde começa, até quando vai, de quanto em quanto anda. De 120 sobraram 10. A gente saiu de uma lista impossível para uma lista possível."</p>
+    <p class="say">"Três partes: onde começa, até quando vai, de quanto em quanto anda. De 120 sobraram 24. A gente saiu de uma lista impossível para uma lista possível."</p>
     <p>Se a banca perguntar sobre <span class="mono">while</span>: "uso <span class="mono">for</span> quando sei quantas vezes vou repetir e <span class="mono">while</span> quando dependo de uma condição — aqui eu sei o tamanho da lista".</p>
   </div>
 </section>
@@ -586,23 +597,24 @@
     <div class="cols wide-r">
       <div>
         <h2>Dar <span class="amber">nome</span><br>a uma ideia.</h2>
-        <p>Função é um pedaço de lógica com nome, que recebe entrada e devolve saída. Escreve uma vez, usa em todo lugar.</p>
+        <p>Função é um pedaço de código com <strong>nome</strong>. Você escreve uma vez e usa quantas vezes quiser.</p>
         <div class="rule"></div>
-        <p style="font-size:22px;color:var(--slate)">A mesma solução, três níveis de maturidade — e todos os três resolvem o problema. O aluno escreve o <span class="mono">for</span> primeiro; a versão encadeada vem quando ele já entendeu.</p>
+        <p style="font-size:22px;color:var(--slate)">Repare: é <strong>o mesmo código</strong> que a gente já escreveu. A diferença é que agora o nível vem de fora — então serve para júnior, para estágio, para qualquer um.</p>
       </div>
       <div>
         <div class="filetab"><span class="dot"></span>vagas.js</div>
-        <pre><span class="k">function</span> <span class="f">top3ParaMim</span><span class="p">(</span>vagas<span class="p">,</span> skills<span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> vagas
-    <span class="p">.</span><span class="f">filter</span><span class="p">((</span>v<span class="p">)</span> <span class="k">=&gt;</span> <span class="f">serveParaMim</span><span class="p">(</span>v<span class="p">,</span> skills<span class="p">))</span>
-    <span class="p">.</span><span class="f">sort</span><span class="p">((</span>a<span class="p">,</span> b<span class="p">)</span> <span class="k">=&gt;</span> b<span class="p">.</span>salario <span class="p">-</span> a<span class="p">.</span>salario<span class="p">)</span>
-    <span class="p">.</span><span class="f">slice</span><span class="p">(</span><span class="n">0</span><span class="p">,</span> <span class="n">3</span><span class="p">);</span>
-<span class="p">}</span></pre>
-        <div class="grid3" style="margin-top:22px;gap:14px">
-          <div class="card" style="padding:15px 16px"><div class="n">filter</div><p>fica só com quem passa</p></div>
-          <div class="card" style="padding:15px 16px"><div class="n">sort</div><p>maior salário primeiro</p></div>
-          <div class="card" style="padding:15px 16px"><div class="n">slice</div><p>corta as 3 primeiras</p></div>
-        </div>
+        <pre><span class="k">function</span> <span class="f">buscarVagas</span><span class="p">(</span>vagas<span class="p">,</span> nivel<span class="p">)</span> <span class="p">{</span>
+  <span class="k">const</span> encontradas <span class="p">=</span> <span class="p">[];</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">let</span> i <span class="p">=</span> <span class="n">0</span><span class="p">;</span> i <span class="p">&lt;</span> vagas<span class="p">.</span>length<span class="p">;</span> i<span class="p">++)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span>vagas<span class="p">[</span>i<span class="p">].</span>nivel <span class="p">===</span> nivel<span class="p">)</span> <span class="p">{</span>
+      encontradas<span class="p">.</span><span class="f">push</span><span class="p">(</span>vagas<span class="p">[</span>i<span class="p">]);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> encontradas<span class="p">;</span>
+<span class="p">}</span>
+
+<span class="hl"><span class="f">buscarVagas</span><span class="p">(</span>vagas<span class="p">,</span> <span class="s">"junior"</span><span class="p">);</span>   <span class="c">// 34 vagas</span></span>  <span class="f">buscarVagas</span><span class="p">(</span>vagas<span class="p">,</span> <span class="s">"estagio"</span><span class="p">);</span>  <span class="c">// 35 vagas</span></pre>
       </div>
     </div>
   </div>
@@ -619,14 +631,15 @@
     <div style="max-width:1180px;margin:0 auto;width:100%">
       <div class="term">
         <span class="ps">➜</span> <span class="cmd">node vagas.js</span><br><br>
-        <span class="out">De 120 vagas, 10 combinam com você.</span><br>
-        <span class="out">Top 3 por salário:</span><br><br>
-        <span class="cmd">  1. Dev Front-End Junior · Sergipe Log ....... R$ 2.600,00</span><br>
-        <span class="cmd">  2. Analista de QA Junior · Tech Aracaju ..... R$ 2.450,00</span><br>
-        <span class="cmd">  3. Suporte Web Junior · Orla Digital ........ R$ 2.400,00</span><br>
+        <span class="out">De 120 vagas, 24 sao pra voce:</span><br><br>
+        <span class="cmd">  Designer de Produto Junior - Orla Digital - R$ 2800</span><br>
+        <span class="cmd">  Dev Mobile Junior - Caju Hub Labs - R$ 2750</span><br>
+        <span class="cmd">  Dev Full-Stack Junior - Farol Tecnologia - R$ 2700</span><br>
+        <span class="cmd">  Dev Back-End Junior - Sergipe Log - R$ 2650</span><br>
+        <span class="out">  ... e mais 20</span><br>
         <span class="cur"></span>
       </div>
-      <p class="lead" style="text-align:center;margin-top:38px;max-width:none">120 linhas de caos viraram <strong class="amber">três linhas de decisão</strong>.<br><span style="font-size:25px;color:var(--slate)">Isto é lógica de programação. A primeira metade do problema está resolvida.</span></p>
+      <p class="lead" style="text-align:center;margin-top:38px;max-width:none">Uma lista impossível virou <strong class="amber">uma lista possível</strong>.<br><span style="font-size:25px;color:var(--slate)">Isto é lógica de programação. A primeira metade do problema está resolvida.</span></p>
     </div>
   </div>
   <div class="notes">
@@ -850,7 +863,7 @@
         <h3>O que cada squad entrega</h3>
         <ul class="tight">
           <li>Repositório público no GitHub com <span class="mono">README</span></li>
-          <li>Algoritmo rodando e devolvendo o Top 3</li>
+          <li>Algoritmo rodando e mostrando as vagas que servem</li>
           <li>Mínimo de 3 commits com mensagem descritiva</li>
           <li>1 branch por integrante + Pull Request revisado</li>
         </ul>
@@ -900,7 +913,7 @@
   <p class="eyebrow">Apoio · arguição (10 min) · não apresentar</p>
   <div class="body">
     <div class="grid2" style="gap:22px 34px">
-      <div class="card"><h4 style="font-size:21px">“Como você adapta isso para quem nunca viu um computador?”</h4><p>Primeiro encontro sem código: o algoritmo do Top 3 é feito no papel, em português, em duplas. O código só entra quando a lógica já está resolvida. Pareamento entre quem tem mais e menos facilidade.</p></div>
+      <div class="card"><h4 style="font-size:21px">“Como você adapta isso para quem nunca viu um computador?”</h4><p>Primeiro encontro sem código: o algoritmo é escrito no papel, em português, em duplas. O código só entra quando a lógica já está resolvida. Pareamento entre quem tem mais e menos facilidade.</p></div>
       <div class="card"><h4 style="font-size:21px">“E se o aluno não tiver notebook?”</h4><p>Todo o material roda em navegador com editor online, e o repositório fica no GitHub — acessível de qualquer máquina do laboratório. Nada depende de instalação local.</p></div>
       <div class="card"><h4 style="font-size:21px">“Por que PBL e não aula expositiva?”</h4><p>Porque o edital exige e porque funciona: o aluno retém o que usou para resolver um problema que ele reconhece. O conteúdo aparece quando é necessário para avançar, não antes.</p></div>
       <div class="card"><h4 style="font-size:21px">“Como você avalia quem não entrega?”</h4><p>Avaliação é formativa: eu vejo o progresso pelos commits, não só pela entrega final. Aluno sem commit em uma semana é sinalizado e recebe acompanhamento antes de virar reprovação.</p></div>
@@ -917,7 +930,7 @@
     <div class="grid2" style="gap:22px 34px">
       <div class="card"><h4 style="font-size:21px">“Qual a diferença entre <span class="mono">let</span>, <span class="mono">const</span> e <span class="mono">var</span>?”</h4><p><span class="mono">const</span> não permite reatribuição; <span class="mono">let</span> permite e tem escopo de bloco; <span class="mono">var</span> tem escopo de função e é legado — ensino <span class="mono">const</span> por padrão e <span class="mono">let</span> quando o valor muda.</p></div>
       <div class="card"><h4 style="font-size:21px">“Por que <span class="mono">===</span> e não <span class="mono">==</span>?”</h4><p><span class="mono">==</span> converte tipos antes de comparar e gera surpresas — <span class="mono">"2" == 2</span> é verdadeiro. <span class="mono">===</span> compara valor e tipo. Ensino só <span class="mono">===</span> desde o primeiro dia.</p></div>
-      <div class="card"><h4 style="font-size:21px">“<span class="mono">for</span> ou <span class="mono">forEach</span>/<span class="mono">filter</span>?”</h4><p>Primeiro <span class="mono">for</span>, para o aluno ver o índice andando. Os métodos de array vêm depois, apresentados como “o mesmo <span class="mono">for</span>, escrito curto”. Pular a etapa manual cria dependência sem compreensão.</p></div>
+      <div class="card"><h4 style="font-size:21px">“Por que não ensinar <span class="mono">filter</span> direto?”</h4><p>Porque <span class="mono">filter</span> esconde o que está acontecendo. Com o <span class="mono">for</span> o aluno vê o índice andando e entende o mecanismo. Os métodos de array entram no encontro 06, apresentados como “o mesmo <span class="mono">for</span>, escrito curto”.</p></div>
       <div class="card"><h4 style="font-size:21px">“E se der conflito no merge?”</h4><p>É conteúdo previsto: provoco um conflito de propósito no laboratório, para o aluno ver os marcadores, escolher o que fica e concluir o merge. Conflito assusta uma vez só.</p></div>
       <div class="card"><h4 style="font-size:21px">“Como lida com o aluno muito adiantado?”</h4><p>Ele vira revisor: recebe os PRs do squad para comentar antes de mim. Aprofunda sem atropelar a turma e desenvolve a competência de revisão por pares.</p></div>
       <div class="card"><h4 style="font-size:21px">“Qual estrutura de dados além de array?”</h4><p>Na trilha básica: array, objeto e array de objetos. Menciono <span class="mono">Map</span> e <span class="mono">Set</span> como próximo passo, ligando ao módulo de POO &amp; TypeScript que vem em seguida.</p></div>
