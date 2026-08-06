@@ -1,0 +1,354 @@
+<meta charset="utf-8">
+<title>Guia de Execução — Jovem Tech 2026 | Guilherme Santos Rabelo</title>
+<style>
+  :root{
+    --bg:#FBFAF7; --surface:#FFFFFF; --raised:#F3F1EC;
+    --text:#151C24; --text2:#4A5866; --muted:#7A8899;
+    --line:#DFDCD4; --line2:#C9C5BB;
+    --accent:#B5670C; --accent-soft:#FBF1E2;
+    --ok:#2C7A55; --warn:#B5670C; --crit:#B23A2A;
+    --mono:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0B1119; --surface:#111A25; --raised:#18232F;
+      --text:#EDF2F7; --text2:#B9C7D6; --muted:#7D90A6;
+      --line:#22303F; --line2:#2E4052;
+      --accent:#F0A93B; --accent-soft:#1B2430;
+      --ok:#52B788; --warn:#F0A93B; --crit:#E06C5A;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0B1119; --surface:#111A25; --raised:#18232F;
+    --text:#EDF2F7; --text2:#B9C7D6; --muted:#7D90A6;
+    --line:#22303F; --line2:#2E4052;
+    --accent:#F0A93B; --accent-soft:#1B2430;
+    --ok:#52B788; --warn:#F0A93B; --crit:#E06C5A;
+  }
+  :root[data-theme="light"]{
+    --bg:#FBFAF7; --surface:#FFFFFF; --raised:#F3F1EC;
+    --text:#151C24; --text2:#4A5866; --muted:#7A8899;
+    --line:#DFDCD4; --line2:#C9C5BB;
+    --accent:#B5670C; --accent-soft:#FBF1E2;
+    --ok:#2C7A55; --warn:#B5670C; --crit:#B23A2A;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+    font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:920px;margin:0 auto;padding:60px 28px 100px}
+  .mono{font-family:var(--mono)}
+
+  header{border-bottom:2px solid var(--text);padding-bottom:22px;margin-bottom:14px}
+  .org{font-family:var(--mono);font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+  h1{font-family:var(--mono);font-size:clamp(30px,5.2vw,46px);line-height:1.06;letter-spacing:-.035em;
+     margin:14px 0 10px;font-weight:700;text-wrap:balance}
+  .dek{font-size:19px;color:var(--text2);max-width:62ch;margin:0}
+
+  h2{font-family:var(--mono);font-size:25px;letter-spacing:-.02em;margin:56px 0 6px;font-weight:700;
+     display:flex;align-items:baseline;gap:12px;text-wrap:balance}
+  h2 .n{font-size:14px;color:var(--accent);letter-spacing:.12em}
+  h2+.sec-dek{color:var(--muted);font-size:16px;margin:0 0 22px;max-width:62ch}
+  h3{font-family:var(--mono);font-size:18.5px;margin:30px 0 8px;font-weight:700;letter-spacing:-.01em}
+  p{margin:0 0 14px;max-width:66ch;color:var(--text2)}
+  p strong,li strong{color:var(--text);font-weight:600}
+  a{color:var(--accent)}
+
+  /* alert */
+  .alert{border:1px solid var(--line2);border-left:4px solid var(--accent);background:var(--accent-soft);
+    padding:18px 22px;border-radius:3px;margin:22px 0}
+  .alert .t{font-family:var(--mono);font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:7px}
+  .alert p{margin:0;color:var(--text)}
+  .alert p+p{margin-top:9px}
+
+  /* phase cards */
+  .phases{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+  @media(max-width:720px){.phases{grid-template-columns:1fr}}
+  .ph{border:1px solid var(--line);background:var(--surface);border-radius:3px;padding:22px;border-top:3px solid var(--accent)}
+  .ph .when{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+  .ph h4{font-family:var(--mono);font-size:22px;margin:8px 0 4px;letter-spacing:-.01em}
+  .ph .big{font-family:var(--mono);font-size:31px;font-weight:700;letter-spacing:-.02em;margin:10px 0 2px;
+    font-variant-numeric:tabular-nums}
+  .ph dl{margin:14px 0 0;display:grid;grid-template-columns:auto 1fr;gap:5px 14px;font-size:14.5px}
+  .ph dt{font-family:var(--mono);font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+  .ph dd{margin:0;color:var(--text2)}
+
+  /* timeline bar */
+  .tl{margin:24px 0 10px}
+  .tl .bar{display:flex;height:46px;border:1px solid var(--line2);border-radius:3px;overflow:hidden}
+  .tl .seg{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;
+    color:#fff;position:relative;letter-spacing:.03em;text-align:center;padding:0 4px}
+  .tl .s1{background:#5B6B7C;flex:5}
+  .tl .s2{background:#8A6323;flex:5}
+  .tl .s3{background:var(--accent);flex:20;color:#1A1005;font-weight:700}
+  .tl .s4{background:#3E5162;flex:10}
+  .tl .lg{display:flex;font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:8px;gap:0}
+  .tl .lg span{text-align:center}
+  .tl .lg .s1{flex:5}.tl .lg .s2{flex:5}.tl .lg .s3{flex:20}.tl .lg .s4{flex:10}
+
+  /* tables */
+  .tw{overflow-x:auto;margin:16px 0 8px;border:1px solid var(--line);border-radius:3px}
+  table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+  th{background:var(--raised);font-family:var(--mono);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;
+     text-align:left;padding:11px 14px;color:var(--accent);font-weight:600;border-bottom:1px solid var(--line)}
+  td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--text2)}
+  tr:last-child td{border-bottom:none}
+  td.t{font-family:var(--mono);white-space:nowrap;width:1%;color:var(--text);font-variant-numeric:tabular-nums;font-weight:600}
+  td.n{font-family:var(--mono);text-align:right;white-space:nowrap;width:1%;font-variant-numeric:tabular-nums;color:var(--text)}
+  td strong{color:var(--text)}
+  tfoot td{background:var(--raised);font-weight:700;color:var(--text)}
+
+  /* checklist */
+  .ck{list-style:none;padding:0;margin:14px 0;display:grid;gap:2px}
+  .ck li{display:flex;gap:12px;align-items:flex-start;padding:9px 12px;border:1px solid transparent;border-radius:3px}
+  .ck li:nth-child(odd){background:var(--surface);border-color:var(--line)}
+  .ck .box{flex:none;width:16px;height:16px;border:1.5px solid var(--line2);border-radius:2px;margin-top:4px}
+  .ck .crit .box{border-color:var(--crit);border-width:2px}
+  .ck b{color:var(--text);font-weight:600}
+  .ck small{display:block;color:var(--muted);font-size:13.5px;line-height:1.45;margin-top:1px}
+
+  /* rubric rows */
+  .rub{display:grid;gap:10px;margin:18px 0}
+  .rb{border:1px solid var(--line);background:var(--surface);border-radius:3px;padding:15px 18px;
+    display:grid;grid-template-columns:auto 1fr;gap:4px 18px;align-items:baseline}
+  .rb .pts{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--accent);
+    font-variant-numeric:tabular-nums;grid-row:span 2;align-self:center;min-width:44px}
+  .rb .cr{font-family:var(--mono);font-size:16px;font-weight:700;color:var(--text)}
+  .rb .do{font-size:14.5px;color:var(--text2);line-height:1.5}
+  .rb .do b{color:var(--text)}
+
+  code{font-family:var(--mono);font-size:.9em;background:var(--raised);padding:1.5px 5px;border-radius:2px;color:var(--text)}
+  .say{border-left:3px solid var(--line2);padding:2px 0 2px 16px;margin:12px 0;color:var(--text);font-style:italic}
+  ul.plain{padding-left:20px;color:var(--text2)}
+  ul.plain li{margin-bottom:7px}
+  ul.plain li::marker{color:var(--accent)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+  .box{border:1px solid var(--line);background:var(--surface);border-radius:3px;padding:18px 20px}
+  .box h4{font-family:var(--mono);font-size:16px;margin:0 0 8px;letter-spacing:-.01em}
+  .box p{font-size:14.5px;margin:0}
+  footer{margin-top:70px;padding-top:20px;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+  @media print{
+    body{background:#fff;color:#000;font-size:10.5pt}
+    .wrap{max-width:none;padding:0}
+    h2{margin-top:22px;break-after:avoid}
+    .ph,.rb,.box,.tw{break-inside:avoid}
+    @page{margin:14mm}
+  }
+</style>
+
+<div class="wrap">
+<header>
+  <div class="org">Projeto Jovem Tech · INOVASE · Edital nº 01/2026</div>
+  <h1>Guia de execução:<br>as duas avaliações</h1>
+  <p class="dek">Tudo o que Guilherme Santos Rabelo precisa fazer nas próximas 48 horas — o que levar, o que dizer, em que minuto, e como cada ação vira ponto na ficha da banca.</p>
+</header>
+
+<div class="alert">
+  <div class="t">Correção importante do que você me disse</div>
+  <p>Você mencionou “dia 7 de tutoria e 8 de instrutoria”. <strong>Está invertido.</strong> Pelo cronograma oficial e pelos dois e-mails de convocação:</p>
+  <p><strong>7 de agosto (sexta) é a INSTRUTORIA</strong> — aula prática presencial, às 20h15, no CAJU HUB.<br>
+  <strong>8 de agosto (sábado) é a TUTORIA</strong> — entrevista on-line, às 12h05, pelo Google Meet.</p>
+  <p>Ou seja: <strong>a aula prática é amanhã</strong>, e é a que exige preparo material (plano impresso, notebook, adaptador HDMI).</p>
+</div>
+
+<h2><span class="n">01</span> O que você tem pela frente</h2>
+<p class="sec-dek">Você está inscrito nas duas modalidades e é obrigado a participar das duas etapas.</p>
+
+<div class="phases">
+  <div class="ph">
+    <div class="when">Fase 1 · sexta-feira</div>
+    <h4>Instrutoria</h4>
+    <div class="big">07/08 · 20h15</div>
+    <dl>
+      <dt>Até</dt><dd>20h55 (40 min de janela)</dd>
+      <dt>Onde</dt><dd>CAJU HUB — Av. Santos Dumont, s/n, Espaço J. Inácio, Orla da Atalaia</dd>
+      <dt>Banca</dt><dd>Banca Avaliadora 2 · presencial</dd>
+      <dt>Trilha</dt><dd>Básica</dd>
+      <dt>Tema</dt><dd>Lógica de Programação &amp; Versionamento — Algoritmos JS, Estruturas de Dados, Git/GitHub, Abertura de Projetos</dd>
+      <dt>Vale</dt><dd>30 pts (plano de aula) + 60 pts (aula prática)</dd>
+    </dl>
+  </div>
+  <div class="ph">
+    <div class="when">Fase 2 · sábado</div>
+    <h4>Tutoria</h4>
+    <div class="big">08/08 · 12h05</div>
+    <dl>
+      <dt>Até</dt><dd>12h35 (30 min)</dd>
+      <dt>Onde</dt><dd>On-line — <span class="mono">meet.google.com/tgm-nbnn-iba</span></dd>
+      <dt>Formato</dt><dd>Entrevista técnica e comportamental</dd>
+      <dt>Trilha</dt><dd>Básica</dd>
+      <dt>Câmera</dt><dd>Obrigatória, ligada o tempo todo</dd>
+      <dt>Vale</dt><dd>100 pts, em 7 critérios</dd>
+    </dl>
+  </div>
+</div>
+
+<h2><span class="n">02</span> Como os 40 minutos de sexta se dividem</h2>
+<p class="sec-dek">Este é o ponto onde a maioria dos candidatos perde nota. O cronograma diz “40 minutos”, mas o Art. 40 do Edital reparte esse tempo — e só 20 minutos são de aula.</p>
+
+<div class="tl">
+  <div class="bar">
+    <div class="seg s1">preparação</div>
+    <div class="seg s2">plano de aula</div>
+    <div class="seg s3">SUA AULA — 20 min</div>
+    <div class="seg s4">arguição</div>
+  </div>
+  <div class="lg">
+    <span class="s1">~5 min<br>montar</span>
+    <span class="s2">5 min<br>Art. 40, I</span>
+    <span class="s3">20 min<br>Art. 40, II</span>
+    <span class="s4">10 min<br>Art. 40, III</span>
+  </div>
+</div>
+
+<p>Traduzindo para o relógio da sua avaliação:</p>
+<div class="tw"><table>
+  <thead><tr><th>Horário</th><th>O que acontece</th><th>Quem conduz</th></tr></thead>
+  <tbody>
+    <tr><td class="t">19h45</td><td>Você chega. O edital pede 20 min de antecedência — chegue 30.</td><td>você</td></tr>
+    <tr><td class="t">~20h10</td><td>Entra na sala, conecta o HDMI, abre os slides e o terminal</td><td>você</td></tr>
+    <tr><td class="t">20h15</td><td><strong>Entrega o plano de aula impresso à banca</strong> e apresenta o plano</td><td>você · 5 min</td></tr>
+    <tr><td class="t">20h20</td><td><strong>Ministra a aula</strong> — é aqui que estão os 60 pontos</td><td>você · 20 min</td></tr>
+    <tr><td class="t">20h40</td><td>Arguição: a banca pergunta</td><td>banca · 10 min</td></tr>
+    <tr><td class="t">20h55</td><td>Encerramento</td><td>—</td></tr>
+  </tbody>
+</table></div>
+
+<div class="alert">
+  <div class="t">A regra que elimina</div>
+  <p>Art. 35, §8º: <strong>não entregar o plano de aula no início da apresentação = nota zero no plano.</strong> E o Art. 38 elimina quem tirar menos de 15 dos 30 pontos do plano. Entregue as cópias impressas <em>antes</em> de falar qualquer coisa — é literalmente a primeira coisa que você faz ao entrar.</p>
+</div>
+
+<h2><span class="n">03</span> Roteiro minuto a minuto da aula</h2>
+<p class="sec-dek">A apresentação tem cronômetro embutido. Aperte <code>T</code> quando começar a aula (não no plano) e ele mostra se você está adiantado ou atrasado em relação ao orçamento de cada slide.</p>
+
+<div class="tw"><table>
+  <thead><tr><th>Min</th><th>Bloco</th><th>O que você faz</th></tr></thead>
+  <tbody>
+    <tr><td class="t">0–3</td><td><strong>Imersão</strong></td><td>Gancho das 120 vagas → mostra o JSON bagunçado → enuncia o <strong>problema gerador</strong> e diz que ele tem duas metades</td></tr>
+    <tr><td class="t">3–6</td><td><strong>Investigação</strong></td><td>4 pilares do pensamento computacional aplicados ao problema → escreve o algoritmo em português. <em>Faça a primeira pergunta à turma aqui.</em></td></tr>
+    <tr><td class="t">6–13</td><td><strong>Construção</strong></td><td>Objeto → array de objetos → condicional → <code>for</code> → função com <code>filter/sort/slice</code> → roda o código e mostra o Top 3</td></tr>
+    <tr><td class="t">13–15</td><td><strong>Projeto</strong></td><td>Anatomia da pasta e os 4 comandos de abertura. <em>Diga em voz alta “abertura de projetos”</em> — é item do tema sorteado</td></tr>
+    <tr><td class="t">15–19</td><td><strong>Versionamento</strong></td><td>A dor do <code>v2_AGORAVAI</code> → as 3 áreas do Git → comandos → branch + Pull Request. <strong>Retome o problema gerador aqui</strong></td></tr>
+    <tr><td class="t">19–20</td><td><strong>Fechamento</strong></td><td>Callback das 120 vagas → GitHub como portfólio → entrega do squad → encerra dizendo que terminou no tempo</td></tr>
+  </tbody>
+</table></div>
+
+<h3>Se o tempo apertar</h3>
+<p>Corte nesta ordem, sem hesitar: <strong>1º</strong> o slide do resultado rodando (você já mostrou o código); <strong>2º</strong> o slide de comandos de abertura; <strong>3º</strong> encurte o slide de funções. <strong>Nunca corte</strong> o problema gerador, o bloco de Git, nem o fechamento — são eles que carregam os pontos de metodologia PBL e de aderência ao tema.</p>
+
+<h2><span class="n">04</span> Cada critério da ficha, e o que fazer para pontuar</h2>
+<p class="sec-dek">A banca preenche uma ficha individual justificando cada nota (Art. 43). São 60 pontos na aula; 30 é a nota mínima para aprovação.</p>
+
+<div class="rub">
+  <div class="rb"><div class="pts">20</div><div class="cr">Domínio técnico do conteúdo</div>
+    <div class="do">Rode o código ao vivo no terminal — não só mostre o slide. Use o vocabulário certo (<b>array de objetos</b>, <b>staging area</b>, <b>merge</b>). Na arguição, se não souber, diga o caminho que você seguiria em vez de inventar.</div></div>
+  <div class="rb"><div class="pts">10</div><div class="cr">Clareza didática</div>
+    <div class="do">Um conceito por slide. Sempre analogia antes de definição — <b>“a prateleira”</b> antes de “staging area”. Aponte fisicamente para a linha de código que você está explicando.</div></div>
+  <div class="rb"><div class="pts">10</div><div class="cr">Comunicação</div>
+    <div class="do">De pé, voltado para a banca, sem ler a tela. Pause depois de cada ideia grande. Fale mais devagar do que parece natural — no nervosismo todo mundo acelera.</div></div>
+  <div class="rb"><div class="pts">10</div><div class="cr">Aplicação da metodologia PBL</div>
+    <div class="do">Diga as palavras <b>“problema gerador”</b> e <b>“Aprendizagem Baseada em Projetos”</b> em voz alta, no mínimo duas vezes. Abra com o problema e feche voltando a ele. É o critério mais fácil de ganhar e o mais fácil de perder por silêncio.</div></div>
+  <div class="rb"><div class="pts">5</div><div class="cr">Gestão do tempo</div>
+    <div class="do">Use o cronômetro da apresentação. Ao encerrar, diga: <b>“encerro a exposição no tempo previsto”</b>. Não deixe implícito — a banca tem essa linha na ficha.</div></div>
+  <div class="rb"><div class="pts">5</div><div class="cr">Capacidade de interação</div>
+    <div class="do">Faça <b>no mínimo duas perguntas abertas</b> e espere a resposta de verdade. As duas já estão marcadas nas notas do apresentador: “o que dá pra jogar fora dessa vaga?” e “se a primeira é <code>vagas[0]</code>, qual é a última de 120?”</div></div>
+</div>
+
+<h2><span class="n">05</span> O que levar — confira antes de sair de casa</h2>
+<p class="sec-dek">Marcados em vermelho: se faltar, você perde ponto ou é eliminado.</p>
+<ul class="ck">
+  <li class="crit"><span class="box"></span><span><b>Documento oficial com foto</b><small>Obrigatório pelo edital. Sem ele, você não é avaliado.</small></span></li>
+  <li class="crit"><span class="box"></span><span><b>Plano de aula impresso — leve 3 cópias</b><small>Entregue à banca <em>antes</em> de começar a falar. Não entregar = nota zero no plano (Art. 35, §8º).</small></span></li>
+  <li class="crit"><span class="box"></span><span><b>Notebook carregado + carregador</b><small>Não conte com tomada livre no local.</small></span></li>
+  <li class="crit"><span class="box"></span><span><b>Cabo ou adaptador HDMI compatível</b><small>A TV tem entrada HDMI, mas o cabo/adaptador é responsabilidade sua. Teste hoje.</small></span></li>
+  <li><span class="box"></span><span><b>A apresentação salva localmente</b><small>Abra o arquivo <code>apresentacao/index.html</code> no navegador. Não depende de internet — não confie no Wi-Fi do local.</small></span></li>
+  <li><span class="box"></span><span><b>O projeto de código pronto para rodar</b><small>Terminal já aberto na pasta, <code>node vagas.js</code> testado. Deixe o comando já digitado, só faltando o Enter.</small></span></li>
+  <li><span class="box"></span><span><b>Relógio, cronômetro ou smartwatch</b><small>Permitido pelo edital. A apresentação já tem cronômetro, mas tenha um plano B.</small></span></li>
+  <li><span class="box"></span><span><b>Água</b><small>São 40 minutos falando, às 20h15.</small></span></li>
+</ul>
+
+<h2><span class="n">06</span> Plano das próximas 24 horas</h2>
+<p class="sec-dek">Hoje é quinta, 6 de agosto. A aula é amanhã à noite. Isto é o que cabe no tempo que resta.</p>
+
+<div class="tw"><table>
+  <thead><tr><th>Quando</th><th>O quê</th><th>Por quê</th></tr></thead>
+  <tbody>
+    <tr><td class="t">Hoje, à noite</td><td><strong>Imprima 3 cópias do plano de aula</strong> (o PDF em <code>plano-de-aula/</code>)</td><td>É a única coisa que não dá para resolver amanhã se der errado</td></tr>
+    <tr><td class="t">Hoje, à noite</td><td>Rode <code>node gerar-dados.js</code> e <code>node vagas.js</code> e confirme que a saída bate com o slide</td><td>Código rodando ao vivo é o que mais pesa em domínio técnico</td></tr>
+    <tr><td class="t">Hoje, à noite</td><td><strong>Um ensaio completo, cronometrado, em voz alta</strong>, com as notas abertas (tecla <code>N</code>)</td><td>O primeiro ensaio sempre estoura o tempo. Melhor descobrir hoje</td></tr>
+    <tr><td class="t">Amanhã, manhã</td><td>Dois ensaios seguidos, o segundo <strong>sem olhar as notas</strong></td><td>Você precisa saber a ordem dos blocos de cabeça, não o texto</td></tr>
+    <tr><td class="t">Amanhã, tarde</td><td>Teste o HDMI numa TV ou monitor de verdade. Carregue o notebook a 100%</td><td>Problema de cabo na hora consome do <em>seu</em> tempo de aula</td></tr>
+    <tr><td class="t">Amanhã, 18h</td><td>Separe documento, cópias impressas, cabo, carregador. Coma alguma coisa</td><td>Sua avaliação é às 20h15 — é tarde, e você não vai querer estar com fome</td></tr>
+    <tr><td class="t">Amanhã, 19h45</td><td>Chegue ao CAJU HUB</td><td>O edital pede 20 min; 30 te dá margem para achar a sala e respirar</td></tr>
+  </tbody>
+</table></div>
+
+<div class="alert">
+  <div class="t">Sobre ensaiar</div>
+  <p>Dois ensaios completos valem mais que dez leituras dos slides. E ensaie <strong>em voz alta, de pé</strong> — falar por dentro engana: você lê 40% mais rápido do que consegue falar.</p>
+</div>
+
+<h2><span class="n">07</span> Sábado: a entrevista de tutoria</h2>
+<p class="sec-dek">Outro jogo, outra ficha. Aqui não se avalia aula: avalia-se como você conduz pessoas. São 100 pontos em 7 critérios (Art. 46).</p>
+
+<div class="tw"><table>
+  <thead><tr><th>Critério</th><th class="n">Pts</th><th>O que eles querem ouvir</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Trabalho colaborativo</strong></td><td class="n">20</td><td>O critério de maior peso. Uma história concreta em que você dependeu de outras pessoas para entregar algo — e o que você fez para o grupo funcionar</td></tr>
+    <tr><td><strong>Organização</strong></td><td class="n">15</td><td>Como você acompanha vários alunos ao mesmo tempo: registro, rotina de checagem, quem está travado</td></tr>
+    <tr><td><strong>Liderança</strong></td><td class="n">15</td><td>Uma vez em que você puxou a responsabilidade sem ter o cargo para isso</td></tr>
+    <tr><td><strong>Comunicação</strong></td><td class="n">15</td><td>Explicar algo técnico para quem não é técnico. Dê um exemplo real</td></tr>
+    <tr><td><strong>Gestão de grupos</strong></td><td class="n">15</td><td>Squad desequilibrado: um aluno adiantado e um travado. O que você faz com cada um</td></tr>
+    <tr><td><strong>Resolução de problemas</strong></td><td class="n">10</td><td>Um conflito ou imprevisto real e como você resolveu</td></tr>
+    <tr><td><strong>Métodos ágeis</strong></td><td class="n">10</td><td>Sprint, daily, retrospectiva, kanban — e como isso caberia numa turma de jovens</td></tr>
+  </tbody>
+  <tfoot><tr><td>Total</td><td class="n">100</td><td>Nota final = média das notas dos entrevistadores</td></tr></tfoot>
+</table></div>
+
+<h3>Como responder</h3>
+<p>Use sempre a mesma estrutura em três tempos: <strong>situação → o que eu fiz → resultado</strong>. Respostas genéricas (“sou comunicativo”, “trabalho bem em equipe”) não pontuam porque não são verificáveis. Histórias pontuam.</p>
+<div class="say">“Numa entrega de faculdade, dois colegas pararam de responder a três dias do prazo. Eu quebrei o que faltava em tarefas de duas horas, mandei uma lista no grupo com nome em cada item e chamei cada um por mensagem direta. Entregamos no prazo, e a partir dali passamos a dividir tarefa por escrito desde o começo.”</p></div>
+<p>Repare que essa resposta cobre <strong>três critérios de uma vez</strong>: trabalho colaborativo, liderança e organização. Prepare de três a quatro histórias assim — não sete. As mesmas histórias servem para vários critérios, contadas por ângulos diferentes.</p>
+
+<h3>Um vínculo que pega bem</h3>
+<p>Você é candidato às duas modalidades. Se couber, conecte: <em>“na aula de sexta eu propus que a entrega fosse por Pull Request revisado entre squads — como tutor, é exatamente esse ritual que eu usaria para acompanhar o grupo semana a semana”</em>. Mostra que instrutoria e tutoria são a mesma prática, vista de dois lados.</p>
+
+<h3>Checklist técnico de sábado</h3>
+<ul class="ck">
+  <li class="crit"><span class="box"></span><span><b>Entrar às 11h55</b><small>10 minutos antes, como pede o edital, com o <b>nome completo</b> na sala.</small></span></li>
+  <li><span class="box"></span><span><b>Câmera ligada o tempo todo</b><small>Exigência expressa. Teste câmera, microfone e som antes.</small></span></li>
+  <li><span class="box"></span><span><b>Ambiente silencioso, luz na frente do rosto</b><small>Luz atrás vira silhueta. Se a janela estiver às suas costas, vire a mesa.</small></span></li>
+  <li><span class="box"></span><span><b>Internet estável + plano B</b><small>Deixe o 4G do celular pronto para virar roteador.</small></span></li>
+</ul>
+
+<h2><span class="n">08</span> Se algo der errado</h2>
+<div class="grid2">
+  <div class="box"><h4>O HDMI não funciona</h4><p>Não gaste seu tempo mexendo em cabo. Diga: “sigo pelo notebook, com a banca acompanhando pela tela”. Vire o notebook e continue. Perder 6 minutos com cabo custa mais caro que apresentar numa tela menor.</p></div>
+  <div class="box"><h4>O código dá erro ao vivo</h4><p>É a melhor coisa que pode acontecer. Diga: “ótimo, erro em aula é conteúdo”. Leia a mensagem em voz alta, mostre onde está a linha e corrija. Isso demonstra domínio real, não decorado.</p></div>
+  <div class="box"><h4>Você percebe que está atrasado</h4><p>Não acelere a fala. Corte um slide inteiro na ordem já definida no item 03 e siga no mesmo ritmo. Falar rápido derruba clareza e comunicação, 20 pontos; cortar um slide não derruba nada.</p></div>
+  <div class="box"><h4>Travou numa pergunta da arguição</h4><p>“Isso eu não domino a fundo, mas o caminho que eu seguiria é ___.” Honestidade com raciocínio pontua mais do que improviso errado — e a banca percebe a diferença na hora.</p></div>
+</div>
+
+<h2><span class="n">09</span> Onde está cada arquivo</h2>
+<div class="tw"><table>
+  <thead><tr><th>Arquivo</th><th>Para quê</th><th>Quando usar</th></tr></thead>
+  <tbody>
+    <tr><td class="t">apresentacao/index.html</td><td>A apresentação, com cronômetro e notas do apresentador</td><td>Na aula. Abra no navegador e aperte <code>F</code></td></tr>
+    <tr><td class="t">plano-de-aula/…​.pdf</td><td>O plano de aula em A4, 4 páginas</td><td><strong>Imprima 3 cópias hoje</strong></td></tr>
+    <tr><td class="t">codigo/vagas.js</td><td>O algoritmo da aula, funcionando</td><td>Rodar ao vivo no terminal</td></tr>
+    <tr><td class="t">guia/index.html</td><td>Este guia</td><td>Agora, e de novo amanhã antes de sair</td></tr>
+  </tbody>
+</table></div>
+
+<h3>Atalhos da apresentação</h3>
+<p><code>→</code> ou espaço avança · <code>←</code> volta · <code>T</code> inicia/pausa o cronômetro · <code>R</code> zera ·
+<code>N</code> mostra as notas do apresentador · <code>O</code> abre o mapa de slides (útil na arguição, para voltar a um slide específico) · <code>F</code> tela cheia.</p>
+
+<footer>
+  Guia de execução · Guilherme Santos Rabelo · Projeto Jovem Tech 2026 · Trilha Básica
+</footer>
+</div>

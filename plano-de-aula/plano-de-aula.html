@@ -1,0 +1,208 @@
+<meta charset="utf-8">
+<title>Plano de Aula — Lógica de Programação &amp; Versionamento</title>
+<style>
+  @page{size:A4;margin:16mm 15mm 14mm}
+  *{box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{margin:0;font-family:"Charter","Georgia","Times New Roman",serif;font-size:10.2pt;line-height:1.5;color:#15202B}
+  .mono{font-family:ui-monospace,"SF Mono","Cascadia Code",Menlo,Consolas,monospace}
+
+  header{border-bottom:2.5px solid #0E1B2A;padding-bottom:9px;margin-bottom:16px}
+  .org{font-family:ui-monospace,monospace;font-size:7.6pt;letter-spacing:.13em;text-transform:uppercase;color:#6B7C8F}
+  h1{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:17.5pt;line-height:1.15;letter-spacing:-.02em;margin:7px 0 4px;font-weight:700}
+  .sub{font-size:9.6pt;color:#4A5C6E;font-style:italic}
+
+  .idbox{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid #C3CEDA;margin-bottom:16px}
+  .idbox div{padding:6px 9px;border-right:1px solid #C3CEDA}
+  .idbox div:last-child{border-right:none}
+  .idbox .k{font-family:ui-monospace,monospace;font-size:6.9pt;letter-spacing:.1em;text-transform:uppercase;color:#7A8A9B;display:block;margin-bottom:2px}
+  .idbox .v{font-size:9.1pt;font-weight:600;line-height:1.25}
+
+  h2{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:10.4pt;letter-spacing:.02em;margin:15px 0 6px;
+     padding-bottom:3px;border-bottom:1px solid #C3CEDA;display:flex;align-items:baseline;gap:8px;break-after:avoid}
+  h2 .num{color:#B06A12;font-size:8.6pt;letter-spacing:.1em}
+  h3{font-size:9.6pt;margin:9px 0 3px;font-weight:700;color:#0E1B2A;break-after:avoid}
+  p{margin:0 0 6px;text-align:justify}
+  ol,ul{margin:0 0 6px;padding-left:17px}
+  li{margin-bottom:2.5px}
+  .lead{font-size:10.6pt}
+
+  .problema{border-left:3px solid #B06A12;background:#FBF6EE;padding:9px 13px;margin:4px 0 9px}
+  .problema p{margin:0;font-size:11pt;line-height:1.42;font-style:italic;text-align:left}
+
+  table{width:100%;border-collapse:collapse;font-size:8.9pt;margin:4px 0 7px}
+  th{background:#0E1B2A;color:#fff;font-family:ui-monospace,monospace;font-size:7.4pt;letter-spacing:.09em;
+     text-transform:uppercase;text-align:left;padding:5px 8px;font-weight:600}
+  td{padding:4.5px 8px;border-bottom:.5px solid #D3DCE5;vertical-align:top}
+  tr:nth-child(even) td{background:#F6F9FB}
+  td.n{text-align:right;font-family:ui-monospace,monospace;white-space:nowrap;width:1%;font-variant-numeric:tabular-nums}
+  td.et{font-family:ui-monospace,monospace;color:#B06A12;font-weight:700;width:1%;white-space:nowrap}
+  tfoot td{font-weight:700;background:#EDF2F6!important;border-top:1px solid #0E1B2A}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .comp{border:1px solid #C3CEDA;padding:7px 10px}
+  .comp .t{font-family:ui-monospace,monospace;font-size:7.4pt;letter-spacing:.1em;text-transform:uppercase;color:#B06A12;margin-bottom:4px}
+  .comp ul{margin:0;padding-left:15px;font-size:8.9pt}
+
+  .pbl{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:5px 0 8px}
+  .pbl div{border:1px solid #C3CEDA;border-top:2.5px solid #B06A12;padding:6px 8px}
+  .pbl .s{font-family:ui-monospace,monospace;font-size:7pt;letter-spacing:.09em;color:#B06A12;text-transform:uppercase}
+  .pbl b{display:block;font-size:9.1pt;margin:2px 0 2px}
+  .pbl p{font-size:8.1pt;line-height:1.35;margin:0;color:#41525F;text-align:left}
+
+  code{font-family:ui-monospace,monospace;font-size:8.6pt;background:#EDF2F6;padding:.5px 3px;border-radius:2px}
+  .refs{font-size:8.6pt;line-height:1.45}
+  .refs li{margin-bottom:3.5px}
+  footer{margin-top:17px;padding-top:8px;border-top:1px solid #C3CEDA;
+    font-family:ui-monospace,monospace;font-size:7.4pt;color:#7A8A9B;display:flex;justify-content:space-between}
+  .sig{margin-top:22px;display:grid;grid-template-columns:1fr;gap:2px;font-size:8.6pt}
+  .sig .line{border-top:.8px solid #15202B;width:74mm;margin-top:26px;padding-top:3px}
+  .avoid{break-inside:avoid}
+</style>
+
+<header>
+  <div class="org">Instituto de Inovação de Sergipe · INOVASE — Projeto Jovem Tech · Edital de Seleção Pública nº 01/2026</div>
+  <h1>Plano de Aula — Lógica de Programação &amp; Versionamento</h1>
+  <div class="sub">Aula prática/demonstrativa de instrutoria · elaborado conforme os Arts. 35 a 37 do Edital · metodologia PBL</div>
+</header>
+
+<div class="idbox">
+  <div><span class="k">Responsável Técnico</span><span class="v">Guilherme Santos Rabelo</span></div>
+  <div><span class="k">Trilha / Módulo</span><span class="v">Básica · Módulo 2 · 40 h</span></div>
+  <div><span class="k">Tema sorteado</span><span class="v">Algoritmos JS, Estruturas de Dados, Git/GitHub, Abertura de Projetos</span></div>
+  <div><span class="k">Data · Horário · Banca</span><span class="v">07/08/2026 · 20h15–20h55 · Banca 2</span></div>
+</div>
+
+<h2><span class="num">I</span> Identificação</h2>
+<p>Aula inaugural do módulo <strong>Lógica de Programação &amp; Versionamento</strong> da Trilha Básica do Projeto Jovem Tech, com carga horária total de 40 horas. O presente plano refere-se ao <strong>encontro de abertura</strong> do módulo, cuja exposição demonstrativa tem duração de 20 minutos, conforme o Art. 40, II do Edital. O tema sorteado abrange raciocínio lógico e pensamento computacional, algoritmos em JavaScript, variáveis, tipos de dados e operadores, estruturas condicionais e de repetição, funções, estruturas de dados introdutórias, abertura e organização de projetos tecnológicos e controle de versões com Git e GitHub. Público-alvo: jovens em formação inicial, sem pré-requisito de programação.</p>
+
+<h2><span class="num">II</span> Objetivos de aprendizagem</h2>
+<p>Ao final do encontro, espera-se que o participante seja capaz de:</p>
+<ol>
+  <li><strong>Decompor</strong> um problema real em etapas ordenadas, formulando o algoritmo em linguagem natural antes de codificar;</li>
+  <li><strong>Construir</strong> um algoritmo em JavaScript utilizando variáveis, tipos de dados, operadores, estrutura condicional, estrutura de repetição e funções;</li>
+  <li><strong>Selecionar</strong> a estrutura de dados adequada ao problema, reconhecendo o array de objetos como forma de organizar coleções;</li>
+  <li><strong>Abrir e organizar</strong> um projeto tecnológico do zero, com estrutura de pastas, <code>README.md</code>, <code>.gitignore</code> e arquivo de identidade do projeto;</li>
+  <li><strong>Versionar</strong> o próprio trabalho com Git, aplicando <code>add</code>, <code>commit</code>, <code>push</code> e redigindo mensagens de commit descritivas;</li>
+  <li><strong>Colaborar</strong> em squad no GitHub por meio de branches e Pull Requests, sem sobrescrita de trabalho alheio.</li>
+</ol>
+
+<h2><span class="num">III</span> Competências a desenvolver</h2>
+<div class="two avoid">
+  <div class="comp">
+    <div class="t">Técnicas</div>
+    <ul>
+      <li>Pensamento computacional: decomposição, reconhecimento de padrões, abstração e algoritmo</li>
+      <li>Sintaxe fundamental de JavaScript e tipagem dinâmica</li>
+      <li>Estruturas condicionais e operadores lógicos</li>
+      <li>Estruturas de repetição e iteração sobre coleções</li>
+      <li>Definição e reúso de funções</li>
+      <li>Estruturas de dados: array, objeto e array de objetos</li>
+      <li>Organização e abertura de projetos</li>
+      <li>Controle de versão com Git e colaboração via GitHub</li>
+    </ul>
+  </div>
+  <div class="comp">
+    <div class="t">Comportamentais</div>
+    <ul>
+      <li>Trabalho colaborativo em squad</li>
+      <li>Comunicação técnica escrita (mensagens de commit, README e revisão de PR)</li>
+      <li>Revisão por pares e recebimento de crítica</li>
+      <li>Autonomia na busca de solução antes de pedir ajuda</li>
+      <li>Resiliência diante do erro, tratando a falha como etapa do processo</li>
+      <li>Organização e responsabilidade com prazos de entrega</li>
+    </ul>
+  </div>
+</div>
+
+<h2><span class="num">IV</span> Problema gerador</h2>
+<div class="problema">
+  <p>“Como transformar uma lista bagunçada de 120 vagas de emprego em uma resposta curta — <strong>‘estas 3 são pra você’</strong> — e construir essa solução em squad, sem que ninguém sobrescreva o trabalho do outro?”</p>
+</div>
+<p>O problema foi escolhido por três razões pedagógicas. Primeira, <strong>pertinência</strong>: o participante do Jovem Tech está em processo de inserção no mercado de trabalho, de modo que o contexto lhe é concreto e imediato. Segunda, <strong>cobertura</strong>: a solução exige, de forma não artificial, todos os conteúdos do tema sorteado — a primeira metade da pergunta só se resolve com algoritmos e estruturas de dados, e a segunda metade só se resolve com abertura de projeto e versionamento. Terceira, <strong>continuidade</strong>: o artefato produzido é um repositório público que serve de portfólio ao participante e evolui ao longo das 40 horas do módulo até o Projeto Integrador da trilha.</p>
+
+<h2><span class="num">V</span> Metodologia de desenvolvimento</h2>
+<p>Adota-se a <strong>Aprendizagem Baseada em Projetos (Project Based Learning — PBL)</strong>, nos termos do Art. 35, §7º do Edital. O conteúdo não antecede o problema: cada conceito é introduzido no momento em que se torna necessário para avançar na solução. A aula percorre integralmente o ciclo abaixo, e o mesmo ciclo se repete, em escala ampliada, ao longo das 40 horas do módulo.</p>
+<div class="pbl avoid">
+  <div><span class="s">Etapa 01</span><b>Imersão</b><p>O problema real é apresentado antes de qualquer conteúdo, a partir de um conjunto de dados verdadeiro.</p></div>
+  <div><span class="s">Etapa 02</span><b>Investigação</b><p>Levantamento do que já se sabe e do que falta saber; formulação do algoritmo em linguagem natural.</p></div>
+  <div><span class="s">Etapa 03</span><b>Construção</b><p>Codificação incremental ao vivo, com cada incremento registrado em um commit.</p></div>
+  <div><span class="s">Etapa 04</span><b>Entrega</b><p>Publicação da solução no repositório remoto por meio de branch e Pull Request.</p></div>
+  <div><span class="s">Etapa 05</span><b>Socialização</b><p>Revisão cruzada entre squads e devolutiva do instrutor sobre código e histórico.</p></div>
+</div>
+<p>São empregadas como técnicas de apoio a <strong>demonstração ao vivo</strong> (o instrutor codifica no projetor, incluindo os próprios erros e a respectiva correção), o <strong>questionamento dirigido</strong> em pontos de decisão do algoritmo e o <strong>pareamento</strong> entre participantes de ritmos distintos.</p>
+
+<h2><span class="num">VI</span> Cronograma das atividades</h2>
+<table>
+  <thead><tr><th style="width:1%">Etapa</th><th>Atividade</th><th>Conteúdo mobilizado</th><th style="text-align:right">Tempo</th></tr></thead>
+  <tbody>
+    <tr><td class="et">01</td><td>Imersão: apresentação do conjunto de dados e do problema gerador</td><td>Contextualização; leitura de dados estruturados</td><td class="n">3 min</td></tr>
+    <tr><td class="et">02</td><td>Investigação: pensamento computacional e escrita do algoritmo em português</td><td>Decomposição, padrões, abstração, algoritmo</td><td class="n">3 min</td></tr>
+    <tr><td class="et">03</td><td>Construção: tradução do algoritmo para JavaScript, em incrementos</td><td>Variáveis, tipos, operadores, condicionais, repetição, funções, array de objetos</td><td class="n">7 min</td></tr>
+    <tr><td class="et">04</td><td>Abertura e organização do projeto</td><td>Estrutura de pastas, README, .gitignore, package.json</td><td class="n">2 min</td></tr>
+    <tr><td class="et">05</td><td>Versionamento e colaboração</td><td>Modelo de três áreas do Git; add, commit, push, branch, Pull Request, merge</td><td class="n">4 min</td></tr>
+    <tr><td class="et">06</td><td>Entrega, critérios de avaliação e fechamento</td><td>Retomada do problema gerador; pactuação da entrega</td><td class="n">1 min</td></tr>
+  </tbody>
+  <tfoot><tr><td colspan="3">Total da exposição prática/demonstrativa (Art. 40, II)</td><td class="n">20 min</td></tr></tfoot>
+</table>
+<p style="font-size:8.9pt;color:#41525F">Somam-se ainda, conforme o Art. 40 do Edital, até 5 minutos para apresentação deste Plano de Aula (inciso I) e até 10 minutos para arguição pela Comissão de Seleção (inciso III), totalizando 35 minutos de avaliação.</p>
+
+<h2><span class="num">VII</span> Recursos didáticos</h2>
+<ul>
+  <li><strong>Tecnológicos:</strong> notebook próprio com saída HDMI, televisor do local, editor de código, terminal e Node.js para execução do algoritmo em tempo real;</li>
+  <li><strong>Digitais:</strong> repositório-modelo público no GitHub, contendo <code>README.md</code>, o conjunto de dados <code>vagas.json</code> e issues previamente abertas para distribuição entre os squads;</li>
+  <li><strong>Analógicos:</strong> quadro para registro do algoritmo em linguagem natural antes da codificação; checklist de entrega impresso, um por squad;</li>
+  <li><strong>Apresentação:</strong> slides autorais em formato próprio, com cronômetro embutido para controle do tempo por bloco.</li>
+</ul>
+
+<h2><span class="num">VIII</span> Metodologia de avaliação</h2>
+<p>A avaliação é contínua, formativa e centrada no produto, sem prova escrita. Compõe-se de quatro instrumentos:</p>
+<table>
+  <thead><tr><th>Instrumento</th><th>Evidência observada</th><th style="text-align:right">Peso</th></tr></thead>
+  <tbody>
+    <tr><td>Observação durante a construção</td><td>Participação nos pontos de decisão do algoritmo; devolutiva imediata a cada incremento</td><td class="n">—</td></tr>
+    <tr><td>Produto: algoritmo</td><td>A solução resolve o problema e é executada sem erro</td><td class="n">30%</td></tr>
+    <tr><td>Produto: qualidade do código</td><td>Legibilidade, nomes significativos e uso de funções</td><td class="n">20%</td></tr>
+    <tr><td>Produto: histórico de versões</td><td>Mínimo de três commits com mensagens descritivas que narrem a construção</td><td class="n">25%</td></tr>
+    <tr><td>Colaboração</td><td>Uma branch por integrante e ao menos um Pull Request revisado por par</td><td class="n">15%</td></tr>
+    <tr><td>Documentação</td><td><code>README.md</code> descrevendo o problema, a solução e o modo de execução</td><td class="n">10%</td></tr>
+  </tbody>
+  <tfoot><tr><td colspan="2">Total</td><td class="n">100%</td></tr></tfoot>
+</table>
+<p>Prevê-se ainda <strong>autoavaliação</strong> por checklist assinado e <strong>avaliação por pares</strong>, em que cada squad revisa o Pull Request de outro squad na abertura do encontro seguinte, exercitando a competência de revisão técnica.</p>
+
+<h2><span class="num">IX</span> Indicadores de monitoramento dos resultados</h2>
+<table>
+  <thead><tr><th>Indicador</th><th>Forma de coleta</th><th style="text-align:right">Meta</th></tr></thead>
+  <tbody>
+    <tr><td>Participantes com repositório criado e <code>push</code> realizado</td><td>Painel de repositórios da organização no GitHub</td><td class="n">100%</td></tr>
+    <tr><td>Commits com mensagem descritiva por participante</td><td>Leitura de <code>git log</code> do repositório do squad</td><td class="n">≥ 3</td></tr>
+    <tr><td>Algoritmos entregues em execução sem erro</td><td>Execução do código na revisão cruzada</td><td class="n">≥ 80%</td></tr>
+    <tr><td>Pull Requests com ao menos uma revisão de par</td><td>Aba de Pull Requests do repositório</td><td class="n">100%</td></tr>
+    <tr><td>Frequência e conclusão da atividade proposta</td><td>Registro de presença e entrega no prazo</td><td class="n">≥ 85%</td></tr>
+    <tr><td>Percepção de aprendizagem do participante</td><td>Autoavaliação por checklist ao fim do encontro</td><td class="n">≥ 80%</td></tr>
+  </tbody>
+</table>
+<p style="font-size:8.9pt;color:#41525F">Os indicadores são apurados ao término de cada encontro e consolidados ao final do módulo, permitindo replanejamento de ritmo e reforço individualizado antes do fechamento das 40 horas.</p>
+
+<h2><span class="num">X</span> Referências bibliográficas</h2>
+<ol class="refs">
+  <li>BRASIL. Ministério da Educação. <em>Diretrizes Curriculares Nacionais para a Educação Profissional Técnica de Nível Médio</em>. Brasília: MEC/CNE, 2021.</li>
+  <li>CHACON, Scott; STRAUB, Ben. <em>Pro Git</em>. 2. ed. New York: Apress, 2014. Disponível em: https://git-scm.com/book/pt-br/v2.</li>
+  <li>BENDER, William N. <em>Aprendizagem Baseada em Projetos: educação diferenciada para o século XXI</em>. Porto Alegre: Penso, 2014.</li>
+  <li>WING, Jeannette M. Computational Thinking. <em>Communications of the ACM</em>, v. 49, n. 3, p. 33–35, 2006.</li>
+  <li>MOZILLA FOUNDATION. <em>MDN Web Docs — JavaScript Guide</em>. Disponível em: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide.</li>
+  <li>FLANAGAN, David. <em>JavaScript: o guia definitivo</em>. 7. ed. Sebastopol: O’Reilly Media, 2020.</li>
+  <li>BERGMANN, Jonathan; SAMS, Aaron. <em>Sala de aula invertida: uma metodologia ativa de aprendizagem</em>. Rio de Janeiro: LTC, 2018.</li>
+  <li>GITHUB INC. <em>GitHub Docs — Collaborating with pull requests</em>. Disponível em: https://docs.github.com/pt/pull-requests.</li>
+</ol>
+
+<div class="sig avoid">
+  <div class="line">Guilherme Santos Rabelo — Responsável Técnico Executor</div>
+  <div style="color:#5A6B7C">Aracaju/SE, 7 de agosto de 2026</div>
+</div>
+
+<footer>
+  <span>Plano de Aula · Trilha Básica · Módulo Lógica de Programação &amp; Versionamento</span>
+  <span>Elaborado conforme o Art. 36 do Edital nº 01/2026</span>
+</footer>
