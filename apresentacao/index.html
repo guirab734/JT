@@ -147,7 +147,16 @@
   #notes.on{display:block}
   #notes b{color:var(--amber);font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;font-size:14px;display:block;margin-bottom:8px}
   #notes p{font-size:17px;max-width:none;margin:0 0 9px;color:var(--paper2)}
-  #notes .say{color:var(--paper)}
+  #notes .say{color:var(--paper);font-size:19px;line-height:1.5}
+  #notes .say em{color:var(--amber);font-style:normal;font-weight:600}
+  #notes .say i{color:var(--slate);font-size:16px}
+  #notes .do,#notes .warn{font-size:15px;padding:7px 12px;border-radius:3px;margin-top:11px}
+  #notes .do{background:rgba(82,183,136,.10);color:var(--paper2)}
+  #notes .warn{background:rgba(240,169,59,.10);color:var(--paper2)}
+  #notes b2{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    margin-right:9px;display:inline-block}
+  #notes .do b2{color:var(--added)}
+  #notes .warn b2{color:var(--amber)}
 
   /* overview */
   #ov{position:fixed;inset:0;background:rgba(6,10,15,.985);z-index:50;display:none;padding:44px;overflow:auto}
@@ -181,12 +190,7 @@
     <div>Data<b>07/08/2026 · 20h15 · Banca 2</b></div>
     <div>Metodologia<b>PBL</b></div>
   </div>
-  <div class="notes">
-    <b>0:00 – 0:45 · Entrega do plano</b>
-    <p class="say">"Boa noite. Sou Guilherme Santos Rabelo, candidato à instrutoria da Trilha Básica. Este é o plano de aula impresso — entrego agora, antes de começar." <em>(entregue as cópias à banca)</em></p>
-    <p>Fique de pé. Não leia a capa em voz alta — a banca já leu. Diga o tema e siga.</p>
-  </div>
-</section>
+  <div class="notes"><b>PLANO · 0:00 – 0:45 · Capa</b><p class="say">"Boa noite. Eu sou Guilherme Santos Rabelo, candidato à instrutoria da Trilha Básica."</p><p class="say">"O tema que me foi sorteado é <em>Lógica de Programação e Versionamento</em>."</p><p class="say">"Este é o plano de aula impresso — estou entregando agora, antes de começar."</p><p class="say">"Vou usar cinco minutos para apresentar o plano e depois vinte para dar a aula em si."</p><p class="do"><b2>Faça</b2> Entregue as cópias impressas ANTES de falar qualquer outra coisa. Fique de pé. Não leia a capa — a banca já está lendo.</p></div></section>
 
 <section class="slide" data-sec="plano" data-b="75" data-t="Problema gerador + objetivos">
   <p class="eyebrow">Plano de aula · itens I, II e IV</p>
@@ -210,12 +214,7 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>0:45 – 2:00 · O coração do PBL</b>
-    <p class="say">"O plano parte de um problema gerador, não de uma lista de conteúdos. É este: <em>(leia o problema)</em>. Repare que ele tem duas metades — e elas são exatamente as duas metades do módulo."</p>
-    <p>Este slide vale muitos pontos: <b>Clareza dos objetivos (5)</b> + <b>Aplicação de PBL (10)</b>. Os objetivos começam com verbo observável — decompor, construir, escolher, abrir, versionar. Nunca "entender" ou "conhecer": não se avalia.</p>
-  </div>
-</section>
+  <div class="notes"><b>PLANO · 0:45 – 2:00 · Problema gerador e objetivos</b><p class="say">"O plano parte de um <em>problema gerador</em>, não de uma lista de conteúdos. É o que a metodologia de <em>Aprendizagem Baseada em Projetos</em> exige."</p><p class="say">"O problema é este: como transformar uma lista bagunçada de 120 vagas de emprego na resposta 'estas aqui são pra mim' — e construir isso em squad, sem ninguém sobrescrever o trabalho do outro."</p><p class="say">"Reparem que a pergunta tem duas metades. A primeira é lógica: transformar dado em decisão. A segunda é versionamento: construir junto sem destruir. São exatamente as duas metades do nome do módulo."</p><p class="say">"E os objetivos estão todos escritos com verbo observável: decompor, construir, reconhecer, abrir, versionar, colaborar. Eu preciso conseguir VERIFICAR se o aluno faz — não se ele 'entendeu'."</p><p class="warn"><b2>Atenção</b2> Aqui estão 15 dos 30 pontos do plano. Diga 'problema gerador' e 'Aprendizagem Baseada em Projetos' com todas as letras.</p></div></section>
 
 <section class="slide" data-sec="plano" data-b="70" data-t="Competências + método PBL">
   <p class="eyebrow">Plano de aula · itens III e V</p>
@@ -251,12 +250,7 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>2:00 – 3:10 · Competências e método</b>
-    <p class="say">"As competências não são só técnicas. Como a entrega é em squad e por Pull Request, o aluno exercita revisão por pares e comunicação técnica — que é o que o mercado cobra."</p>
-    <p>Diga o nome das 5 etapas do ciclo PBL em voz alta. A banca precisa <em>ouvir</em> "Aprendizagem Baseada em Projetos", porque é um critério nominal do edital.</p>
-  </div>
-</section>
+  <div class="notes"><b>PLANO · 2:00 – 3:10 · Competências e método</b><p class="say">"As competências não são só técnicas. Como a entrega é em squad e passa por Pull Request, o aluno exercita revisão por pares, comunicação técnica escrita e resiliência ao erro — que é o que o mercado cobra e que não se mede em prova."</p><p class="say">"A metodologia é o ciclo de <em>Aprendizagem Baseada em Projetos</em>, em cinco etapas: imersão no problema, investigação, construção, entrega e socialização."</p><p class="say">"A aula de hoje percorre as cinco. E o mesmo ciclo se repete, em escala maior, ao longo das 40 horas do módulo."</p><p class="do"><b2>Faça</b2> Diga os nomes das cinco etapas em voz alta, apontando cada caixa.</p></div></section>
 
 <section class="slide" data-sec="plano" data-b="60" data-t="Cronograma + recursos">
   <p class="eyebrow">Plano de aula · itens VI e VII</p>
@@ -289,12 +283,7 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>3:10 – 4:10 · Cronograma</b>
-    <p class="say">"O cronograma cabe nos 20 minutos de exposição, e ele é o mesmo ciclo que se expande para as 40 horas do módulo na turma real."</p>
-    <p>Mostrar que você sabe que a exposição são 20 min já pontua em <b>Gestão do tempo</b> — a banca percebe que você leu o Art. 40.</p>
-  </div>
-</section>
+  <div class="notes"><b>PLANO · 3:10 – 4:10 · Cronograma e recursos</b><p class="say">"O cronograma cabe nos <em>vinte minutos de exposição</em> previstos no edital: três minutos de imersão, três de investigação, sete de construção do código, dois de abertura de projeto, quatro de versionamento e um de fechamento."</p><p class="say">"Os recursos: notebook e TV, editor e terminal para rodar o código ao vivo, um repositório-modelo no GitHub, o conjunto de dados em JSON, e o quadro — porque o algoritmo é escrito em português antes de virar código."</p><p class="warn"><b2>Atenção</b2> Dizer 'vinte minutos de exposição' sinaliza domínio das regras e ajuda na nota de gestão do tempo.</p></div></section>
 
 <section class="slide" data-sec="plano" data-b="50" data-t="Avaliação + indicadores">
   <p class="eyebrow">Plano de aula · itens VIII, IX e X</p>
@@ -323,12 +312,7 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>4:10 – 5:00 · Fim da parte do plano</b>
-    <p class="say">"A avaliação é formativa e por produto: o repositório do aluno é a prova do aprendizado. E eu monitoro com indicadores numéricos, não com impressão. Feito isso, vamos à aula."</p>
-    <p><b>Marco de tempo: aos 5:00 você DEVE estar saindo daqui.</b> Se estiver atrasado, pule direto. Não sacrifique a aula pelo plano — a aula vale 60 pontos, o plano vale 30 e já está impresso na mão deles.</p>
-  </div>
-</section>
+  <div class="notes"><b>PLANO · 4:10 – 5:00 · Avaliação e indicadores</b><p class="say">"A avaliação é formativa e por produto. Não tem prova escrita: o repositório do aluno é a evidência do aprendizado, e eu acompanho o progresso pelos commits, não só pela entrega final."</p><p class="say">"E eu monitoro com números, não com impressão: cem por cento dos alunos com repositório criado, no mínimo três commits com mensagem descritiva por aluno, oitenta por cento dos algoritmos rodando sem erro."</p><p class="say">"Esse é o plano. Vou para a aula."</p><p class="warn"><b2>Atenção</b2> Aos 5:00 você tem que estar saindo daqui. Se estourou, pule direto: a aula vale 60 pontos e o plano já está na mão deles.</p></div></section>
 
 <!-- ============ PARTE B — A AULA (20 min) ============ -->
 
@@ -340,12 +324,7 @@
     <h1>Você tem <span class="amber">120 vagas</span><br>na sua frente.</h1>
     <div class="note">E vinte minutos para descobrir quais são realmente <strong style="color:var(--paper)">suas</strong>.</div>
   </div>
-  <div class="notes">
-    <b>0:00 – 0:40 · Comece o cronômetro AQUI (tecla T)</b>
-    <p class="say">"Vamos começar com uma situação real. Vocês entraram no Jovem Tech para trabalhar com tecnologia. Daqui a alguns meses vocês vão abrir um site de vagas e ver 120 anúncios de uma vez. Quantos são de verdade pra vocês? Três? Cinco? Como descobrir sem ler os 120?"</p>
-    <p>Fale de pé, olhando a banca, sem ler a tela. Este slide é 100% contato visual.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 0:00 – 0:40 · O gancho</b><p class="say">"Vamos começar com uma situação de verdade."</p><p class="say">"Vocês entraram no Jovem Tech para trabalhar com tecnologia. Daqui a alguns meses, vocês vão abrir um site de vagas e encontrar 120 anúncios de uma vez."</p><p class="say">"Quantos desses são realmente pra vocês? Cinco? Dez?"</p><p class="say">"E como descobrir isso SEM ler os 120 na mão?"</p><p class="do"><b2>Faça</b2> Aperte T agora para iniciar o cronômetro. Fale de pé, olhando para a banca. Este slide é 100% contato visual.</p></div></section>
 
 <section class="slide" data-sec="aula" data-b="50" data-t="A lista bagunçada">
   <p class="eyebrow">01 · Imersão</p>
@@ -374,12 +353,7 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>0:40 – 1:30</b>
-    <p class="say">"Esse é o arquivo. Não precisa entender cada linha agora — só repare que cada vaga tem sempre os mesmos campos: título, nível, salário, remoto. Guarda isso, porque é a chave de tudo."</p>
-    <p>Plante aqui a ideia de <em>padrão</em> — você vai colher no slide de pensamento computacional.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 0:40 – 1:30 · A lista bagunçada</b><p class="say">"Este é o arquivo com as vagas. Não precisa entender cada linha agora."</p><p class="say">"Só quero que vocês reparem numa coisa: toda vaga tem exatamente os mesmos quatro campos. Título, empresa, nível e salário. Sempre os mesmos."</p><p class="say">"Guardem isso, porque é a chave de tudo que vem depois."</p><p class="do"><b2>Faça</b2> Aponte para os campos repetidos nos dois blocos. Você colhe isso no slide de pensamento computacional.</p></div></section>
 
 <section class="slide" data-sec="aula" data-b="70" data-t="O problema gerador">
   <p class="eyebrow">01 · Imersão · problema gerador</p>
@@ -398,31 +372,21 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>1:30 – 2:40 · Slide mais importante da aula</b>
-    <p class="say">"Esse é o nosso problema gerador. Toda a aula existe para responder essa pergunta. E repare: ela tem duas metades. A primeira é lógica — transformar dado em decisão. A segunda é versionamento — construir junto sem destruir. É exatamente o nome do nosso módulo."</p>
-    <p>Pause depois de ler. Deixe o silêncio trabalhar. <b>Sinalize verbalmente que é o problema gerador do PBL</b> — a banca está com a rubrica na mão.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 1:30 – 2:40 · Problema gerador · SLIDE MAIS IMPORTANTE</b><p class="say">"Esta é a pergunta que a gente vai responder hoje. É o nosso <em>problema gerador</em>."</p><p class="say">"Como transformar 120 vagas bagunçadas na resposta 'estas aqui são pra mim' — e construir isso em equipe, sem ninguém apagar o trabalho do outro."</p><p class="say"><i>(pausa de dois segundos — deixe a pergunta no ar)</i></p><p class="say">"Reparem que ela tem duas metades. A primeira: como o computador decide o que serve. Isso é LÓGICA DE PROGRAMAÇÃO."</p><p class="say">"A segunda: como a gente constrói junto sem destruir. Isso é VERSIONAMENTO."</p><p class="say">"E olha só — é exatamente o nome do nosso módulo."</p><p class="warn"><b2>Atenção</b2> Pause de verdade depois de ler. O silêncio faz a banca registrar que aquilo é o eixo da aula.</p></div></section>
 
 <section class="slide" data-sec="aula" data-b="70" data-t="Pensamento computacional">
   <p class="eyebrow">02 · Investigação</p>
   <h2>Antes de programar,<br>a gente <span class="amber">pensa</span>.</h2>
   <div class="body">
     <div class="grid4">
-      <div class="card"><div class="n">01 · Decomposição</div><h4>Quebrar</h4><p>“Achar 3 vagas” vira: ler a lista → filtrar → ordenar → cortar as 3 primeiras.</p></div>
+      <div class="card"><div class="n">01 · Decomposição</div><h4>Quebrar</h4><p>“Achar minhas vagas” vira: ler a lista → olhar uma por uma → separar as que servem.</p></div>
       <div class="card"><div class="n">02 · Padrões</div><h4>Repetir</h4><p>Toda vaga tem os mesmos campos. O que serve para uma serve para as 120.</p></div>
       <div class="card"><div class="n">03 · Abstração</div><h4>Ignorar</h4><p>Cor do logo da empresa não importa. Nível e salário importam.</p></div>
       <div class="card" style="border-color:var(--amber-dim)"><div class="n">04 · Algoritmo</div><h4>Ordenar</h4><p>Escrever o passo a passo — <strong style="color:var(--paper)">em português</strong>, antes de virar código.</p></div>
     </div>
     <p style="margin-top:34px;font-size:25px">Isto não é “teoria de programação”. É o que separa quem <strong>resolve problemas</strong> de quem só <strong>decora sintaxe</strong>.</p>
   </div>
-  <div class="notes">
-    <b>2:40 – 3:50</b>
-    <p class="say">"Programar não começa no teclado. Começa aqui. Decompor: quebrar o problema grande em pedaços pequenos. Padrões: lembra que toda vaga tinha os mesmos campos? Isso é padrão. Abstração: jogar fora o que não importa. E aí sim, o algoritmo."</p>
-    <p><b>Interação obrigatória (vale 5 pts):</b> "Me ajuda: o que a gente pode jogar fora dessa vaga?" Espere resposta. Aponte para quem responder.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 2:40 – 3:50 · Pensamento computacional · INTERAÇÃO 1</b><p class="say">"Antes de escrever qualquer código, a gente pensa. Programar não começa no teclado."</p><p class="say">"São quatro passos. DECOMPOR: quebrar o problema grande em pedaços pequenos. 'Achar minhas vagas' vira: ler a lista, olhar uma por uma, separar as que servem."</p><p class="say">"PADRÕES: lembram que toda vaga tinha os mesmos campos? Aquilo é padrão. O que serve pra uma serve pras 120."</p><p class="say">"ABSTRAÇÃO: jogar fora o que não importa. Deixa eu perguntar pra vocês — nessa vaga aí, o que dá pra jogar fora?"</p><p class="say"><i>(espere a resposta de verdade — não responda por eles)</i></p><p class="say">"Isso. E o que sobra é nível e salário. E aí sim, o quarto passo: escrever o ALGORITMO, o passo a passo."</p><p class="do"><b2>Faça</b2> Interação nº 1 das duas obrigatórias (valem 5 pontos). Espere alguém responder e aponte para quem respondeu.</p></div></section>
 
 <section class="slide" data-sec="aula" data-b="65" data-t="A receita em português">
   <p class="eyebrow">02 · Investigação · algoritmo</p>
@@ -445,12 +409,7 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>3:50 – 4:55</b>
-    <p class="say">"Olha o que aconteceu: eu resolvi o problema sem escrever uma linha de código. Da linha 2 sai a repetição, da 3 e 4 sai a condicional, da 6 sai a ordenação. Agora traduzir para JavaScript é a parte fácil."</p>
-    <p>Aponte fisicamente para cada linha ao dizer de onde sai cada estrutura. É o momento de maior clareza didática da aula.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 3:50 – 4:55 · A receita em português</b><p class="say">"Olhem o que a gente vai fazer: escrever a solução em português, antes de escrever em código."</p><p class="say">"Criar uma lista vazia. Para cada vaga das 120: se o nível for junior, e o salário for dois mil ou mais, guardar na minha lista. No fim, mostrar a lista."</p><p class="say">"Seis linhas. Nenhuma delas é JavaScript. E mesmo assim O PROBLEMA JÁ ESTÁ RESOLVIDO."</p><p class="say">"Da linha 2 vai sair a repetição. Das linhas 3 e 4, a condicional. Traduzir isso para o computador agora é a parte fácil."</p><p class="say">"Se você não consegue explicar em português, você ainda não sabe o que vai programar. É por isso que tanta gente trava na frente do computador — não travou no código, travou antes dele."</p><p class="do"><b2>Faça</b2> Aponte fisicamente para cada linha ao dizer de onde sai cada estrutura. É o momento de maior clareza didática.</p></div></section>
 
 <section class="slide" data-sec="aula" data-b="75" data-t="Variáveis, tipos e objeto">
   <p class="eyebrow">03 · Construção · variáveis e tipos</p>
@@ -484,12 +443,7 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>4:55 – 6:10</b>
-    <p class="say">"Cada campo tem um tipo. Repara: 2400 sem aspas é número — dá pra comparar e somar. Se eu escrevesse '2400' com aspas, viraria texto, e texto não se compara por tamanho do jeito que a gente quer. Esse é o erro número um de quem está começando."</p>
-    <p>Se der tempo, rode <span class="mono">node vagas.js</span> ao vivo. Código executando na frente da banca vale muito em <b>Domínio técnico (20)</b>.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 4:55 – 6:10 · Variáveis, tipos e objeto</b><p class="say">"Primeira peça: VARIÁVEL. Variável é só um nome para um valor guardado. Aqui eu guardei o texto 'junior' num nome chamado meuNivel."</p><p class="say">"Segunda peça: OBJETO. Um objeto junta vários valores que descrevem a mesma coisa. Esta vaga tem título, empresa, nível e salário — tudo num pacote só."</p><p class="say">"E reparem nos tipos. O título está entre aspas: é texto, é uma <em>string</em>. O salário, 2200, está sem aspas: é <em>número</em>."</p><p class="say">"Isso importa muito. Se eu colocasse aspas no 2200, o computador ia tratar como texto — e texto não dá pra comparar por tamanho. Esse é o erro número um de quem está começando."</p></div></section>
 
 <section class="slide" data-sec="aula" data-b="60" data-t="Estruturas de dados: array de objetos">
   <p class="eyebrow">03 · Construção · estruturas de dados</p>
@@ -514,12 +468,7 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>6:10 – 7:10</b>
-    <p class="say">"Índice começa em zero. Todo mundo erra isso na primeira semana, e tudo bem — mas a partir de hoje vocês já sabem."</p>
-    <p><b>Interação:</b> "Se a primeira é vagas[0], qual é a última de 120?" Resposta: <span class="mono">vagas[119]</span>. Deixe alguém responder errado primeiro — o erro ensina mais.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 6:10 – 7:10 · Array de objetos · INTERAÇÃO 2</b><p class="say">"Terceira peça: o ARRAY. Array é uma lista de coisas."</p><p class="say">"A gente não tem uma vaga, tem 120. Então coloca todas numa lista só. O ponto-length me diz quantas tem: 120. E o colchete zero me dá a primeira da lista."</p><p class="say">"Deixa eu perguntar: se a primeira é vagas colchete zero, qual é a última das 120?"</p><p class="say"><i>(espere — e deixe alguém errar primeiro)</i></p><p class="say">"É 119. A contagem começa no zero, então a última é sempre uma a menos. Todo mundo erra isso na primeira semana, e tudo bem. Mas a partir de hoje vocês já sabem."</p><p class="do"><b2>Faça</b2> Interação nº 2. Deixar alguém errar é melhor que ninguém responder — o erro fixa mais.</p></div></section>
 
 <section class="slide" data-sec="aula" data-b="75" data-t="Condicional">
   <p class="eyebrow">03 · Construção · estruturas condicionais</p>
@@ -550,12 +499,7 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>7:10 – 8:25</b>
-    <p class="say">"O <span class="mono">if</span> faz uma pergunta que só tem duas respostas: sim ou não. E o <span class="mono">&amp;&amp;</span> quer as DUAS coisas ao mesmo tempo — júnior <em>e</em> pagando 2000 ou mais. Se fosse <span class="mono">||</span>, bastaria uma das duas."</p>
-    <p>Leia o <span class="mono">if</span> em voz alta como português: “se o nível da vaga for igual a junior”. Ler código em voz alta é o hábito que destrava iniciante.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 7:10 – 8:25 · Condicional</b><p class="say">"Agora a peça que faz o computador DECIDIR: o if. Se."</p><p class="say">"Leiam comigo em português: SE o nível dessa vaga FOR IGUAL A junior, mostra 'essa serve pra mim'. SENÃO, mostra 'essa não'."</p><p class="say">"Só isso. O if faz uma pergunta que só tem duas respostas: sim ou não."</p><p class="say">"Três sinais que vocês vão usar sempre: três iguais quer dizer 'é igual a'. Maior-igual quer dizer 'é maior ou igual a'. E o E-comercial dobrado quer dizer 'e' — ele exige as duas coisas ao mesmo tempo."</p><p class="say">"Nível junior E salário de dois mil pra cima. Se fosse 'ou', bastava uma das duas."</p><p class="do"><b2>Faça</b2> Leia o código em voz alta traduzindo para português. É o hábito que mais destrava iniciante.</p></div></section>
 
 <section class="slide" data-sec="aula" data-b="75" data-t="Repetição">
   <p class="eyebrow">03 · Construção · estruturas de repetição</p>
@@ -584,12 +528,7 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>8:25 – 9:40</b>
-    <p class="say">"Três partes: onde começa, até quando vai, de quanto em quanto anda. De 120 sobraram 24. A gente saiu de uma lista impossível para uma lista possível."</p>
-    <p>Se a banca perguntar sobre <span class="mono">while</span>: "uso <span class="mono">for</span> quando sei quantas vezes vou repetir e <span class="mono">while</span> quando dependo de uma condição — aqui eu sei o tamanho da lista".</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 8:25 – 9:40 · Repetição</b><p class="say">"Mas eu não quero testar uma vaga. Quero testar as 120. Pra isso existe o for."</p><p class="say">"Ele tem três partes: onde começa, até quando vai, e de quanto em quanto anda. Começa no zero, vai enquanto o i for menor que o tamanho da lista, e anda de um em um."</p><p class="say">"Dentro dele, o if que a gente acabou de ver. Se a vaga passa, entra na minha lista."</p><p class="say">"E aqui está o resultado: de 120, sobraram 24."</p><p class="say">"Reparem no que aconteceu. Eu escrevi a regra UMA VEZ SÓ, e o computador aplicou 120 vezes. Se amanhã a lista virar dez mil vagas, este código não muda uma única linha."</p></div></section>
 
 <section class="slide" data-sec="aula" data-b="80" data-t="Funções">
   <p class="eyebrow">03 · Construção · funções</p>
@@ -618,12 +557,7 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>9:40 – 11:00 · Ponto alto técnico</b>
-    <p class="say">"Olha só o que essa função faz: ela é o nosso algoritmo em português, linha por linha. Filtrar, ordenar, cortar três. O código virou a receita."</p>
-    <p>Amarre explicitamente com o slide da receita — é o fecho do arco de construção. <b>Se estiver atrasado, este é o slide a encurtar, nunca a pular.</b></p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 9:40 – 11:00 · Funções</b><p class="say">"Última peça: FUNÇÃO. Função é um pedaço de código que ganha um nome. Você escreve uma vez e usa quantas vezes quiser."</p><p class="say">"Olhem o que tem dentro dela: é EXATAMENTE O MESMO CÓDIGO que a gente acabou de escrever. A lista vazia, o for, o if."</p><p class="say">"A diferença é uma só: o nível não está mais fixo lá dentro. Ele vem de fora, na hora em que eu chamo a função."</p><p class="say">"Então eu chamo buscarVagas com 'junior' e recebo 34. Chamo com 'estagio' e recebo 35. Mesmo código, respostas diferentes."</p><p class="say">"É pra isso que serve uma função."</p><p class="warn"><b2>Atenção</b2> Se estiver atrasado, ENCURTE este slide — mas não pule.</p></div></section>
 
 <section class="slide" data-sec="aula" data-b="45" data-t="O resultado rodando">
   <p class="eyebrow">03 · Construção · resultado</p>
@@ -642,12 +576,7 @@
       <p class="lead" style="text-align:center;margin-top:38px;max-width:none">Uma lista impossível virou <strong class="amber">uma lista possível</strong>.<br><span style="font-size:25px;color:var(--slate)">Isto é lógica de programação. A primeira metade do problema está resolvida.</span></p>
     </div>
   </div>
-  <div class="notes">
-    <b>11:00 – 11:45 · Momento de respirar</b>
-    <p class="say">"Pronto. Primeira metade resolvida. Agora vem a pergunta que ninguém faz na primeira aula e que quebra todo mundo no primeiro trabalho em grupo."</p>
-    <p>Faça uma pausa real de 2 segundos aqui. É a virada da aula.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 11:00 – 11:45 · O resultado rodando · A VIRADA</b><p class="say">"E é isso rodando de verdade."</p><p class="say">"De 120 vagas, 24 são pra você. Com nome, empresa e salário."</p><p class="say">"Uma lista impossível de ler virou uma lista possível. Isso é lógica de programação — a primeira metade da nossa pergunta está resolvida."</p><p class="say"><i>(pausa de verdade — dois segundos)</i></p><p class="say">"Agora vem a segunda metade. E é a parte que ninguém ensina na primeira aula, e que quebra todo mundo no primeiro trabalho em grupo."</p><p class="do"><b2>Faça</b2> Se der, rode 'node vagas.js' ao vivo no terminal em vez de mostrar o slide.</p></div></section>
 
 <section class="slide" data-sec="aula" data-b="65" data-t="Anatomia de um projeto">
   <p class="eyebrow">04 · Abertura de projetos</p>
@@ -671,12 +600,7 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>11:45 – 12:50</b>
-    <p class="say">"Quem já salvou arquivo com nome 'trabalho_final_2'? <em>(deixe rir)</em> A partir de hoje a gente organiza de outro jeito."</p>
-    <p>Este slide é o item "Abertura de Projetos" do tema sorteado — <b>nomeie ele explicitamente</b> para a banca marcar o checkbox de aderência ao tema.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 11:45 – 12:50 · Anatomia de um projeto</b><p class="say">"Antes de falar de equipe, uma pergunta: onde é que esse código mora?"</p><p class="say">"Quem aqui já salvou um arquivo com nome tipo 'trabalho final 2'?"</p><p class="say"><i>(deixe rir)</i></p><p class="say">"Pois é. Código solto numa pasta qualquer não é projeto."</p><p class="say">"Projeto tem estrutura: uma pasta com nome, o código separado dos dados, um README explicando o que é e como rodar, e um arquivo dizendo o que NÃO deve ser versionado."</p><p class="say">"Esse README é a porta de entrada. Projeto sem README é casa sem placa."</p><p class="say">"Isso se chama <em>abertura de projeto</em>, e é o que permite outra pessoa — ou você mesmo daqui a três meses — abrir e entender em cinco minutos."</p><p class="warn"><b2>Atenção</b2> Diga 'abertura de projeto' com todas as letras: é um dos quatro itens do tema sorteado.</p></div></section>
 
 <section class="slide" data-sec="aula" data-b="50" data-t="Comandos de abertura">
   <p class="eyebrow">04 · Abertura de projetos · mão na massa</p>
@@ -692,12 +616,7 @@
       <p style="margin-top:30px;font-size:25px">A partir do <span class="mono amber">git init</span>, tudo que acontecer nessa pasta pode ser <strong>gravado, comparado e desfeito</strong>.</p>
     </div>
   </div>
-  <div class="notes">
-    <b>12:50 – 13:40</b>
-    <p class="say">"Quatro comandos. Vinte segundos. E o projeto deixa de ser uma pasta qualquer e vira um projeto de verdade, com histórico."</p>
-    <p>Se possível, digite ao vivo no terminal em vez de mostrar o slide. Vale muito mais.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 12:50 – 13:40 · Os quatro comandos</b><p class="say">"E abrir um projeto são quatro comandos."</p><p class="say">"Criar a pasta e entrar nela. Gerar o arquivo de identidade do projeto. Começar a versionar. E dizer o que deve ser ignorado."</p><p class="say">"Vinte segundos."</p><p class="say">"E a partir desse git init, o terceiro comando, tudo que acontecer nessa pasta pode ser GRAVADO, COMPARADO E DESFEITO."</p><p class="warn"><b2>Atenção</b2> Se estiver atrasado, este é o 2º slide a cortar.</p></div></section>
 
 <section class="slide div-slide" data-sec="git" data-b="40" data-t="A dor do versionamento">
   <div class="body">
@@ -713,12 +632,7 @@
     </div>
     <div class="note" style="margin-top:34px">Todo mundo já viveu isso. <strong style="color:var(--paper)">Git existe para isso nunca mais acontecer.</strong></div>
   </div>
-  <div class="notes">
-    <b>13:40 – 14:20 · Momento de humor</b>
-    <p class="say">"Quem nunca? <em>(pausa, deixe rir)</em> O problema não é preguiça — é que ninguém ensinou o jeito certo. O jeito certo tem nome: controle de versão."</p>
-    <p>Este é o slide que ganha a turma. Não corra. Riso na sala pontua em <b>Capacidade de interação</b>.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 13:40 – 14:20 · A dor do versionamento</b><p class="say">"Agora: por que versionar? Deixa eu mostrar o que acontece quando não se versiona."</p><p class="say">"Quem nunca?"</p><p class="say"><i>(deixe rir de verdade — não corra)</i></p><p class="say">"O problema não é preguiça. É que ninguém ensinou o jeito certo. E o jeito certo tem nome: CONTROLE DE VERSÃO. Git existe pra isso nunca mais acontecer."</p><p class="warn"><b2>Atenção</b2> Riso na sala conta como interação. Não atropele o momento.</p></div></section>
 
 <section class="slide" data-sec="git" data-b="70" data-t="As três áreas do Git">
   <p class="eyebrow">05 · Versionamento · modelo mental</p>
@@ -753,12 +667,7 @@
     </svg>
     <p style="font-size:25px;margin-top:14px">Quase todo erro de iniciante em Git é <strong>confundir esses três lugares</strong>. Quem entende o desenho, entende os comandos.</p>
   </div>
-  <div class="notes">
-    <b>14:20 – 15:30 · Slide técnico central do bloco Git</b>
-    <p class="say">"Sua pasta é onde você trabalha. A prateleira é onde você separa o que quer salvar — porque nem tudo que você mexeu deve entrar junto. E o histórico é o que fica gravado. <span class="mono">add</span> empurra pra prateleira, <span class="mono">commit</span> grava, <span class="mono">push</span> manda pro GitHub."</p>
-    <p>Use as mãos: três posições no ar, da esquerda pra direita. Gesto fixa o modelo mental melhor que o slide.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 14:20 – 15:30 · As três áreas do Git</b><p class="say">"Git parece complicado, mas tem só TRÊS LUGARES. Se vocês entenderem este desenho, entendem todos os comandos."</p><p class="say">"Primeiro: A SUA PASTA. É onde você trabalha, onde edita os arquivos."</p><p class="say">"Segundo: A PRATELEIRA. É onde você separa o que quer salvar — porque nem tudo que você mexeu deve ser salvo junto."</p><p class="say">"Terceiro: O HISTÓRICO. O que entra aqui fica gravado."</p><p class="say">"E os comandos são as setas entre eles. git add empurra da pasta pra prateleira. git commit grava da prateleira no histórico. E git push manda o histórico pro GitHub, que é a nuvem."</p><p class="say">"Quase todo erro de iniciante em Git é confundir esses três lugares."</p><p class="do"><b2>Faça</b2> Use as mãos: três posições no ar, da esquerda para a direita. O gesto fixa o modelo melhor que o slide.</p></div></section>
 
 <section class="slide" data-sec="git" data-b="65" data-t="Comandos essenciais do Git">
   <p class="eyebrow">05 · Versionamento · comandos</p>
@@ -785,12 +694,7 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>15:30 – 16:35</b>
-    <p class="say">"Reparem no histórico de baixo pra cima: abri o projeto, carreguei as vagas, filtrei por nível. Dá pra contar a história do projeto lendo só os commits. É isso que a gente quer."</p>
-    <p>Amarre com a barra de progresso do slide: "esse traço embaixo da tela é exatamente isso — cada slide desta aula foi um commit".</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 15:30 – 16:35 · Comandos essenciais</b><p class="say">"Na prática são quatro comandos. git status: o que mudou? git add: manda pra prateleira. git commit: grava, com uma mensagem dizendo o que você fez. git log: mostra tudo que já foi gravado."</p><p class="say">"E olhem o histórico aqui embaixo, lendo de baixo pra cima: abri o projeto, carreguei as vagas, filtrei por nível. Dá pra contar a história inteira do projeto lendo SÓ AS MENSAGENS."</p><p class="say">"Por isso mensagem importa. 'Ajustes' não diz nada. 'Filtra vagas por nível júnior' diz tudo."</p><p class="say">"E esse histórico é a prova do seu raciocínio — é literalmente o que um recrutador vai ler no seu GitHub."</p><p class="do"><b2>Faça</b2> Aponte para a barra no rodapé: 'essa linha embaixo da tela é um histórico de commits — cada slide desta aula foi um'.</p></div></section>
 
 <section class="slide" data-sec="git" data-b="70" data-t="Branch, Pull Request e squad">
   <p class="eyebrow">05 · Versionamento · trabalho em squad</p>
@@ -817,12 +721,7 @@
       <div class="card" style="border-color:var(--amber-dim)"><div class="n">03 · merge</div><h4>Volta pra main</h4><p>Aprovado, seu trabalho junta ao dos outros sem sobrescrever nada.</p></div>
     </div>
   </div>
-  <div class="notes">
-    <b>16:35 – 17:45 · Fecha a segunda metade do problema gerador</b>
-    <p class="say">"Ana faz o filtro, Bruno faz a ordenação, ao mesmo tempo, sem se atrapalhar. Cada um abre um Pull Request, o squad revisa, e o Git junta os dois. Essa é a resposta para a segunda metade da nossa pergunta."</p>
-    <p><b>Volte ao problema gerador em voz alta aqui.</b> Fechar o ciclo PBL na frente da banca vale os 10 pontos de metodologia.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 16:35 – 17:45 · Branch, Pull Request e merge</b><p class="say">"Agora sim, a segunda metade da nossa pergunta: como trabalhar junto sem se atrapalhar."</p><p class="say">"Imaginem que a Ana vai fazer o filtro e o Bruno vai fazer a ordenação. Ao mesmo tempo, no mesmo projeto."</p><p class="say">"Cada um cria uma BRANCH — uma linha própria de trabalho. A Ana trabalha na dela, o Bruno na dele, e nenhum dos dois encosta no trabalho do outro."</p><p class="say">"Quando termina, cada um abre um PULL REQUEST: um pedido de revisão. O squad lê o código, comenta, sugere."</p><p class="say">"Aprovado, vem o MERGE: o Git junta os dois trabalhos, sem apagar nada de ninguém."</p><p class="say">"E essa é a resposta para a segunda metade do nosso <em>problema gerador</em>."</p><p class="warn"><b2>Atenção</b2> Volte ao problema gerador em voz alta AQUI. Fechar o ciclo na frente da banca carrega os 10 pontos de metodologia.</p></div></section>
 
 <section class="slide" data-sec="git" data-b="50" data-t="GitHub como portfólio">
   <p class="eyebrow">05 · Versionamento · o retorno</p>
@@ -848,12 +747,7 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>17:45 – 18:35 · O callback</b>
-    <p class="say">"A gente começou a aula com 120 vagas. Terminamos com o link que vocês vão mandar pra elas. O círculo fechou."</p>
-    <p>Este é o momento emocional da aula. Fale mais devagar. Olhe para a banca.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 17:45 – 18:35 · GitHub como portfólio</b><p class="say">"E aí, lembram das 120 vagas com que a gente começou?"</p><p class="say">"Quando vocês forem se candidatar a uma delas, a primeira coisa que vão pedir é o link do seu GitHub."</p><p class="say">"O repositório que vocês construírem aqui É A RESPOSTA. README explicando o problema, histórico de commits contando a história, Pull Requests revisados pelo squad, e código que roda."</p><p class="say">"Isso não é exercício de aula. É a primeira peça do portfólio de vocês. E vale mais que qualquer certificado impresso."</p><p class="do"><b2>Faça</b2> Diminua o ritmo. Olhe para a banca. Aqui o círculo da aula se fecha.</p></div></section>
 
 <section class="slide" data-sec="entrega" data-b="45" data-t="Entrega e avaliação">
   <p class="eyebrow">06 · Entrega e avaliação</p>
@@ -886,12 +780,7 @@
       </div>
     </div>
   </div>
-  <div class="notes">
-    <b>18:35 – 19:20</b>
-    <p class="say">"Hoje ninguém vai sair daqui com tudo isso pronto — e nem é para sair. Hoje vocês saem com o projeto criado e o primeiro commit feito. O resto a gente constrói ao longo dos dez encontros. A avaliação não é uma prova: é o próprio repositório de vocês, e 40% dela é sobre COMO vocês trabalharam juntos."</p>
-    <p><b>Este slide responde à pergunta que a banca provavelmente faria:</b> "não é conteúdo demais para uma aula?" Você já respondeu antes de perguntarem — esta é a aula panorâmica de abertura, e cada parada vira um encontro próprio depois.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 18:35 – 19:20 · Entrega e avaliação</b><p class="say">"Sobre a entrega — e quero ser bem claro aqui."</p><p class="say">"Hoje ninguém vai sair daqui com tudo isso pronto, e nem é pra sair. Hoje vocês saem com três coisas: conta criada no GitHub, a pasta do projeto criada, e o primeiro commit feito."</p><p class="say">"O resto — o repositório completo, as branches, os Pull Requests — a gente constrói ao longo dos dez encontros."</p><p class="say">"Hoje a gente percorreu o caminho inteiro de uma vez, pra vocês verem aonde isso chega. Nos próximos encontros a gente volta em cada parada com calma."</p><p class="say">"E a avaliação não é prova: é o próprio repositório de vocês. Reparem que 40% da nota é sobre COMO vocês trabalharam juntos — histórico e colaboração — não só sobre o código funcionar."</p><p class="warn"><b2>Atenção</b2> Este slide desarma a pergunta 'não é conteúdo demais para uma aula?' antes de ela ser feita.</p></div></section>
 
 <section class="slide div-slide" data-sec="entrega" data-b="40" data-t="Fechamento">
   <div class="body">
@@ -905,12 +794,7 @@
       <span class="chip on">Git</span><span class="chip on">GitHub</span><span class="chip on">Branch e Pull Request</span>
     </div>
   </div>
-  <div class="notes">
-    <b>19:20 – 20:00 · Encerre no tempo</b>
-    <p class="say">"Próximo encontro: cada squad apresenta seu repositório e revisa o do outro. Obrigado."</p>
-    <p><b>Pare o cronômetro e diga em voz alta: "encerro a exposição no tempo previsto".</b> A banca tem "Gestão do tempo" na ficha — não deixe implícito.</p>
-  </div>
-</section>
+  <div class="notes"><b>AULA · 19:20 – 20:00 · Fechamento</b><p class="say">"Fechando."</p><p class="say">"LÓGICA RESOLVE. VERSIONAMENTO PRESERVA."</p><p class="say">"Vocês pegaram uma lista impossível de ler e ensinaram o computador a lê-la. E aprenderam a construir isso com outras pessoas sem perder nada no caminho."</p><p class="say">"Tudo que está escrito aqui embaixo a gente viu hoje, de passagem. Nos próximos nove encontros, cada um desses vira uma aula inteira."</p><p class="say">"No próximo encontro, cada squad apresenta seu repositório e revisa o do outro."</p><p class="say">"Obrigado."</p><p class="do"><b2>Faça</b2> Pare o cronômetro e diga, virado para a banca: 'encerro a exposição no tempo previsto'.</p></div></section>
 
 <!-- ============ PARTE C — APOIO PARA ARGUIÇÃO (não apresentar) ============ -->
 
