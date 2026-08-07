@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roteiro de fala — slide a slide</title>
+<style>
+  :root{
+    --bg:#FBFAF7; --surface:#FFFFFF; --raised:#F1EEE8; --sunk:#E9E5DC;
+    --text:#161C22; --text2:#414C57; --muted:#78838F;
+    --line:#DFDAD0; --line2:#C7C1B4;
+    --accent:#A85A0B; --accent-bg:#FBF1E3;
+    --do:#2C6E63; --do-bg:#E6F1EF;
+    --mono:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --bg:#0B1119; --surface:#111A25; --raised:#18232F; --sunk:#0D151E;
+    --text:#EDF2F7; --text2:#B9C7D6; --muted:#7D90A6;
+    --line:#22303F; --line2:#2E4052;
+    --accent:#F0A93B; --accent-bg:#1D2632;
+    --do:#63C0AE; --do-bg:#132725;
+  }}
+  :root[data-theme="dark"]{
+    --bg:#0B1119; --surface:#111A25; --raised:#18232F; --sunk:#0D151E;
+    --text:#EDF2F7; --text2:#B9C7D6; --muted:#7D90A6;
+    --line:#22303F; --line2:#2E4052;
+    --accent:#F0A93B; --accent-bg:#1D2632;
+    --do:#63C0AE; --do-bg:#132725;
+  }
+  :root[data-theme="light"]{
+    --bg:#FBFAF7; --surface:#FFFFFF; --raised:#F1EEE8; --sunk:#E9E5DC;
+    --text:#161C22; --text2:#414C57; --muted:#78838F;
+    --line:#DFDAD0; --line2:#C7C1B4;
+    --accent:#A85A0B; --accent-bg:#FBF1E3;
+    --do:#2C6E63; --do-bg:#E6F1EF;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:17px;line-height:1.6}
+  .wrap{max-width:860px;margin:0 auto;padding:52px 24px 90px}
+  .mono{font-family:var(--mono)}
+
+  header{border-bottom:2px solid var(--text);padding-bottom:20px;margin-bottom:10px}
+  .org{font-family:var(--mono);font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+  h1{font-family:var(--mono);font-size:clamp(28px,5vw,40px);line-height:1.08;letter-spacing:-.035em;
+     margin:13px 0 10px;font-weight:700;text-wrap:balance}
+  .dek{font-size:18px;color:var(--text2);max-width:60ch;margin:0}
+
+  .howto{background:var(--accent-bg);border:1px solid var(--line2);border-left:4px solid var(--accent);
+    padding:17px 21px;border-radius:3px;margin:26px 0 8px}
+  .howto b{color:var(--accent);font-family:var(--mono);font-size:12px;letter-spacing:.13em;
+    text-transform:uppercase;display:block;margin-bottom:8px}
+  .howto p{margin:0 0 8px;color:var(--text2);font-size:15.5px}
+  .howto p:last-child{margin:0}
+
+  h2{font-family:var(--mono);font-size:22px;letter-spacing:-.02em;margin:52px 0 4px;font-weight:700;
+     padding-top:22px;border-top:2px solid var(--line2)}
+  h2 small{display:block;font-family:var(--sans);font-size:15px;font-weight:400;color:var(--muted);
+    letter-spacing:0;margin-top:5px}
+
+  .slide{border:1px solid var(--line);background:var(--surface);border-radius:4px;margin:16px 0;overflow:hidden}
+  .sh{display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:baseline;
+     padding:13px 20px;background:var(--raised);border-bottom:1px solid var(--line)}
+  .sn{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.1em;font-weight:700;grid-row:span 2}
+  .st{font-family:var(--mono);font-size:16.5px;font-weight:700;letter-spacing:-.01em;margin:0}
+  .sm{font-size:13.5px;color:var(--muted);grid-column:2}
+  .clock{font-family:var(--mono);font-size:14px;color:var(--text);font-variant-numeric:tabular-nums;
+    grid-row:span 2;white-space:nowrap;background:var(--sunk);padding:5px 10px;border-radius:2px;align-self:center}
+  .sb{padding:17px 20px 19px}
+
+  .fala{font-size:18.5px;line-height:1.66;color:var(--text);margin:0}
+  .fala p{margin:0 0 12px}
+  .fala p:last-child{margin:0}
+  .fala em{color:var(--accent);font-style:normal;font-weight:600}
+
+  .acao{display:flex;gap:11px;align-items:flex-start;margin-top:15px;padding:11px 14px;
+    background:var(--do-bg);border-radius:3px;font-size:15px;color:var(--text2);line-height:1.5}
+  .acao b{color:var(--do);font-family:var(--mono);font-size:11px;letter-spacing:.11em;
+    text-transform:uppercase;flex:none;padding-top:3px}
+  .pausa{color:var(--muted);font-style:italic;font-size:16px}
+
+  code{font-family:var(--mono);font-size:.88em;background:var(--sunk);padding:1px 5px;border-radius:2px}
+  footer{margin-top:60px;padding-top:20px;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+  #theme{position:fixed;right:18px;top:18px;background:var(--surface);border:1px solid var(--line2);
+    border-radius:3px;color:var(--text2);font-family:var(--mono);font-size:12px;padding:6px 11px;cursor:pointer;z-index:9}
+  #theme:hover{border-color:var(--accent);color:var(--accent)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  @media print{
+    body{background:#fff;color:#000;font-size:10.5pt}
+    .wrap{max-width:none;padding:0}
+    #theme{display:none}
+    .slide{break-inside:avoid;border:1px solid #bbb}
+    .sh{background:#f0f0f0}
+    h2{break-after:avoid;margin-top:20px}
+    .fala{font-size:11pt}
+    @page{margin:14mm}
+  }
+</style>
+</head>
+<body>
+<button id="theme" type="button">tema</button>
+<div class="wrap">
+
+<header>
+  <div class="org">Projeto Jovem Tech 2026 · Aula prática de instrutoria · 07/08, 20h15 · Banca 2</div>
+  <h1>Roteiro de fala,<br>slide a slide</h1>
+  <p class="dek">O que dizer em cada slide, com o relógio ao lado. Não é para decorar — é para ensaiar em voz alta duas vezes e depois esquecer o texto e lembrar só da ordem.</p>
+</header>
+
+<div class="howto">
+  <b>Como usar isto</b>
+  <p><strong>O texto em preto é o que você fala.</strong> Não precisa ser palavra por palavra — precisa ser a mesma ideia, na mesma ordem. As palavras em <em>laranja</em> são as que você <strong>não pode deixar de dizer</strong>: são termos que a banca procura na ficha de avaliação.</p>
+  <p><strong>As caixas verdes são o que você faz</strong> — apertar tecla, apontar, esperar resposta, rodar código.</p>
+  <p><strong>Ensaie de pé e em voz alta.</strong> Ler por dentro engana: você lê 40% mais rápido do que consegue falar.</p>
+</div>
+
+<h2>Parte 1 — Plano de aula
+  <small>5 minutos · Art. 40, I · <strong>não inicie o cronômetro ainda</strong></small></h2>
+
+<div class="slide">
+  <div class="sh"><span class="sn">01</span><p class="st">Capa</p><span class="clock">0:00 – 0:45</span>
+    <span class="sm">Identificação</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Boa noite. Eu sou Guilherme Santos Rabelo, candidato à instrutoria da Trilha Básica.</p>
+      <p>O tema que me foi sorteado é <em>Lógica de Programação e Versionamento</em>.</p>
+      <p>Este é o plano de aula impresso — estou entregando agora, antes de começar.</p>
+      <p>Vou usar cinco minutos para apresentar o plano e depois vinte para dar a aula em si."</p>
+    </div>
+    <div class="acao"><b>Faça</b><span>Entregue as 3 cópias impressas <strong>antes</strong> de falar qualquer outra coisa. Fique de pé. Não leia a capa em voz alta — a banca já está lendo.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">02</span><p class="st">Problema gerador e objetivos</p><span class="clock">0:45 – 2:00</span>
+    <span class="sm">O slide que mais vale ponto no plano</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"O plano parte de um <em>problema gerador</em>, não de uma lista de conteúdos. É o que a metodologia de <em>Aprendizagem Baseada em Projetos</em> exige.</p>
+      <p>O problema é este: como transformar uma lista bagunçada de 120 vagas de emprego na resposta 'estas aqui são pra mim' — e construir isso em squad, sem ninguém sobrescrever o trabalho do outro.</p>
+      <p>Reparem que a pergunta tem duas metades. A primeira é lógica: transformar dado em decisão. A segunda é versionamento: construir junto sem destruir. São exatamente as duas metades do nome do módulo.</p>
+      <p>E os objetivos estão todos escritos com verbo observável: decompor, construir, reconhecer, abrir, versionar, colaborar. Eu preciso conseguir <strong>verificar</strong> se o aluno faz — não se ele 'entendeu'."</p>
+    </div>
+    <div class="acao"><b>Atenção</b><span>Aqui estão 15 dos 30 pontos do plano: clareza dos objetivos (5) e aplicação do PBL (10). Diga "problema gerador" e "Aprendizagem Baseada em Projetos" com todas as letras.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">03</span><p class="st">Competências e método</p><span class="clock">2:00 – 3:10</span>
+    <span class="sm">Técnicas, comportamentais e o ciclo PBL</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"As competências não são só técnicas. Como a entrega é em squad e passa por Pull Request, o aluno exercita revisão por pares, comunicação técnica escrita e resiliência ao erro — que é o que o mercado cobra e que não se mede em prova.</p>
+      <p>A metodologia é o ciclo de <em>Aprendizagem Baseada em Projetos</em>, em cinco etapas: imersão no problema, investigação, construção, entrega e socialização.</p>
+      <p>A aula de hoje percorre as cinco. E o mesmo ciclo se repete, em escala maior, ao longo das 40 horas do módulo."</p>
+    </div>
+    <div class="acao"><b>Faça</b><span>Diga os nomes das cinco etapas em voz alta, apontando cada caixa. É rápido e a banca marca.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">04</span><p class="st">Cronograma e recursos</p><span class="clock">3:10 – 4:10</span>
+    <span class="sm">Mostra que você leu o Art. 40</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"O cronograma cabe nos <em>vinte minutos de exposição</em> previstos no edital: três minutos de imersão no problema, três de investigação, sete de construção do código, dois de abertura de projeto, quatro de versionamento e um de fechamento.</p>
+      <p>Os recursos: notebook e TV, editor e terminal para rodar o código ao vivo, um repositório-modelo no GitHub, o conjunto de dados em JSON, e o quadro — porque o algoritmo é escrito em português antes de virar código."</p>
+    </div>
+    <div class="acao"><b>Atenção</b><span>Dizer "vinte minutos de exposição" já sinaliza domínio das regras e ajuda na nota de gestão do tempo.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">05</span><p class="st">Avaliação e indicadores</p><span class="clock">4:10 – 5:00</span>
+    <span class="sm">Última do plano — saia daqui aos 5:00</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"A avaliação é formativa e por produto. Não tem prova escrita: o repositório do aluno é a evidência do aprendizado, e eu acompanho o progresso pelos commits, não só pela entrega final.</p>
+      <p>E eu monitoro com números, não com impressão: cem por cento dos alunos com repositório criado, no mínimo três commits com mensagem descritiva por aluno, oitenta por cento dos algoritmos rodando sem erro.</p>
+      <p>Esse é o plano. Vou para a aula."</p>
+    </div>
+    <div class="acao"><b>Se atrasou</b><span>Aos 5:00 você tem que estar saindo daqui. Se estourou, pule direto para a aula: ela vale 60 pontos e o plano, que vale 30, já está impresso na mão deles.</span></div>
+  </div>
+</div>
+
+<h2>Parte 2 — A aula
+  <small>20 minutos · Art. 40, II · <strong>aperte T agora para iniciar o cronômetro</strong></small></h2>
+
+<div class="slide">
+  <div class="sh"><span class="sn">06</span><p class="st">O gancho</p><span class="clock">0:00 – 0:40</span>
+    <span class="sm">Contato visual, sem olhar a tela</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Vamos começar com uma situação de verdade.</p>
+      <p>Vocês entraram no Jovem Tech para trabalhar com tecnologia. Daqui a alguns meses, vocês vão abrir um site de vagas e encontrar 120 anúncios de uma vez.</p>
+      <p>Quantos desses são realmente pra vocês? Cinco? Dez?</p>
+      <p>E como descobrir isso <strong>sem ler os 120 na mão</strong>?"</p>
+    </div>
+    <div class="acao"><b>Faça</b><span>Aperte <code>T</code>. Fale de pé, olhando para a banca. Este slide é 100% contato visual.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">07</span><p class="st">A lista bagunçada</p><span class="clock">0:40 – 1:30</span>
+    <span class="sm">Plante a ideia de padrão</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Este é o arquivo com as vagas. Não precisa entender cada linha agora.</p>
+      <p>Só quero que vocês reparem numa coisa: toda vaga tem exatamente os mesmos quatro campos. Título, empresa, nível e salário. Sempre os mesmos.</p>
+      <p>Guardem isso, porque é a chave de tudo que vem depois."</p>
+    </div>
+    <div class="acao"><b>Faça</b><span>Aponte para os campos repetidos nos dois blocos. Você vai colher isso no slide 09.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">08</span><p class="st">O problema gerador</p><span class="clock">1:30 – 2:40</span>
+    <span class="sm">O slide mais importante da aula</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Esta é a pergunta que a gente vai responder hoje. É o nosso <em>problema gerador</em>.</p>
+      <p>Como transformar 120 vagas bagunçadas na resposta 'estas aqui são pra mim' — e construir isso em equipe, sem ninguém apagar o trabalho do outro.</p>
+      <p class="pausa">(pausa de dois segundos — deixe a pergunta no ar)</p>
+      <p>Reparem que ela tem duas metades. A primeira: como o computador decide o que serve. Isso é <strong>lógica de programação</strong>.</p>
+      <p>A segunda: como a gente constrói junto sem destruir. Isso é <strong>versionamento</strong>.</p>
+      <p>E olha só — é exatamente o nome do nosso módulo."</p>
+    </div>
+    <div class="acao"><b>Atenção</b><span>Pause de verdade depois de ler a pergunta. O silêncio faz a banca registrar que aquilo é o eixo da aula.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">09</span><p class="st">Pensamento computacional</p><span class="clock">2:40 – 3:50</span>
+    <span class="sm">Primeira interação com a turma</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Antes de escrever qualquer código, a gente pensa. Programar não começa no teclado.</p>
+      <p>São quatro passos. <strong>Decompor</strong>: quebrar o problema grande em pedaços pequenos. 'Achar minhas vagas' vira: ler a lista, olhar uma por uma, separar as que servem.</p>
+      <p><strong>Padrões</strong>: lembram que toda vaga tinha os mesmos campos? Aquilo é padrão. O que serve pra uma serve pras 120.</p>
+      <p><strong>Abstração</strong>: jogar fora o que não importa. Deixa eu perguntar pra vocês — nessa vaga aí, o que dá pra jogar fora?"</p>
+      <p class="pausa">(espere a resposta de verdade — não responda por eles)</p>
+      <p>"Isso. E o que sobra é nível e salário. E aí sim, o quarto passo: escrever o <strong>algoritmo</strong>, o passo a passo."</p>
+    </div>
+    <div class="acao"><b>Faça</b><span>Esta é a interação nº 1 das duas obrigatórias (vale 5 pontos). Espere alguém responder e aponte para quem respondeu.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">10</span><p class="st">A receita em português</p><span class="clock">3:50 – 4:55</span>
+    <span class="sm">Momento de maior clareza didática</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Olhem o que a gente vai fazer: escrever a solução em português, antes de escrever em código.</p>
+      <p>Criar uma lista vazia. Para cada vaga das 120: se o nível for junior, e o salário for dois mil ou mais, guardar na minha lista. No fim, mostrar a lista.</p>
+      <p>Seis linhas. Nenhuma delas é JavaScript. E mesmo assim <strong>o problema já está resolvido</strong>.</p>
+      <p>Da linha 2 vai sair a repetição. Das linhas 3 e 4, a condicional. Traduzir isso para o computador agora é a parte fácil.</p>
+      <p>Se você não consegue explicar em português, você ainda não sabe o que vai programar. É por isso que tanta gente trava na frente do computador — não travou no código, travou antes dele."</p>
+    </div>
+    <div class="acao"><b>Faça</b><span>Aponte fisicamente para cada linha ao dizer de onde sai cada estrutura.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">11</span><p class="st">Variáveis, tipos e objeto</p><span class="clock">4:55 – 6:10</span>
+    <span class="sm">Primeira peça de código</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Primeira peça: <strong>variável</strong>. Variável é só um nome para um valor guardado. Aqui eu guardei o texto 'junior' num nome chamado meuNivel.</p>
+      <p>Segunda peça: <strong>objeto</strong>. Um objeto junta vários valores que descrevem a mesma coisa. Esta vaga tem título, empresa, nível e salário — tudo num pacote só.</p>
+      <p>E reparem nos tipos. O título está entre aspas: é texto, é uma <em>string</em>. O salário, 2200, está sem aspas: é <em>número</em>.</p>
+      <p>Isso importa muito. Se eu colocasse aspas no 2200, o computador ia tratar como texto — e texto não dá pra comparar por tamanho. Esse é o erro número um de quem está começando."</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">12</span><p class="st">Array de objetos</p><span class="clock">6:10 – 7:10</span>
+    <span class="sm">Segunda interação com a turma</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Terceira peça: o <strong>array</strong>. Array é uma lista de coisas.</p>
+      <p>A gente não tem uma vaga, tem 120. Então coloca todas numa lista só. O <code>.length</code> me diz quantas tem: 120. E o colchete zero me dá a primeira da lista.</p>
+      <p>Deixa eu perguntar: se a primeira é <code>vagas[0]</code>, qual é a última das 120?"</p>
+      <p class="pausa">(espere — e deixe alguém errar primeiro)</p>
+      <p>"É 119. A contagem começa no zero, então a última é sempre uma a menos. Todo mundo erra isso na primeira semana, e tudo bem. Mas a partir de hoje vocês já sabem."</p>
+    </div>
+    <div class="acao"><b>Faça</b><span>Interação nº 2. Deixar alguém errar é melhor que ninguém responder — o erro fixa mais.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">13</span><p class="st">Condicional</p><span class="clock">7:10 – 8:25</span>
+    <span class="sm">Ler código em voz alta como português</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Agora a peça que faz o computador <strong>decidir</strong>: o <code>if</code>. Se.</p>
+      <p>Leiam comigo em português: <em>se</em> o nível dessa vaga <em>for igual a</em> junior, mostra 'essa serve pra mim'. <em>Senão</em>, mostra 'essa não'.</p>
+      <p>Só isso. O <code>if</code> faz uma pergunta que só tem duas respostas: sim ou não.</p>
+      <p>Três sinais que vocês vão usar sempre: três iguais quer dizer 'é igual a'. Maior-igual quer dizer 'é maior ou igual a'. E o E-comercial dobrado quer dizer 'e' — ele exige as duas coisas ao mesmo tempo.</p>
+      <p>Nível junior <strong>E</strong> salário de dois mil pra cima. Se fosse 'ou', bastava uma das duas."</p>
+    </div>
+    <div class="acao"><b>Faça</b><span>Leia o código em voz alta traduzindo para português. É o hábito que mais destrava iniciante.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">14</span><p class="st">Repetição</p><span class="clock">8:25 – 9:40</span>
+    <span class="sm">O momento em que a mágica aparece</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Mas eu não quero testar uma vaga. Quero testar as 120. Pra isso existe o <code>for</code>.</p>
+      <p>Ele tem três partes: onde começa, até quando vai, e de quanto em quanto anda. Começa no zero, vai enquanto o <code>i</code> for menor que o tamanho da lista, e anda de um em um.</p>
+      <p>Dentro dele, o <code>if</code> que a gente acabou de ver. Se a vaga passa, entra na minha lista.</p>
+      <p>E aqui está o resultado: de 120, sobraram <strong>24</strong>.</p>
+      <p>Reparem no que aconteceu. Eu escrevi a regra <strong>uma vez só</strong>, e o computador aplicou 120 vezes. Se amanhã a lista virar dez mil vagas, este código não muda uma única linha."</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">15</span><p class="st">Funções</p><span class="clock">9:40 – 11:00</span>
+    <span class="sm">Se estiver atrasado, encurte aqui — mas não pule</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Última peça: <strong>função</strong>. Função é um pedaço de código que ganha um nome. Você escreve uma vez e usa quantas vezes quiser.</p>
+      <p>Olhem o que tem dentro dela: é <strong>exatamente o mesmo código</strong> que a gente acabou de escrever. A lista vazia, o <code>for</code>, o <code>if</code>.</p>
+      <p>A diferença é uma só: o nível não está mais fixo lá dentro. Ele vem de fora, na hora em que eu chamo a função.</p>
+      <p>Então eu chamo buscarVagas com 'junior' e recebo 34. Chamo com 'estagio' e recebo 35. Mesmo código, respostas diferentes.</p>
+      <p>É pra isso que serve uma função."</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">16</span><p class="st">O resultado rodando</p><span class="clock">11:00 – 11:45</span>
+    <span class="sm">A virada da aula</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"E é isso rodando de verdade.</p>
+      <p>De 120 vagas, 24 são pra você. Com nome, empresa e salário.</p>
+      <p>Uma lista impossível de ler virou uma lista possível. Isso é lógica de programação — a primeira metade da nossa pergunta está resolvida.</p>
+      <p class="pausa">(pausa de verdade — dois segundos)</p>
+      <p>"Agora vem a segunda metade. E é a parte que ninguém ensina na primeira aula, e que quebra todo mundo no primeiro trabalho em grupo."</p>
+    </div>
+    <div class="acao"><b>Faça</b><span>Se der, rode <code>node vagas.js</code> ao vivo no terminal em vez de mostrar o slide. Código executando vale muito em domínio técnico.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">17</span><p class="st">Anatomia de um projeto</p><span class="clock">11:45 – 12:50</span>
+    <span class="sm">Item do tema sorteado — nomeie em voz alta</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Antes de falar de equipe, uma pergunta: onde é que esse código mora?</p>
+      <p>Quem aqui já salvou um arquivo com nome tipo 'trabalho final 2'?"</p>
+      <p class="pausa">(deixe rir)</p>
+      <p>"Pois é. Código solto numa pasta qualquer não é projeto.</p>
+      <p>Projeto tem estrutura: uma pasta com nome, o código separado dos dados, um <code>README</code> explicando o que é e como rodar, e um arquivo dizendo o que <strong>não</strong> deve ser versionado.</p>
+      <p>Esse README é a porta de entrada. Projeto sem README é casa sem placa.</p>
+      <p>Isso se chama <em>abertura de projeto</em>, e é o que permite outra pessoa — ou você mesmo daqui a três meses — abrir e entender em cinco minutos."</p>
+    </div>
+    <div class="acao"><b>Atenção</b><span>Diga "abertura de projeto" com todas as letras: é um dos quatro itens do tema que foi sorteado para você.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">18</span><p class="st">Os quatro comandos</p><span class="clock">12:50 – 13:40</span>
+    <span class="sm">Se estiver atrasado, este é o 2º a cortar</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"E abrir um projeto são quatro comandos.</p>
+      <p>Criar a pasta e entrar nela. Gerar o arquivo de identidade do projeto. Começar a versionar. E dizer o que deve ser ignorado.</p>
+      <p>Vinte segundos.</p>
+      <p>E a partir desse <code>git init</code>, o terceiro comando, tudo que acontecer nessa pasta pode ser <strong>gravado, comparado e desfeito</strong>."</p>
+    </div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">19</span><p class="st">A dor do versionamento</p><span class="clock">13:40 – 14:20</span>
+    <span class="sm">O slide que ganha a turma</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Agora: por que versionar? Deixa eu mostrar o que acontece quando não se versiona.</p>
+      <p class="pausa">(mostre a lista de arquivos)</p>
+      <p>"Quem nunca?"</p>
+      <p class="pausa">(deixe rir de verdade — não corra)</p>
+      <p>"O problema não é preguiça. É que ninguém ensinou o jeito certo. E o jeito certo tem nome: <strong>controle de versão</strong>. Git existe pra isso nunca mais acontecer."</p>
+    </div>
+    <div class="acao"><b>Atenção</b><span>Riso na sala conta como interação. Não atropele o momento.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">20</span><p class="st">As três áreas do Git</p><span class="clock">14:20 – 15:30</span>
+    <span class="sm">Slide técnico central do bloco</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Git parece complicado, mas tem só <strong>três lugares</strong>. Se vocês entenderem este desenho, entendem todos os comandos.</p>
+      <p>Primeiro: <strong>a sua pasta</strong>. É onde você trabalha, onde edita os arquivos.</p>
+      <p>Segundo: <strong>a prateleira</strong>. É onde você separa o que quer salvar — porque nem tudo que você mexeu deve ser salvo junto.</p>
+      <p>Terceiro: <strong>o histórico</strong>. O que entra aqui fica gravado.</p>
+      <p>E os comandos são as setas entre eles. <code>git add</code> empurra da pasta pra prateleira. <code>git commit</code> grava da prateleira no histórico. E <code>git push</code> manda o histórico pro GitHub, que é a nuvem.</p>
+      <p>Quase todo erro de iniciante em Git é confundir esses três lugares."</p>
+    </div>
+    <div class="acao"><b>Faça</b><span>Use as mãos: três posições no ar, da esquerda para a direita. O gesto fixa o modelo melhor que o slide.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">21</span><p class="st">Comandos essenciais</p><span class="clock">15:30 – 16:35</span>
+    <span class="sm">Commit como save point</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Na prática são quatro comandos. <code>git status</code>: o que mudou? <code>git add</code>: manda pra prateleira. <code>git commit</code>: grava, com uma mensagem dizendo o que você fez. <code>git log</code>: mostra tudo que já foi gravado.</p>
+      <p>E olhem o histórico aqui embaixo, lendo de baixo pra cima: abri o projeto, carreguei as vagas, filtrei por nível. Dá pra contar a história inteira do projeto lendo <strong>só as mensagens</strong>.</p>
+      <p>Por isso mensagem importa. 'Ajustes' não diz nada. 'Filtra vagas por nível júnior' diz tudo.</p>
+      <p>E esse histórico é a prova do seu raciocínio — é literalmente o que um recrutador vai ler no seu GitHub."</p>
+    </div>
+    <div class="acao"><b>Bônus</b><span>Aponte para a barra no rodapé do slide: "essa linha embaixo da tela é um histórico de commits — cada slide desta aula foi um."</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">22</span><p class="st">Branch, Pull Request e merge</p><span class="clock">16:35 – 17:45</span>
+    <span class="sm">Fecha a 2ª metade do problema gerador</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Agora sim, a segunda metade da nossa pergunta: como trabalhar junto sem se atrapalhar.</p>
+      <p>Imaginem que a Ana vai fazer o filtro e o Bruno vai fazer a ordenação. Ao mesmo tempo, no mesmo projeto.</p>
+      <p>Cada um cria uma <strong>branch</strong> — uma linha própria de trabalho. A Ana trabalha na dela, o Bruno na dele, e nenhum dos dois encosta no trabalho do outro.</p>
+      <p>Quando termina, cada um abre um <strong>Pull Request</strong>: um pedido de revisão. O squad lê o código, comenta, sugere.</p>
+      <p>Aprovado, vem o <strong>merge</strong>: o Git junta os dois trabalhos, sem apagar nada de ninguém.</p>
+      <p>E essa é a resposta para a segunda metade do nosso <em>problema gerador</em>."</p>
+    </div>
+    <div class="acao"><b>Atenção</b><span>Volte ao problema gerador em voz alta aqui. Fechar o ciclo na frente da banca é o que carrega os 10 pontos de metodologia.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">23</span><p class="st">GitHub como portfólio</p><span class="clock">17:45 – 18:35</span>
+    <span class="sm">O momento emocional — fale devagar</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"E aí, lembram das 120 vagas com que a gente começou?</p>
+      <p>Quando vocês forem se candidatar a uma delas, a primeira coisa que vão pedir é o link do seu GitHub.</p>
+      <p>O repositório que vocês construírem aqui <strong>é a resposta</strong>. README explicando o problema, histórico de commits contando a história, Pull Requests revisados pelo squad, e código que roda.</p>
+      <p>Isso não é exercício de aula. É a primeira peça do portfólio de vocês. E vale mais que qualquer certificado impresso."</p>
+    </div>
+    <div class="acao"><b>Faça</b><span>Diminua o ritmo. Olhe para a banca. Aqui o círculo da aula se fecha.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">24</span><p class="st">Entrega e avaliação</p><span class="clock">18:35 – 19:20</span>
+    <span class="sm">Responde antes de perguntarem</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Sobre a entrega — e quero ser bem claro aqui.</p>
+      <p>Hoje ninguém vai sair daqui com tudo isso pronto, e nem é pra sair. Hoje vocês saem com três coisas: conta criada no GitHub, a pasta do projeto criada, e o primeiro commit feito.</p>
+      <p>O resto — o repositório completo, as branches, os Pull Requests — a gente constrói ao longo dos dez encontros.</p>
+      <p>Hoje a gente percorreu o caminho inteiro de uma vez, pra vocês verem aonde isso chega. Nos próximos encontros a gente volta em cada parada com calma.</p>
+      <p>E a avaliação não é prova: é o próprio repositório de vocês. Reparem que 40% da nota é sobre <strong>como</strong> vocês trabalharam juntos — histórico e colaboração — não só sobre o código funcionar."</p>
+    </div>
+    <div class="acao"><b>Atenção</b><span>Este slide desarma a pergunta "não é conteúdo demais para uma aula?" antes de ela ser feita.</span></div>
+  </div>
+</div>
+
+<div class="slide">
+  <div class="sh"><span class="sn">25</span><p class="st">Fechamento</p><span class="clock">19:20 – 20:00</span>
+    <span class="sm">Encerre dizendo que encerrou no tempo</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p>"Fechando.</p>
+      <p><strong>Lógica resolve. Versionamento preserva.</strong></p>
+      <p>Vocês pegaram uma lista impossível de ler e ensinaram o computador a lê-la. E aprenderam a construir isso com outras pessoas sem perder nada no caminho.</p>
+      <p>Tudo que está escrito aqui embaixo a gente viu hoje, de passagem. Nos próximos nove encontros, cada um desses vira uma aula inteira.</p>
+      <p>No próximo encontro, cada squad apresenta seu repositório e revisa o do outro.</p>
+      <p>Obrigado."</p>
+    </div>
+    <div class="acao"><b>Faça</b><span>Pare o cronômetro e diga, virado para a banca: <strong>"encerro a exposição no tempo previsto"</strong>. Gestão do tempo é uma linha da ficha — não deixe implícito.</span></div>
+  </div>
+</div>
+
+<h2>Parte 3 — Arguição
+  <small>10 minutos · Art. 40, III · o tempo agora é da banca</small></h2>
+
+<div class="slide">
+  <div class="sh"><span class="sn">Q&amp;A</span><p class="st">Como se portar</p><span class="clock">10 min</span>
+    <span class="sm">Dois slides de apoio ao final da apresentação</span></div>
+  <div class="sb">
+    <div class="fala">
+      <p><strong>Se souber:</strong> responda em 30 a 60 segundos e pare. Resposta longa demais parece insegurança.</p>
+      <p><strong>Se não souber:</strong> "Isso eu não domino a fundo, mas o caminho que eu seguiria é ___." Honestidade com raciocínio pontua mais que improviso errado, e a banca percebe a diferença na hora.</p>
+      <p><strong>Se perguntarem sobre as 40 horas:</strong> é a deixa para o site da trilha. Aí sim você abre e mostra os dez encontros.</p>
+      <p><strong>Se perguntarem se não é conteúdo demais:</strong> você já respondeu no slide 24 — reforce que é a aula panorâmica de abertura.</p>
+    </div>
+    <div class="acao"><b>Faça</b><span>Aperte <code>O</code> para abrir o mapa e ir direto a qualquer slide que a banca citar. Os dois últimos slides trazem 12 perguntas prováveis já respondidas.</span></div>
+  </div>
+</div>
+
+<footer>Roteiro de fala · Guilherme Santos Rabelo · Jovem Tech 2026 · Trilha Básica, Módulo 2</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, b=document.getElementById('theme');
+  try{ var s=localStorage.getItem('jt-roteiro-theme'); if(s) root.setAttribute('data-theme',s); }catch(e){}
+  b.addEventListener('click',function(){
+    var c=root.getAttribute('data-theme');
+    if(!c) c=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+    var n=c==='dark'?'light':'dark';
+    root.setAttribute('data-theme',n);
+    try{ localStorage.setItem('jt-roteiro-theme',n); }catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
