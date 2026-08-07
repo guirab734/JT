@@ -17,7 +17,7 @@
   #viewport{position:fixed;inset:0;display:grid;place-items:center;background:
     radial-gradient(1200px 700px at 78% -10%, #16222F 0%, transparent 60%),
     radial-gradient(900px 600px at 5% 110%, #10202C 0%, transparent 55%), var(--ink);}
-  #stage{width:1600px;height:900px;position:relative;transform-origin:center center;flex:none}
+  #stage{width:1600px;height:900px;position:absolute;left:0;top:0;transform-origin:top left;flex:none}
   .slide{position:absolute;inset:0;padding:84px 96px 118px;display:none;flex-direction:column}
   .slide.on{display:flex;animation:in .34s cubic-bezier(.2,.7,.3,1) both}
   .slide .notes{display:none}
@@ -857,8 +857,11 @@
 
   /* ---- scale stage to viewport ---- */
   function fit(){
-    var s=Math.min(window.innerWidth/1600, window.innerHeight/900);
-    stage.style.transform='scale('+s+')';
+    var w=vp.clientWidth,h=vp.clientHeight;
+    var s=Math.min(w/1600,h/900);
+    var x=Math.max(0,(w-1600*s)/2);
+    var y=Math.max(0,(h-900*s)/2);
+    stage.style.transform='translate('+x+'px,'+y+'px) scale('+s+')';
   }
   window.addEventListener('resize',fit); fit();
 
