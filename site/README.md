@@ -1,17 +1,36 @@
-# Versão alternativa do site
+# Versões do site
 
-`index-chatgpt.html` é a versão gerada pelo ChatGPT, preservada aqui.
+| Arquivo | Situação |
+| --- | --- |
+| `../index.html` (raiz) | **Publicado.** Versão construída com o ChatGPT. |
+| `index-claude.html` | Guardada. Versão alternativa, não publicada. |
 
-**Não é a versão publicada.** O site que vai ao ar é o `index.html` da raiz
-do repositório, porque:
+## Sobre a versão publicada
 
-1. Esta versão lista **5 módulos** e omite o *Mentalidade Tech, Design e
-   Prototipagem*, o que renumera todos os outros — Lógica de Programação &
-   Versionamento aparece como M1 quando é o **M2** da Trilha Básica
-   (Anexo III-A do Edital nº 01/2026).
-2. Os links de anexo (`apresentacao/`, `plano-de-aula/`) só funcionam se o
-   arquivo estiver na raiz, convivendo com essas pastas.
+É uma versão de teste, escolhida pelo visual. Vale saber, para quando for
+usar de verdade com uma turma, que ela lista **5 módulos** e omite o
+*Mentalidade Tech, Design e Prototipagem*. Com isso, todos os módulos ficam
+renumerados e o **Lógica de Programação & Versionamento aparece como M1**,
+quando é o **M2** da Trilha Básica (Anexo III-A do Edital nº 01/2026).
 
-Se você preferir o visual desta versão, corrija a numeração e a lista de
-módulos, mova o arquivo para a raiz como `index.html` e ajuste os links dos
-anexos para apontar para os arquivos reais.
+A carga total exibida (140 h) também reflete essa ausência: a Trilha Básica
+soma **180 h** nos seis módulos.
+
+Nada disso impede o uso como demonstração. Só precisa ser corrigido antes de
+o site virar referência para alunos de verdade.
+
+## A versão guardada
+
+`index-claude.html` traz os seis módulos com a numeração, a carga horária e
+as ementas conforme o Anexo III-A, além do módulo de Lógica detalhado em dez
+encontros de 4 h. Se algum dia quiser o conteúdo correto, o caminho mais
+curto é trazer a lista de módulos daqui para o visual de lá.
+
+## Links dos anexos
+
+Os chips de anexo usam caminhos relativos e só funcionam com o arquivo na
+**raiz** do repositório, ao lado das pastas `apresentacao/` e
+`plano-de-aula/`. Se mover o arquivo de lugar, os links quebram.
+
+- `apresentacao/` → a apresentação da aula
+- `plano-de-aula/Plano-de-Aula-Guilherme-Santos-Rabelo.pdf` → o plano em PDF

@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trilha Básica — Jovem Tech 2026</title>
+<meta name="description" content="Trilha Básica do Projeto Jovem Tech 2026: módulos, dias de aula, materiais e a turma.">
+<style>
+  :root{
+    --bg:#F5F7F9; --surface:#FFFFFF; --raised:#EDF0F4; --sunk:#E4E9EE;
+    --text:#101822; --text2:#44515F; --muted:#77869A;
+    --line:#DCE2E9; --line2:#C3CCD6;
+    --accent:#B5670C; --accent-bg:#FDF3E4;
+    --done:#2C7A55; --done-bg:#E7F3ED;
+    --live:#B5670C; --live-bg:#FDF3E4;
+    --soon:#77869A; --soon-bg:#EDF0F4;
+    --mono:ui-monospace,"SF Mono","Cascadia Code","JetBrains Mono",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --bg:#0A1018; --surface:#111A25; --raised:#18232F; --sunk:#0D151E;
+    --text:#EDF2F7; --text2:#B4C2D1; --muted:#7A8DA3;
+    --line:#22303F; --line2:#2E4052;
+    --accent:#F0A93B; --accent-bg:#1E2735;
+    --done:#52B788; --done-bg:#16281F;
+    --live:#F0A93B; --live-bg:#241C0C;
+    --soon:#7A8DA3; --soon-bg:#18232F;
+  }}
+  :root[data-theme="dark"]{
+    --bg:#0A1018; --surface:#111A25; --raised:#18232F; --sunk:#0D151E;
+    --text:#EDF2F7; --text2:#B4C2D1; --muted:#7A8DA3;
+    --line:#22303F; --line2:#2E4052;
+    --accent:#F0A93B; --accent-bg:#1E2735;
+    --done:#52B788; --done-bg:#16281F;
+    --live:#F0A93B; --live-bg:#241C0C;
+    --soon:#7A8DA3; --soon-bg:#18232F;
+  }
+  :root[data-theme="light"]{
+    --bg:#F5F7F9; --surface:#FFFFFF; --raised:#EDF0F4; --sunk:#E4E9EE;
+    --text:#101822; --text2:#44515F; --muted:#77869A;
+    --line:#DCE2E9; --line2:#C3CCD6;
+    --accent:#B5670C; --accent-bg:#FDF3E4;
+    --done:#2C7A55; --done-bg:#E7F3ED;
+    --live:#B5670C; --live-bg:#FDF3E4;
+    --soon:#77869A; --soon-bg:#EDF0F4;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+    font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+  a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px}
+  .mono{font-family:var(--mono)}
+
+  /* ── topbar ── */
+  .top{border-bottom:1px solid var(--line);background:var(--surface);position:sticky;top:0;z-index:20}
+  .top .wrap{display:flex;align-items:center;gap:16px;height:58px}
+  .brand{font-family:var(--mono);font-size:14.5px;font-weight:700;letter-spacing:-.01em;color:var(--text);
+    display:flex;align-items:center;gap:9px;text-decoration:none}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--accent);flex:none}
+  .brand span{color:var(--muted);font-weight:400}
+  .top nav{margin-left:auto;display:flex;gap:20px;font-size:14px}
+  .top nav a{color:var(--text2);text-decoration:none}
+  .top nav a:hover{color:var(--accent)}
+  #theme{background:none;border:1px solid var(--line2);border-radius:3px;color:var(--text2);
+    font-family:var(--mono);font-size:12px;padding:5px 9px;cursor:pointer}
+  #theme:hover{border-color:var(--accent);color:var(--accent)}
+  @media(max-width:640px){.top nav a:not(.keep){display:none}}
+
+  /* ── hero ── */
+  header.hero{padding:56px 0 40px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+  h1{font-family:var(--mono);font-size:clamp(30px,5.5vw,46px);line-height:1.05;letter-spacing:-.035em;
+    margin:0 0 14px;font-weight:700;text-wrap:balance}
+  .hero p{font-size:18px;color:var(--text2);max-width:60ch;margin:0}
+  .stats{display:flex;flex-wrap:wrap;gap:36px;margin-top:32px}
+  .stat b{display:block;font-family:var(--mono);font-size:30px;font-weight:700;letter-spacing:-.02em;
+    color:var(--text);font-variant-numeric:tabular-nums;line-height:1}
+  .stat span{font-family:var(--mono);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+  .bar{margin-top:26px;height:6px;background:var(--sunk);border-radius:3px;overflow:hidden;max-width:520px}
+  .bar i{display:block;height:100%;background:var(--accent);border-radius:3px}
+  .barlbl{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:8px}
+
+  /* ── sections ── */
+  section{padding:52px 0}
+  h2{font-family:var(--mono);font-size:24px;letter-spacing:-.02em;margin:0 0 6px;font-weight:700}
+  .sdek{color:var(--muted);font-size:15px;margin:0 0 28px;max-width:62ch}
+
+  /* ── trail ── */
+  .trail{position:relative;padding-left:38px}
+  .trail::before{content:"";position:absolute;left:9px;top:10px;bottom:34px;width:2px;background:var(--line)}
+  .mod{position:relative;margin-bottom:14px}
+  .node{position:absolute;left:-38px;top:20px;width:20px;height:20px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--line2);display:grid;place-items:center;z-index:2}
+  .node::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--line2)}
+  .mod.done .node{border-color:var(--done)} .mod.done .node::after{background:var(--done)}
+  .mod.live .node{border-color:var(--live);box-shadow:0 0 0 4px var(--live-bg)} .mod.live .node::after{background:var(--live)}
+
+  .modhead{width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:4px;
+    padding:17px 20px;cursor:pointer;font-family:inherit;color:inherit;display:grid;
+    grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:center;transition:border-color .15s}
+  .modhead:hover{border-color:var(--line2)}
+  .mod.live .modhead{border-color:var(--live)}
+  .modhead:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .modnum{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.08em;grid-row:span 2;align-self:start;padding-top:3px}
+  .modttl{font-family:var(--mono);font-size:17px;font-weight:700;letter-spacing:-.015em;margin:0;text-wrap:balance}
+  .modmeta{font-size:13.5px;color:var(--muted);grid-column:2}
+  .modright{grid-row:span 2;display:flex;align-items:center;gap:12px}
+  .badge{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+    padding:4px 9px;border-radius:2px;white-space:nowrap;font-weight:600}
+  .b-done{background:var(--done-bg);color:var(--done)}
+  .b-live{background:var(--live-bg);color:var(--live)}
+  .b-soon{background:var(--soon-bg);color:var(--soon)}
+  .chev{width:11px;height:11px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);
+    transform:rotate(45deg);transition:transform .2s;flex:none;margin-top:-4px}
+  .mod[open] .chev{transform:rotate(-135deg);margin-top:2px}
+
+  .modbody{border:1px solid var(--line);border-top:none;border-radius:0 0 4px 4px;background:var(--surface);
+    padding:4px 20px 18px;display:none}
+  .mod[open] .modbody{display:block}
+  .mod[open] .modhead{border-radius:4px 4px 0 0}
+  .ementa{font-size:14px;color:var(--text2);border-left:2px solid var(--line2);padding:2px 0 2px 14px;margin:14px 0 18px}
+
+  /* aulas */
+  .aula{display:grid;grid-template-columns:78px 1fr;gap:4px 16px;padding:13px 0;border-top:1px solid var(--line)}
+  .aula .d{font-family:var(--mono);font-size:12.5px;color:var(--muted);padding-top:2px;font-variant-numeric:tabular-nums}
+  .aula .t{font-size:15px;font-weight:600;color:var(--text);margin:0}
+  .aula .s{font-size:13.5px;color:var(--muted);margin:2px 0 0;grid-column:2}
+  .anexos{grid-column:2;display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+  .ax{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;text-decoration:none;
+    border:1px solid var(--line2);border-radius:2px;padding:4px 10px;color:var(--text2);
+    display:inline-flex;align-items:center;gap:6px;transition:.15s}
+  .ax:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
+  .ax.off{opacity:.55;pointer-events:none;border-style:dashed}
+  .ax svg{width:11px;height:11px;flex:none}
+  .aula.priv{background:var(--accent-bg);margin:0 -20px;padding:13px 20px;border-left:3px solid var(--accent)}
+
+  /* alunos */
+  .alunos{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:12px}
+  .al{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:15px 17px}
+  .al .av{width:34px;height:34px;border-radius:50%;background:var(--raised);display:grid;place-items:center;
+    font-family:var(--mono);font-size:13px;font-weight:700;color:var(--accent);margin-bottom:10px}
+  .al h4{font-size:15px;margin:0 0 2px;font-weight:600}
+  .al .sq{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.05em}
+  .al .lk{display:flex;gap:8px;margin-top:11px}
+  .al .lk a{width:28px;height:28px;border:1px solid var(--line2);border-radius:3px;display:grid;place-items:center;color:var(--text2)}
+  .al .lk a:hover{border-color:var(--accent);color:var(--accent)}
+  .al .lk svg{width:14px;height:14px}
+  .al.add{border-style:dashed;display:grid;place-items:center;text-align:center;color:var(--muted);min-height:132px}
+  .al.add .plus{font-size:22px;color:var(--accent);font-family:var(--mono)}
+
+  pre{background:var(--sunk);border:1px solid var(--line);border-radius:4px;padding:16px 18px;
+    font-family:var(--mono);font-size:13px;line-height:1.7;overflow-x:auto;margin:14px 0;color:var(--text)}
+  pre .c{color:var(--muted)}
+  .note{border:1px solid var(--line2);border-left:3px solid var(--accent);background:var(--accent-bg);
+    padding:15px 18px;border-radius:3px;margin:20px 0;font-size:14.5px;color:var(--text2)}
+  .note b{color:var(--text)}
+  footer{border-top:1px solid var(--line);padding:32px 0 52px;font-family:var(--mono);
+    font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:10px 26px}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="top"><div class="wrap">
+  <a class="brand" href="#"><span class="dot"></span>jovemtech<span>.guirab.com.br</span></a>
+  <nav>
+    <a href="#trilha" class="keep">Trilha</a>
+    <a href="#turma">Turma</a>
+    <a href="#como">Como entrar</a>
+    <button id="theme" type="button" aria-label="Alternar tema">tema</button>
+  </nav>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">Projeto Jovem Tech 2026 · INOVASE · Trilha Básica</p>
+  <h1>A trilha inteira,<br>num lugar só.</h1>
+  <p>Todos os módulos, os dias de aula e os materiais de cada encontro. Se você faltou, o conteúdo continua aqui. Se quer revisar antes da próxima aula, também.</p>
+  <div class="stats">
+    <div class="stat"><b>6</b><span>módulos</span></div>
+    <div class="stat"><b>180h</b><span>trilha básica</span></div>
+    <div class="stat"><b>+20h</b><span>progressão de carreira</span></div>
+    <div class="stat"><b>1</b><span>aula publicada</span></div>
+  </div>
+  <div class="bar"><i style="width:2.2%"></i></div>
+  <div class="barlbl">4 h de 180 h concluídas · módulo 2 em andamento</div>
+</div></header>
+
+<section id="trilha"><div class="wrap">
+  <h2>Módulos da trilha</h2>
+  <p class="sdek">Os módulos seguem a matriz do Anexo III-A do Edital nº 01/2026. Os materiais de cada encontro entram aqui logo depois da aula. As ementas dos módulos futuros ficam visíveis desde já — dá para se preparar antes.</p>
+
+  <div class="trail">
+
+    <!-- 1 -->
+    <details class="mod done">
+      <summary class="modhead"><span class="node"></span>
+        <span class="modnum">M1</span>
+        <h3 class="modttl">Mentalidade Tech, Design e Prototipagem</h3>
+        <span class="modright"><span class="badge b-done">concluído</span><i class="chev"></i></span>
+        <span class="modmeta">40 h · 10 encontros</span>
+      </summary>
+      <div class="modbody">
+        <p class="ementa">Introdução ao universo da tecnologia, mentalidade digital, resolução de problemas, metodologias ágeis, fundamentos de UX/UI, design de soluções, identificação das necessidades dos usuários, prototipagem, validação de ideias e ferramentas Low Code/No Code.</p>
+        <div class="aula"><span class="d">—</span><p class="t">Módulo ministrado por outro instrutor</p>
+          <p class="s">Os materiais ficam sob responsabilidade do instrutor do módulo.</p></div>
+      </div>
+    </details>
+
+    <!-- 2 — O MEU -->
+    <details class="mod live" open>
+      <summary class="modhead"><span class="node"></span>
+        <span class="modnum">M2</span>
+        <h3 class="modttl">Lógica de Programação &amp; Versionamento</h3>
+        <span class="modright"><span class="badge b-live">em andamento</span><i class="chev"></i></span>
+        <span class="modmeta">40 h · 10 encontros de 4 h · instrutor: Guilherme Santos Rabelo</span>
+      </summary>
+      <div class="modbody">
+        <p class="ementa">Raciocínio lógico, pensamento computacional, algoritmos em JavaScript, variáveis, tipos de dados, operadores, estruturas condicionais e de repetição, funções, estruturas de dados introdutórias, resolução de problemas computacionais, abertura e organização de projetos tecnológicos, controle de versões e utilização de Git e GitHub.</p>
+
+        <!-- ══════════════════════════════════════════════════════════════
+             AULA DEMONSTRATIVA — visível só para a banca avaliadora.
+             Para remover depois da seleção: apague este bloco <div class="aula priv"> inteiro.
+             ══════════════════════════════════════════════════════════════ -->
+        <div class="aula priv"><span class="d">07/08</span>
+          <p class="t">Aula demonstrativa — processo seletivo <span class="badge b-live" style="margin-left:6px">privado</span></p>
+          <p class="s">Aula prática de instrutoria apresentada à Banca Avaliadora 2. Mesmo conteúdo do Encontro 01, em formato de 20 minutos.</p>
+          <div class="anexos">
+            <a class="ax" href="apresentacao/">Slides da aula</a>
+            <a class="ax" href="plano-de-aula/Plano-de-Aula-Guilherme-Santos-Rabelo.pdf">Plano de aula (PDF)</a>
+            <a class="ax" href="guia/">Roteiro de execução</a>
+          </div>
+        </div>
+
+        <div class="aula"><span class="d">Enc. 01</span>
+          <p class="t">Pensamento computacional e algoritmos</p>
+          <p class="s">O problema gerador, decomposição, padrões, abstração e a escrita do algoritmo em linguagem natural antes do código.</p>
+          <div class="anexos">
+            <a class="ax" href="apresentacao/">Slides</a>
+            <a class="ax" href="codigo/">Projeto Mural de Vagas</a>
+            <a class="ax" href="codigo/README.md">Instruções e entrega</a>
+          </div>
+        </div>
+
+        <div class="aula"><span class="d">Enc. 02</span>
+          <p class="t">Variáveis, tipos de dados e operadores</p>
+          <p class="s">const e let, string, number, boolean, operadores aritméticos, de comparação e lógicos.</p>
+          <div class="anexos"><span class="ax off">Material após a aula</span></div>
+        </div>
+
+        <div class="aula"><span class="d">Enc. 03</span>
+          <p class="t">Estruturas condicionais</p>
+          <p class="s">if, else if, else, operador ternário e a construção de regras de decisão.</p>
+          <div class="anexos"><span class="ax off">Material após a aula</span></div>
+        </div>
+
+        <div class="aula"><span class="d">Enc. 04</span>
+          <p class="t">Estruturas de repetição</p>
+          <p class="s">for, while, do...while, percurso de listas e a diferença entre repetir por contagem e por condição.</p>
+          <div class="anexos"><span class="ax off">Material após a aula</span></div>
+        </div>
+
+        <div class="aula"><span class="d">Enc. 05</span>
+          <p class="t">Funções e modularização</p>
+          <p class="s">Parâmetros, retorno, escopo, funções de seta e a divisão do problema em partes reaproveitáveis.</p>
+          <div class="anexos"><span class="ax off">Material após a aula</span></div>
+        </div>
+
+        <div class="aula"><span class="d">Enc. 06</span>
+          <p class="t">Estruturas de dados: arrays</p>
+          <p class="s">Índices, length, push, e os métodos filter, map, sort e slice.</p>
+          <div class="anexos"><span class="ax off">Material após a aula</span></div>
+        </div>
+
+        <div class="aula"><span class="d">Enc. 07</span>
+          <p class="t">Estruturas de dados: objetos e coleções</p>
+          <p class="s">Objetos, propriedades, array de objetos e leitura de dados em JSON.</p>
+          <div class="anexos"><span class="ax off">Material após a aula</span></div>
+        </div>
+
+        <div class="aula"><span class="d">Enc. 08</span>
+          <p class="t">Abertura e organização de projetos</p>
+          <p class="s">Estrutura de pastas, README, .gitignore, package.json e o que faz um projeto ser entregável.</p>
+          <div class="anexos"><span class="ax off">Material após a aula</span></div>
+        </div>
+
+        <div class="aula"><span class="d">Enc. 09</span>
+          <p class="t">Git: versionamento local</p>
+          <p class="s">As três áreas do Git, init, status, add, commit, log e mensagens de commit descritivas.</p>
+          <div class="anexos"><span class="ax off">Material após a aula</span></div>
+        </div>
+
+        <div class="aula"><span class="d">Enc. 10</span>
+          <p class="t">GitHub: colaboração em squad</p>
+          <p class="s">Repositório remoto, push, branch, Pull Request, revisão por pares, merge e resolução de conflito.</p>
+          <div class="anexos"><span class="ax off">Material após a aula</span></div>
+        </div>
+      </div>
+    </details>
+
+    <!-- 3 -->
+    <details class="mod">
+      <summary class="modhead"><span class="node"></span>
+        <span class="modnum">M3</span>
+        <h3 class="modttl">Programação Orientada a Objetos &amp; TypeScript</h3>
+        <span class="modright"><span class="badge b-soon">previsto</span><i class="chev"></i></span>
+        <span class="modmeta">20 h · 5 encontros</span>
+      </summary>
+      <div class="modbody">
+        <p class="ementa">Classes, objetos, atributos, métodos, construtores, encapsulamento, abstração, herança, composição e polimorfismo, além dos fundamentos de TypeScript, tipagem estática, interfaces, tipos personalizados, funções tipadas, organização, modularização e manutenção de código.</p>
+        <div class="aula"><span class="d">—</span><p class="t">Encontros e materiais entram aqui quando o módulo começar</p>
+          <p class="s">Pré-requisito: o módulo 2 inteiro. O que você construir lá é a base daqui.</p></div>
+      </div>
+    </details>
+
+    <!-- 4 -->
+    <details class="mod">
+      <summary class="modhead"><span class="node"></span>
+        <span class="modnum">M4</span>
+        <h3 class="modttl">Desenvolvimento Web Front-End</h3>
+        <span class="modright"><span class="badge b-soon">previsto</span><i class="chev"></i></span>
+        <span class="modmeta">40 h · 10 encontros</span>
+      </summary>
+      <div class="modbody">
+        <p class="ementa">Formação e organização de squads, HTML5, CSS3 e JavaScript, páginas semânticas, estilização, responsividade, acessibilidade, manipulação do DOM, tratamento de eventos, validação de formulários, consumo de APIs, manipulação de JSON e integração entre componentes de interface.</p>
+        <div class="aula"><span class="d">—</span><p class="t">Encontros e materiais entram aqui quando o módulo começar</p></div>
+      </div>
+    </details>
+
+    <!-- 5 -->
+    <details class="mod">
+      <summary class="modhead"><span class="node"></span>
+        <span class="modnum">M5</span>
+        <h3 class="modttl">Fundamentos de Banco de Dados</h3>
+        <span class="modright"><span class="badge b-soon">previsto</span><i class="chev"></i></span>
+        <span class="modmeta">30 h · 8 encontros</span>
+      </summary>
+      <div class="modbody">
+        <p class="ementa">Modelagem conceitual e lógica, entidades, atributos e relacionamentos, bancos relacionais, tabelas, chaves primárias e estrangeiras, linguagem SQL, operações CRUD, filtros, agrupamentos, junções e noções de integração e deploy de soluções com persistência de dados.</p>
+        <div class="aula"><span class="d">—</span><p class="t">Encontros e materiais entram aqui quando o módulo começar</p></div>
+      </div>
+    </details>
+
+    <!-- 6 -->
+    <details class="mod">
+      <summary class="modhead"><span class="node"></span>
+        <span class="modnum">M6</span>
+        <h3 class="modttl">Projeto Integrador &amp; DemoDay</h3>
+        <span class="modright"><span class="badge b-soon">previsto</span><i class="chev"></i></span>
+        <span class="modmeta">10 h · o fechamento da trilha</span>
+      </summary>
+      <div class="modbody">
+        <p class="ementa">Desenvolvimento em squads, integração dos conhecimentos técnicos da formação, definição e refinamento da solução, construção de produto mínimo viável, validação das funcionalidades, documentação, preparação de pitch, demonstração e apresentação final no DemoDay.</p>
+        <div class="aula"><span class="d">—</span><p class="t">É aqui que tudo se junta</p>
+          <p class="s">O repositório que você abriu no módulo 2 pode virar o seu projeto final.</p></div>
+      </div>
+    </details>
+
+  </div>
+</div></section>
+
+<section id="turma" style="background:var(--sunk);border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
+  <h2>A turma</h2>
+  <p class="sdek">Tecnologia se aprende junto e se trabalha em rede. Cada pessoa aqui entrou na lista adicionando o próprio nome por Pull Request — foi a primeira contribuição real dela num projeto de verdade.</p>
+
+  <div class="alunos">
+    <div class="al"><div class="av">GR</div><h4>Guilherme Santos Rabelo</h4><div class="sq">instrutor · módulo 2</div>
+      <div class="lk">
+        <a href="https://github.com/guirab734" aria-label="GitHub"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>
+        <a href="https://www.linkedin.com/" aria-label="LinkedIn"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.15C0 .51.53 0 1.18 0h13.64C15.47 0 16 .51 16 1.15v13.7c0 .64-.53 1.15-1.18 1.15H1.18C.53 16 0 15.49 0 14.85V1.15Zm4.94 12.22V6.17H2.54v7.2h2.4Zm-1.2-8.19c.84 0 1.36-.55 1.36-1.24-.02-.71-.52-1.24-1.34-1.24-.82 0-1.36.53-1.36 1.24 0 .69.52 1.24 1.32 1.24h.02Zm4.500 8.19V9.35c0-.21.02-.43.08-.58.17-.43.56-.88 1.21-.88.86 0 1.2.65 1.2 1.61v3.87h2.4V9.22c0-2.22-1.18-3.25-2.76-3.25-1.27 0-1.84.7-2.16 1.19v.02h-.02l.02-.02V6.17h-2.4c.03.68 0 7.2 0 7.2h2.4Z"/></svg></a>
+      </div>
+    </div>
+    <div class="al add"><div><div class="plus">+</div>seu nome aqui<br><span style="font-size:12.5px">abra um Pull Request</span></div></div>
+  </div>
+
+  <div class="note" style="margin-top:26px">
+    <b>Sobre os seus dados:</b> ninguém entra nesta lista sem se adicionar. Você escolhe o que aparece — pode publicar só o GitHub, só o LinkedIn, ou os dois. Para sair, é só abrir outro Pull Request removendo o seu bloco, ou me avisar que eu removo.
+  </div>
+</div></section>
+
+<section id="como"><div class="wrap">
+  <h2>Como aparecer aqui</h2>
+  <p class="sdek">Adicionar seu nome nesta página é a sua primeira contribuição real num projeto de código aberto — e é exatamente o conteúdo dos encontros 09 e 10 do módulo 2, aplicado de verdade.</p>
+
+  <pre><span class="c"># 1. faça um fork deste repositório no GitHub, depois:</span>
+git clone https://github.com/SEU-USUARIO/JT.git
+cd JT
+
+<span class="c"># 2. crie a sua branch</span>
+git switch -c aluno/seu-nome
+
+<span class="c"># 3. abra o index.html e copie um bloco &lt;div class="al"&gt;,
+#    trocando o nome, as iniciais e os links pelos seus</span>
+
+<span class="c"># 4. salve o seu trabalho</span>
+git add index.html
+git commit -m "feat: adiciona SEU NOME à turma"
+git push -u origin aluno/seu-nome
+
+<span class="c"># 5. no GitHub, abra um Pull Request. Eu reviso e faço o merge.</span></pre>
+
+  <div class="note">
+    <b>Travou em algum passo?</b> Ótimo — é para travar mesmo na primeira vez. Traz o erro para a aula que a gente resolve junto, ou abre uma issue no repositório descrevendo o que aconteceu. Abrir issue também é conteúdo do módulo.
+  </div>
+</div></section>
+
+<footer><div class="wrap" style="display:flex;flex-wrap:wrap;gap:10px 26px">
+  <span>Trilha Básica · Projeto Jovem Tech 2026</span>
+  <span>Módulo 2 · Guilherme Santos Rabelo</span>
+  <span style="margin-left:auto"><a href="https://github.com/guirab734/JT">repositório</a></span>
+</div></footer>
+
+<script>
+(function(){
+  "use strict";
+  var root=document.documentElement, btn=document.getElementById('theme');
+  var saved=null;
+  try{ saved=localStorage.getItem('jt-theme'); }catch(e){}
+  if(saved){ root.setAttribute('data-theme',saved); }
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur){ cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'; }
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{ localStorage.setItem('jt-theme',next); }catch(e){}
+  });
+  // abre o módulo pelo hash (#m2) e rola até ele
+  function openFromHash(){
+    var h=location.hash.replace('#','');
+    if(!/^m[1-6]$/i.test(h))return;
+    var mods=document.querySelectorAll('.mod');
+    var idx=parseInt(h.slice(1),10)-1;
+    if(mods[idx]){ mods[idx].open=true; mods[idx].scrollIntoView({behavior:'smooth',block:'start'}); }
+  }
+  addEventListener('hashchange',openFromHash); openFromHash();
+})();
+</script>
+</body>
+</html>
