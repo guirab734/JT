@@ -469,7 +469,7 @@
       <div>
         <div class="filetab"><span class="dot"></span>vagas.js</div>
         <pre><span class="c">// uma variável guarda UM valor</span>
-<span class="k">const</span> meuNivel <span class="p">=</span> <span class="s">"junior"</span><span class="p">;</span>
+<span class="k">var</span> meuNivel <span class="p">=</span> <span class="s">"junior"</span><span class="p">;</span>
 
 <span class="c">// um objeto guarda VÁRIOS valores</span>
 <span class="c">// que descrevem a mesma coisa</span>
@@ -661,12 +661,8 @@
       <div>
         <div class="filetab"><span class="dot"></span>mural-vagas/</div>
         <pre class="sm">mural-vagas<span class="p">/</span>
-├── <span class="f">src</span><span class="p">/</span>
-│   ├── vagas.js       <span class="c">// a lógica</span>
-│   └── dados.json     <span class="c">// os dados</span>
-├── <span class="amber">README.md</span>       <span class="c">// o que é e como rodar</span>
-├── .gitignore       <span class="c">// o que NÃO versionar</span>
-└── package.json     <span class="c">// identidade do projeto</span></pre>
+├── vagas.js          <span class="c">// o código do projeto</span>
+└── <span class="amber">README.md</span>        <span class="c">// como abrir e usar</span></pre>
         <p style="font-size:20px;margin-top:20px;color:var(--slate)">O <span class="mono amber">README</span> é a porta de entrada. Um projeto sem README é uma casa sem placa.</p>
       </div>
     </div>
@@ -682,19 +678,17 @@
   <p class="eyebrow">04 · Abertura de projetos · mão na massa</p>
   <div class="body">
     <div style="max-width:1200px">
-      <h2>Quatro comandos e<br>o projeto existe.</h2>
+      <h2>Dois comandos e<br>o projeto existe.</h2>
       <div class="term" style="margin-top:30px">
         <span class="ps">➜</span> <span class="cmd">mkdir mural-vagas &amp;&amp; cd mural-vagas</span>   <span class="out"># cria e entra na pasta</span><br>
-        <span class="ps">➜</span> <span class="cmd">npm init -y</span>                            <span class="out"># gera o package.json</span><br>
-        <span class="ps">➜</span> <span class="cmd">git init</span>                               <span class="out"># começa a versionar</span><br>
-        <span class="ps">➜</span> <span class="cmd">echo "node_modules/" &gt; .gitignore</span>       <span class="out"># ignora o que não é seu</span><span class="cur"></span>
+        <span class="ps">➜</span> <span class="cmd">git init</span>                               <span class="out"># começa a versionar</span><span class="cur"></span>
       </div>
       <p style="margin-top:30px;font-size:25px">A partir do <span class="mono amber">git init</span>, tudo que acontecer nessa pasta pode ser <strong>gravado, comparado e desfeito</strong>.</p>
     </div>
   </div>
   <div class="notes">
     <b>12:50 – 13:40</b>
-    <p class="say">"Quatro comandos. Vinte segundos. E o projeto deixa de ser uma pasta qualquer e vira um projeto de verdade, com histórico."</p>
+    <p class="say">"Dois comandos. Vinte segundos. E o projeto deixa de ser uma pasta qualquer e vira um projeto de verdade, com histórico."</p>
     <p>Se possível, digite ao vivo no terminal em vez de mostrar o slide. Vale muito mais.</p>
   </div>
 </section>
