@@ -2,8 +2,8 @@
 
 | Arquivo | Situação |
 | --- | --- |
-| `../index.html` (raiz) | **Publicado.** Versão construída com o ChatGPT. |
-| `index-claude.html` | Guardada. Versão alternativa, não publicada. |
+| `../index.html` (raiz) | **Publicado.** Interface publicada. |
+| `index-alternativo.html` | Guardada. Versão alternativa, não publicada. |
 
 ## Sobre a versão publicada
 
@@ -21,7 +21,7 @@ o site virar referência para alunos de verdade.
 
 ## A versão guardada
 
-`index-claude.html` traz os seis módulos com a numeração, a carga horária e
+`index-alternativo.html` traz os seis módulos com a numeração, a carga horária e
 as ementas conforme o Anexo III-A, além do módulo de Lógica detalhado em dez
 encontros de 4 h. Se algum dia quiser o conteúdo correto, o caminho mais
 curto é trazer a lista de módulos daqui para o visual de lá.
